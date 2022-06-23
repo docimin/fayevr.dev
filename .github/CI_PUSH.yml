@@ -16,6 +16,8 @@ jobs:
           known_hosts: 'github-host'
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_IP_DIGITALOCEAN }} >> ~/.ssh/known_hosts
+      - name: Installing node packages and building..
+        run: npm install && CI='' npm run build
       - name: Cleanup before push
         run: ssh github@${{ secrets.SSH_IP_DIGITALOCEAN }} "rm -rf /var/www/fayevr.dev/httpdocs/* && exit"
       - name: executing remote ssh commands using ssh key
