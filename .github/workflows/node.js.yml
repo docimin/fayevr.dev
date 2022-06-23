@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npm run build --if-present
       - run: ssh github@${{ secrets.SSH_IP_DIGITALOCEAN }} "rm -rf /var/www/fayevr.dev/httpdocs/* && exit"
       - run: scp -r ./build/* github@${{ secrets.SSH_IP_DIGITALOCEAN }}:/var/www/fayevr.dev/httpdocs
