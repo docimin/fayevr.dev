@@ -1,6 +1,6 @@
 # Personal portfolio
 
-[![Site preview](https://www.fayevr.dev/public/social-image.png)](https://fayevr.dev)
+[![Site preview](https://github.com/dev-suro/fayevr.dev/blob/main/public/social-image.png)](https://Fayevr.dev)
 
 A design portfolio to showcase a few projects. View the [live site](https://fayevr.dev) or check out a live version of the [components storybook](https://storybook.fayevr.dev).
 
