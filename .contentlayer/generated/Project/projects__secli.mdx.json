@@ -1,0 +1,28 @@
+{
+  "name": "Secli",
+  "description": "A CLI to store secrets locally",
+  "link": "https://crates.io/crates/secli",
+  "githubLink": "https://github.com/AnishDe12020/secli",
+  "iconName": "secli",
+  "image": {
+    "height": "630",
+    "width": "1200",
+    "url": "https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_secli.png",
+    "type": "CloudinaryImage",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "\nI just wanted to build something simple with Rust and this idea just popped into my mind. I explored some other CLIs written in Rust, understood the working and then decided to make Secli as a part of learning. Few days into building, I realised that this can potentially have a large user base so I decided to make a logo and banner and also [launch it on Producthunt](https://www.producthunt.com/posts/secli) :)\n\nYou can see how to use Secli [in the project's README](https://github.com/AnishDe12020/secli#readme)\n",
+    "code": "var Component=(()=>{var h=Object.create;var o=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var w=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var s in e)o(t,s,{get:e[s],enumerable:!0})},c=(t,e,s,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of m(e))!g.call(t,i)&&i!==s&&o(t,i,{get:()=>e[i],enumerable:!(a=u(e,i))||a.enumerable});return t};var x=(t,e,s)=>(s=t!=null?h(p(t)):{},c(e||!t||!t.__esModule?o(s,\"default\",{value:t,enumerable:!0}):s,t)),b=t=>c(o({},\"__esModule\",{value:!0}),t);var d=w((D,r)=>{r.exports=_jsx_runtime});var I={};j(I,{default:()=>y,frontmatter:()=>f});var n=x(d()),f={name:\"Secli\",description:\"A CLI to store secrets locally\",link:\"https://crates.io/crates/secli\",githubLink:\"https://github.com/AnishDe12020/secli\",iconName:\"secli\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_secli.png\",height:\"630\",width:\"1200\"}};function l(t){let e=Object.assign({p:\"p\",a:\"a\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:[\"I just wanted to build something simple with Rust and this idea just popped into my mind. I explored some other CLIs written in Rust, understood the working and then decided to make Secli as a part of learning. Few days into building, I realised that this can potentially have a large user base so I decided to make a logo and banner and also \",(0,n.jsx)(e.a,{href:\"https://www.producthunt.com/posts/secli\",children:\"launch it on Producthunt\"}),\" :)\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"You can see how to use Secli \",(0,n.jsx)(e.a,{href:\"https://github.com/AnishDe12020/secli#readme\",children:\"in the project's README\"})]})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(l,t)})):l(t)}var y=_;return b(I);})();\n;return Component;"
+  },
+  "_id": "projects/secli.mdx",
+  "_raw": {
+    "sourceFilePath": "projects/secli.mdx",
+    "sourceFileName": "secli.mdx",
+    "sourceFileDir": "projects",
+    "contentType": "mdx",
+    "flattenedPath": "projects/secli"
+  },
+  "type": "Project",
+  "slug": "secli"
+}

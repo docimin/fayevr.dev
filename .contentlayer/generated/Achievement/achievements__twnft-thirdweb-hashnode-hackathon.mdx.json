@@ -1,0 +1,25 @@
+{
+  "title": "Won the Thirdweb x Hashnode Hackathon",
+  "date": "2022-02-08T00:00:00.000Z",
+  "prizeValue": "$500",
+  "proof": {
+    "title": "Winners Announcement",
+    "url": "https://townhall.hashnode.com/thirdweb-x-hashnode-hackathon-winners",
+    "type": "Proof",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "\nMy project [TwNFT](https://twnft.vercel.app) was one of the winners of the [Thirdweb x Hashnode Hackathon](https://townhall.hashnode.com/thirdweb-hackathon)\n",
+    "code": "var Component=(()=>{var l=Object.create;var h=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var w=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var m=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),u=(t,e)=>{for(var n in e)h(t,n,{get:e[n],enumerable:!0})},s=(t,e,n,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of w(e))!f.call(t,a)&&a!==n&&h(t,a,{get:()=>e[a],enumerable:!(r=p(e,a))||r.enumerable});return t};var j=(t,e,n)=>(n=t!=null?l(x(t)):{},s(e||!t||!t.__esModule?h(n,\"default\",{value:t,enumerable:!0}):n,t)),b=t=>s(h({},\"__esModule\",{value:!0}),t);var i=m((D,c)=>{c.exports=_jsx_runtime});var M={};u(M,{default:()=>H,frontmatter:()=>_});var o=j(i()),_={title:\"Won the Thirdweb x Hashnode Hackathon\",date:new Date(16442784e5),prizeValue:\"$500\",proof:{title:\"Winners Announcement\",url:\"https://townhall.hashnode.com/thirdweb-x-hashnode-hackathon-winners\"}};function d(t){let e=Object.assign({p:\"p\",a:\"a\"},t.components);return(0,o.jsxs)(e.p,{children:[\"My project \",(0,o.jsx)(e.a,{href:\"https://twnft.vercel.app\",children:\"TwNFT\"}),\" was one of the winners of the \",(0,o.jsx)(e.a,{href:\"https://townhall.hashnode.com/thirdweb-hackathon\",children:\"Thirdweb x Hashnode Hackathon\"})]})}function k(t={}){let{wrapper:e}=t.components||{};return e?(0,o.jsx)(e,Object.assign({},t,{children:(0,o.jsx)(d,t)})):d(t)}var H=k;return b(M);})();\n;return Component;"
+  },
+  "_id": "achievements/twnft-thirdweb-hashnode-hackathon.mdx",
+  "_raw": {
+    "sourceFilePath": "achievements/twnft-thirdweb-hashnode-hackathon.mdx",
+    "sourceFileName": "twnft-thirdweb-hashnode-hackathon.mdx",
+    "sourceFileDir": "achievements",
+    "contentType": "mdx",
+    "flattenedPath": "achievements/twnft-thirdweb-hashnode-hackathon"
+  },
+  "type": "Achievement",
+  "slug": "twnft-thirdweb-hashnode-hackathon"
+}

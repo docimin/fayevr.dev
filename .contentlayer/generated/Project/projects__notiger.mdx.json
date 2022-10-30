@@ -1,0 +1,28 @@
+{
+  "name": "Notiger",
+  "description": "Get realtime notifications on events from your application",
+  "link": "https://notiger.xyz",
+  "githubLink": "https://github.com/AnishDe12020/notiger",
+  "iconName": "notiger",
+  "image": {
+    "height": "632",
+    "width": "1200",
+    "url": "https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_onx91e.png",
+    "type": "CloudinaryImage",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "\nI found myself wanting to get notifications on events that occured on my applications. Personally, I wanted a way to get notified as soon as someone submitted the contact form on my old portfolio website. Solutions that existed at that time were either expensive or did not suite my needs. I wanted something simple. Then cam the [Netlify x Hashnode Hackathon](https://townhall.hashnode.com/netlify-hackathon) and the idea to build Notiger was the only one I had, so I built it.\n\nYou can learn more about it [in my blog post introducing Notiger](https://blog.anishde.dev/notiger-get-realtime-notifications-on-events-from-your-application)\n",
+    "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),y=(e,t)=>{for(var o in t)a(e,o,{get:t[o],enumerable:!0})},r=(e,t,o,s)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let i of g(t))!u.call(e,i)&&i!==o&&a(e,i,{get:()=>t[i],enumerable:!(s=m(t,i))||s.enumerable});return e};var x=(e,t,o)=>(o=e!=null?d(p(e)):{},r(t||!e||!e.__esModule?a(o,\"default\",{value:e,enumerable:!0}):o,e)),b=e=>r(a({},\"__esModule\",{value:!0}),e);var c=f((N,h)=>{h.exports=_jsx_runtime});var v={};y(v,{default:()=>j,frontmatter:()=>w});var n=x(c()),w={name:\"Notiger\",description:\"Get realtime notifications on events from your application\",link:\"https://notiger.xyz\",githubLink:\"https://github.com/AnishDe12020/notiger\",iconName:\"notiger\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_onx91e.png\",height:\"632\",width:\"1200\"}};function l(e){let t=Object.assign({p:\"p\",a:\"a\"},e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.p,{children:[\"I found myself wanting to get notifications on events that occured on my applications. Personally, I wanted a way to get notified as soon as someone submitted the contact form on my old portfolio website. Solutions that existed at that time were either expensive or did not suite my needs. I wanted something simple. Then cam the \",(0,n.jsx)(t.a,{href:\"https://townhall.hashnode.com/netlify-hackathon\",children:\"Netlify x Hashnode Hackathon\"}),\" and the idea to build Notiger was the only one I had, so I built it.\"]}),`\n`,(0,n.jsxs)(t.p,{children:[\"You can learn more about it \",(0,n.jsx)(t.a,{href:\"https://blog.anishde.dev/notiger-get-realtime-notifications-on-events-from-your-application\",children:\"in my blog post introducing Notiger\"})]})]})}function _(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,Object.assign({},e,{children:(0,n.jsx)(l,e)})):l(e)}var j=_;return b(v);})();\n;return Component;"
+  },
+  "_id": "projects/notiger.mdx",
+  "_raw": {
+    "sourceFilePath": "projects/notiger.mdx",
+    "sourceFileName": "notiger.mdx",
+    "sourceFileDir": "projects",
+    "contentType": "mdx",
+    "flattenedPath": "projects/notiger"
+  },
+  "type": "Project",
+  "slug": "notiger"
+}

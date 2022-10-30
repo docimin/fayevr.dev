@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Notiger",
+    "description": "Get realtime notifications on events from your application",
+    "link": "https://notiger.xyz",
+    "githubLink": "https://github.com/AnishDe12020/notiger",
+    "iconName": "notiger",
+    "image": {
+      "height": "632",
+      "width": "1200",
+      "url": "https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_onx91e.png",
+      "type": "CloudinaryImage",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\nI found myself wanting to get notifications on events that occured on my applications. Personally, I wanted a way to get notified as soon as someone submitted the contact form on my old portfolio website. Solutions that existed at that time were either expensive or did not suite my needs. I wanted something simple. Then cam the [Netlify x Hashnode Hackathon](https://townhall.hashnode.com/netlify-hackathon) and the idea to build Notiger was the only one I had, so I built it.\n\nYou can learn more about it [in my blog post introducing Notiger](https://blog.anishde.dev/notiger-get-realtime-notifications-on-events-from-your-application)\n",
+      "code": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),y=(e,t)=>{for(var o in t)a(e,o,{get:t[o],enumerable:!0})},r=(e,t,o,s)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let i of g(t))!u.call(e,i)&&i!==o&&a(e,i,{get:()=>t[i],enumerable:!(s=m(t,i))||s.enumerable});return e};var x=(e,t,o)=>(o=e!=null?d(p(e)):{},r(t||!e||!e.__esModule?a(o,\"default\",{value:e,enumerable:!0}):o,e)),b=e=>r(a({},\"__esModule\",{value:!0}),e);var c=f((N,h)=>{h.exports=_jsx_runtime});var v={};y(v,{default:()=>j,frontmatter:()=>w});var n=x(c()),w={name:\"Notiger\",description:\"Get realtime notifications on events from your application\",link:\"https://notiger.xyz\",githubLink:\"https://github.com/AnishDe12020/notiger\",iconName:\"notiger\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_onx91e.png\",height:\"632\",width:\"1200\"}};function l(e){let t=Object.assign({p:\"p\",a:\"a\"},e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.p,{children:[\"I found myself wanting to get notifications on events that occured on my applications. Personally, I wanted a way to get notified as soon as someone submitted the contact form on my old portfolio website. Solutions that existed at that time were either expensive or did not suite my needs. I wanted something simple. Then cam the \",(0,n.jsx)(t.a,{href:\"https://townhall.hashnode.com/netlify-hackathon\",children:\"Netlify x Hashnode Hackathon\"}),\" and the idea to build Notiger was the only one I had, so I built it.\"]}),`\n`,(0,n.jsxs)(t.p,{children:[\"You can learn more about it \",(0,n.jsx)(t.a,{href:\"https://blog.anishde.dev/notiger-get-realtime-notifications-on-events-from-your-application\",children:\"in my blog post introducing Notiger\"})]})]})}function _(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,Object.assign({},e,{children:(0,n.jsx)(l,e)})):l(e)}var j=_;return b(v);})();\n;return Component;"
+    },
+    "_id": "projects/notiger.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/notiger.mdx",
+      "sourceFileName": "notiger.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/notiger"
+    },
+    "type": "Project",
+    "slug": "notiger"
+  },
+  {
+    "name": "Secli",
+    "description": "A CLI to store secrets locally",
+    "link": "https://crates.io/crates/secli",
+    "githubLink": "https://github.com/AnishDe12020/secli",
+    "iconName": "secli",
+    "image": {
+      "height": "630",
+      "width": "1200",
+      "url": "https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_secli.png",
+      "type": "CloudinaryImage",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\nI just wanted to build something simple with Rust and this idea just popped into my mind. I explored some other CLIs written in Rust, understood the working and then decided to make Secli as a part of learning. Few days into building, I realised that this can potentially have a large user base so I decided to make a logo and banner and also [launch it on Producthunt](https://www.producthunt.com/posts/secli) :)\n\nYou can see how to use Secli [in the project's README](https://github.com/AnishDe12020/secli#readme)\n",
+      "code": "var Component=(()=>{var h=Object.create;var o=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var w=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var s in e)o(t,s,{get:e[s],enumerable:!0})},c=(t,e,s,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let i of m(e))!g.call(t,i)&&i!==s&&o(t,i,{get:()=>e[i],enumerable:!(a=u(e,i))||a.enumerable});return t};var x=(t,e,s)=>(s=t!=null?h(p(t)):{},c(e||!t||!t.__esModule?o(s,\"default\",{value:t,enumerable:!0}):s,t)),b=t=>c(o({},\"__esModule\",{value:!0}),t);var d=w((D,r)=>{r.exports=_jsx_runtime});var I={};j(I,{default:()=>y,frontmatter:()=>f});var n=x(d()),f={name:\"Secli\",description:\"A CLI to store secrets locally\",link:\"https://crates.io/crates/secli\",githubLink:\"https://github.com/AnishDe12020/secli\",iconName:\"secli\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_secli.png\",height:\"630\",width:\"1200\"}};function l(t){let e=Object.assign({p:\"p\",a:\"a\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.p,{children:[\"I just wanted to build something simple with Rust and this idea just popped into my mind. I explored some other CLIs written in Rust, understood the working and then decided to make Secli as a part of learning. Few days into building, I realised that this can potentially have a large user base so I decided to make a logo and banner and also \",(0,n.jsx)(e.a,{href:\"https://www.producthunt.com/posts/secli\",children:\"launch it on Producthunt\"}),\" :)\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"You can see how to use Secli \",(0,n.jsx)(e.a,{href:\"https://github.com/AnishDe12020/secli#readme\",children:\"in the project's README\"})]})]})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(l,t)})):l(t)}var y=_;return b(I);})();\n;return Component;"
+    },
+    "_id": "projects/secli.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/secli.mdx",
+      "sourceFileName": "secli.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/secli"
+    },
+    "type": "Project",
+    "slug": "secli"
+  },
+  {
+    "name": "Storli",
+    "description": "A CLI to upload files to IPFS and interact with them using web3.storage",
+    "link": "https://www.npmjs.com/package/storli",
+    "githubLink": "https://github.com/AnishDe12020/storli",
+    "iconName": "storli",
+    "image": {
+      "height": "632",
+      "width": "1200",
+      "url": "https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_vst6z1.png",
+      "type": "CloudinaryImage",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\n[IPFS](https://ipfs.io/) is an amazing technology that lets one store files in decentralized nodes. I wanted to build a CLI and in my usual hobby of researching random things, I came across [web3.storage](https://web3.storage/) (great website btw). They had gotten an amazing JS SDK and as an oppurtunity to work with IPFS, web3.storage and [oclif](https://oclif.io/), I build Storli and [launched it on ProductHunt](https://www.producthunt.com/posts/storli).\n\nYou can see how to use Storli [in the project's README](https://github.com/AnishDe12020/storli#readme)\n",
+      "code": "var Component=(()=>{var d=Object.create;var s=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var w=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),f=(e,t)=>{for(var o in t)s(e,o,{get:t[o],enumerable:!0})},r=(e,t,o,a)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let i of p(t))!m.call(e,i)&&i!==o&&s(e,i,{get:()=>t[i],enumerable:!(a=u(t,i))||a.enumerable});return e};var b=(e,t,o)=>(o=e!=null?d(g(e)):{},r(t||!e||!e.__esModule?s(o,\"default\",{value:e,enumerable:!0}):o,e)),j=e=>r(s({},\"__esModule\",{value:!0}),e);var c=w((D,h)=>{h.exports=_jsx_runtime});var _={};f(_,{default:()=>S,frontmatter:()=>x});var n=b(c()),x={name:\"Storli\",description:\"A CLI to upload files to IPFS and interact with them using web3.storage\",link:\"https://www.npmjs.com/package/storli\",githubLink:\"https://github.com/AnishDe12020/storli\",iconName:\"storli\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og_vst6z1.png\",height:\"632\",width:\"1200\"}};function l(e){let t=Object.assign({p:\"p\",a:\"a\"},e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.p,{children:[(0,n.jsx)(t.a,{href:\"https://ipfs.io/\",children:\"IPFS\"}),\" is an amazing technology that lets one store files in decentralized nodes. I wanted to build a CLI and in my usual hobby of researching random things, I came across \",(0,n.jsx)(t.a,{href:\"https://web3.storage/\",children:\"web3.storage\"}),\" (great website btw). They had gotten an amazing JS SDK and as an oppurtunity to work with IPFS, web3.storage and \",(0,n.jsx)(t.a,{href:\"https://oclif.io/\",children:\"oclif\"}),\", I build Storli and \",(0,n.jsx)(t.a,{href:\"https://www.producthunt.com/posts/storli\",children:\"launched it on ProductHunt\"}),\".\"]}),`\n`,(0,n.jsxs)(t.p,{children:[\"You can see how to use Storli \",(0,n.jsx)(t.a,{href:\"https://github.com/AnishDe12020/storli#readme\",children:\"in the project's README\"})]})]})}function I(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,Object.assign({},e,{children:(0,n.jsx)(l,e)})):l(e)}var S=I;return j(_);})();\n;return Component;"
+    },
+    "_id": "projects/storli.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/storli.mdx",
+      "sourceFileName": "storli.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/storli"
+    },
+    "type": "Project",
+    "slug": "storli"
+  },
+  {
+    "name": "TwNFT",
+    "description": "Make an extensively customizable image of your tweet with TwNFT and then mint it as an NFT directly from the app!",
+    "link": "https://twnft.vercel.app",
+    "githubLink": "https://github.com/AnishDe12020/twnft",
+    "iconName": "twnft",
+    "image": {
+      "height": "632",
+      "width": "1200",
+      "url": "https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og2_odjbgz.png",
+      "type": "CloudinaryImage",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\nI was new to web3 when I made TwNFT but then there was [Thirdweb](https://thirdweb.com/) so that I did not have to break my head writing Solidity and then not burn my computer down when I would mess up. I wanted to make something related to web3 and this was one of the ideas that I had at that time (and it was the best one). I built TwNFT as a part of the [Thirdweb x Hashnode Hackathon](https://townhall.hashnode.com/thirdweb-hackathon) (and it turned out to be one of the winners :) ). As of now, there are 81 TwNFTs minted by 73 people (including me). You can see the [TwNFT Collection here](https://testnets.opensea.io/collection/twnft).\n\nFor more details on TwNFT and how to use it, read my [blog post introducing TwNFT](https://blog.anishde.dev/twnft-mint-your-tweets-as-nfts-easily-and-for-free)\n",
+      "code": "var Component=(()=>{var c=Object.create;var i=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var f=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),b=(e,t)=>{for(var o in t)i(e,o,{get:t[o],enumerable:!0})},s=(e,t,o,h)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let a of m(t))!u.call(e,a)&&a!==o&&i(e,a,{get:()=>t[a],enumerable:!(h=l(t,a))||h.enumerable});return e};var g=(e,t,o)=>(o=e!=null?c(p(e)):{},s(t||!e||!e.__esModule?i(o,\"default\",{value:e,enumerable:!0}):o,e)),T=e=>s(i({},\"__esModule\",{value:!0}),e);var d=f((_,r)=>{r.exports=_jsx_runtime});var N={};b(N,{default:()=>x,frontmatter:()=>y});var n=g(d()),y={name:\"TwNFT\",description:\"Make an extensively customizable image of your tweet with TwNFT and then mint it as an NFT directly from the app!\",link:\"https://twnft.vercel.app\",githubLink:\"https://github.com/AnishDe12020/twnft\",iconName:\"twnft\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1654335485/Blogfolio/og2_odjbgz.png\",height:\"632\",width:\"1200\"}};function w(e){let t=Object.assign({p:\"p\",a:\"a\"},e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(t.p,{children:[\"I was new to web3 when I made TwNFT but then there was \",(0,n.jsx)(t.a,{href:\"https://thirdweb.com/\",children:\"Thirdweb\"}),\" so that I did not have to break my head writing Solidity and then not burn my computer down when I would mess up. I wanted to make something related to web3 and this was one of the ideas that I had at that time (and it was the best one). I built TwNFT as a part of the \",(0,n.jsx)(t.a,{href:\"https://townhall.hashnode.com/thirdweb-hackathon\",children:\"Thirdweb x Hashnode Hackathon\"}),\" (and it turned out to be one of the winners :) ). As of now, there are 81 TwNFTs minted by 73 people (including me). You can see the \",(0,n.jsx)(t.a,{href:\"https://testnets.opensea.io/collection/twnft\",children:\"TwNFT Collection here\"}),\".\"]}),`\n`,(0,n.jsxs)(t.p,{children:[\"For more details on TwNFT and how to use it, read my \",(0,n.jsx)(t.a,{href:\"https://blog.anishde.dev/twnft-mint-your-tweets-as-nfts-easily-and-for-free\",children:\"blog post introducing TwNFT\"})]})]})}function F(e={}){let{wrapper:t}=e.components||{};return t?(0,n.jsx)(t,Object.assign({},e,{children:(0,n.jsx)(w,e)})):w(e)}var x=F;return T(N);})();\n;return Component;"
+    },
+    "_id": "projects/twnft.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/twnft.mdx",
+      "sourceFileName": "twnft.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/twnft"
+    },
+    "type": "Project",
+    "slug": "twnft"
+  },
+  {
+    "name": "XdoX",
+    "description": "XdoX is an application that lets you start challenges, log your progress and show it off to the world through a unique profile page.",
+    "link": "https://xdox.me",
+    "githubLink": "https://github.com/AnishDe12020/xdox",
+    "iconName": "xdox",
+    "image": {
+      "height": "632",
+      "width": "1200",
+      "url": "https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_jrsnqk.png",
+      "type": "CloudinaryImage",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\nIt was March and my exams were over (and so I had also started 100 days of code) but I faced a big problem, that is, **there was no \"proper\" way to log the 100 days of code progresses**. I started out by logging it on a GitHub repository but found it cumbersome. Of course I had been [tweeting my progress](https://twitter.com/search?f=top&q=(%23100DaysOfCode)%20(from%3AAnishDe12020)&src=typed_query) as well but eh...\n\nAlso the [Hasura x Hashnode Hackathon](https://townhall.hashnode.com/hasura-hackathon) had started so I found this as the perfect idea for a hackathon project.\n\nNow, I regularly add my 100 days of code progress to XdoX, check it out [on my profile page](https://www.xdox.me/@anishde12020/8c06dd6e-b34f-4451-aef2-bc20d164bbff/75)\n\nFor more details on XdoX, read my [blog post introducing XdoX](https://blog.anishde.dev/introducing-xdox-start-challenges-log-your-progress-and-show-them-off-to-the-world)\n",
+      "code": "var Component=(()=>{var l=Object.create;var s=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var m=(o,e)=>()=>(e||o((e={exports:{}}).exports,e),e.exports),x=(o,e)=>{for(var r in e)s(o,r,{get:e[r],enumerable:!0})},d=(o,e,r,n)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of g(e))!f.call(o,a)&&a!==r&&s(o,a,{get:()=>e[a],enumerable:!(n=p(e,a))||n.enumerable});return o};var y=(o,e,r)=>(r=o!=null?l(u(o)):{},d(e||!o||!o.__esModule?s(r,\"default\",{value:o,enumerable:!0}):r,o)),b=o=>d(s({},\"__esModule\",{value:!0}),o);var i=m((I,h)=>{h.exports=_jsx_runtime});var _={};x(_,{default:()=>j,frontmatter:()=>w});var t=y(i()),w={name:\"XdoX\",description:\"XdoX is an application that lets you start challenges, log your progress and show it off to the world through a unique profile page.\",link:\"https://xdox.me\",githubLink:\"https://github.com/AnishDe12020/xdox\",iconName:\"xdox\",image:{url:\"https://res.cloudinary.com/anishde12020/image/upload/v1651462990/Blogfolio/og2_jrsnqk.png\",height:\"632\",width:\"1200\"}};function c(o){let e=Object.assign({p:\"p\",strong:\"strong\",a:\"a\"},o.components);return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(e.p,{children:[\"It was March and my exams were over (and so I had also started 100 days of code) but I faced a big problem, that is, \",(0,t.jsx)(e.strong,{children:'there was no \"proper\" way to log the 100 days of code progresses'}),\". I started out by logging it on a GitHub repository but found it cumbersome. Of course I had been \",(0,t.jsx)(e.a,{href:\"https://twitter.com/search?f=top&q=(%23100DaysOfCode)%20(from%3AAnishDe12020)&src=typed_query\",children:\"tweeting my progress\"}),\" as well but eh...\"]}),`\n`,(0,t.jsxs)(e.p,{children:[\"Also the \",(0,t.jsx)(e.a,{href:\"https://townhall.hashnode.com/hasura-hackathon\",children:\"Hasura x Hashnode Hackathon\"}),\" had started so I found this as the perfect idea for a hackathon project.\"]}),`\n`,(0,t.jsxs)(e.p,{children:[\"Now, I regularly add my 100 days of code progress to XdoX, check it out \",(0,t.jsx)(e.a,{href:\"https://www.xdox.me/@anishde12020/8c06dd6e-b34f-4451-aef2-bc20d164bbff/75\",children:\"on my profile page\"})]}),`\n`,(0,t.jsxs)(e.p,{children:[\"For more details on XdoX, read my \",(0,t.jsx)(e.a,{href:\"https://blog.anishde.dev/introducing-xdox-start-challenges-log-your-progress-and-show-them-off-to-the-world\",children:\"blog post introducing XdoX\"})]})]})}function X(o={}){let{wrapper:e}=o.components||{};return e?(0,t.jsx)(e,Object.assign({},o,{children:(0,t.jsx)(c,o)})):c(o)}var j=X;return b(_);})();\n;return Component;"
+    },
+    "_id": "projects/xdox.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/xdox.mdx",
+      "sourceFileName": "xdox.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/xdox"
+    },
+    "type": "Project",
+    "slug": "xdox"
+  }
+]
