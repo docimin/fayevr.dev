@@ -62,6 +62,12 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "sass-rails" # Use Sass for stylesheets
+end
+
+group :production do
+  gem "db-mariadb" # Use MariaDB as the database for Active Record
+  gem "sass-rails" # Use Sass for stylesheets
 end
 
 group :test do
