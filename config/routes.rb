@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#index'
-  get 'gallery', to: 'pages#gallery'
-  get 'about', to: 'pages#about'
+  # Root route
+  root "home#index"
+  # Gallery route
+  get "gallery", to: "gallery#index"
 end
