@@ -136,3 +136,4 @@ public/sitemap.xml
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+!/app/assets/builds/tailwind.css
