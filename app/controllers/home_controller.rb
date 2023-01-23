@@ -7,13 +7,9 @@ class HomeController < ApplicationController
     today = Date.today
     birthday = Date.new(2000, 8, 17)
     @age = today.year - birthday.year
-    @age -= 1 if today.month < birthday.month || (today.month == birthday.month && today.day < birthday.day)
   end
-
-  def about
-    today = Date.today
-    birthday = Date.new(2000, 8, 17)
-    @about = today.year - birthday.year
-    p @about
+  def something
+    @something1 = "test"
+    @something2 = puts @something1
   end
 end
