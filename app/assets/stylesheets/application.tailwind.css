@@ -11,22 +11,3 @@
 }
 
 */
-
-@layer components {
-  .home {
-    text-align: center;
-  }
-  .container {
-    justify-content: center;
-    line-height: 4rem;
-  }
-  .devcolor {
-    color: rgb(255, 196, 0);
-    font-weight: bold;
-    border: solid;
-    border-color: greenyellow;
-    border-width: 1px;
-    border-radius: 10px;
-    background-color: rgb(255, 196, 0, 0.7);
-  }
-}
