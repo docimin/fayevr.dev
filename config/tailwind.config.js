@@ -16,6 +16,7 @@ module.exports = {
       'purple': '#682AE9',
       'blue': '#0072ff',
       'grey': '#808080',
+      'blackgrey': '#0e1212',
     },
     extend: {
       fontFamily: {

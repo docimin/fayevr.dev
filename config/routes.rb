@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "gallery", to: "gallery#index"
   get "about", to: "about#index"
   get "projects", to: "projects#index"
+  get "resume", to: "about#resumedownload"
 end
