@@ -9,8 +9,13 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: 'rgba(0,114,255,var(--tw-text-opacity));',
-      secondary: 'rgba(0,114,255,var(--tw-text-opacity));'
+      'primary': '#0072FF',
+      'secondary': '#00B0FF',
+      transparent: 'transparent',
+      current: 'currentColor',
+      'purple': '#682AE9',
+      'blue': '#0072ff',
+      'grey': '#808080',
     },
     extend: {
       fontFamily: {

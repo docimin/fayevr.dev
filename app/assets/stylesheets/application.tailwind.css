@@ -11,3 +11,23 @@
 }
 
 */
+
+body {
+  background-color: #0e1212;
+}
+
+/*make all text white*/
+body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, button {
+  color: #fff;
+  @apply tracking-wide;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.nav-section {
+  @apply text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200
+}
