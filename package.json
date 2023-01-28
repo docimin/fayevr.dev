@@ -1,0 +1,11 @@
+{
+  "name": "fayevr.dev",
+  "version": "1.0.0",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "controllers": "^0.0.2",
+    "tailwindcss": "^3.2.4"
+  }
+}
