@@ -18,6 +18,7 @@ module.exports = {
       'blue': '#0072ff',
       'grey': '#808080',
       'blackgrey': '#0e1212',
+      'red': '#f0514e',
     },
     extend: {
       fontFamily: {
