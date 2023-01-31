@@ -3,7 +3,10 @@
     <div class="flex items-center justify-start">
       <%#= link_to image_tag("icon-256.png", width: 64), root_path, :class => "flex" %>
       <%= show_svg('icon.svg') %>
-      <span class="text-xl font-semibold whitespace-nowrap dark:text-white">fayevr<span class="text-purple">.dev( )</span></span>
+      <span class="text-xl font-semibold whitespace-nowrap dark:text-white">fayevr<span class="text-purple">.dev()</span></span>
+    </div>
+    <div>
+      <%= link_to %>
     </div>
     <div class="flex items-center justify-end">
       <%= link_to "Home", root_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
@@ -11,8 +14,5 @@
       <%= link_to "Projects", projects_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
       <%#= link_to "Blog", about_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
     </div>
-  </div>
-  <div>
-    <%= link_to %>
   </div>
 </nav>
