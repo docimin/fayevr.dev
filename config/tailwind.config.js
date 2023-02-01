@@ -16,7 +16,7 @@ module.exports = {
       'secondary': '#00B0FF',
       'purple': '#682AE9',
       'blue': '#0072ff',
-      'grey': '#808080',
+      'grey': '#d1d1d1',
       'blackgrey': '#0e1212',
       'red': '#f0514e',
     },
