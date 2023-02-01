@@ -239,7 +239,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   puma (~> 5.0)
-  rails (~> 7.0.4, >= 7.0.4.1)
+  rails (~> 7.0.4, >= 7.0.4.2)
   rubocop
   selenium-webdriver
   sprockets-rails
