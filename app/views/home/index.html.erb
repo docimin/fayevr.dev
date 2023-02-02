@@ -1,10 +1,25 @@
-<div>
+<div class="container">
   <div>
     <div>
       <h1 class="text-6xl font-bold pb-4 self-center">fayevr<span class="text-purple">.dev( )</span></h1>
       <p class="text-purple pb-2 subheading">Dominic S.</p>
-      <p class="text-grey subheading">I am <%= @age.to_s %> years old,<br>a web, game dev and a server engineer</p>
+      <p class="text-grey subheading">I am <%= @age %> years old,<br>a web, game dev and a server engineer</p>
+    </div>
+  </div>
+  <div class="justify-center">
+    <div class="flex pt-20 space-x-32 justify-center">
+      <%= image_tag("hq_block.png", size: "100") %>
+      <%= image_tag("hq_block.png", size: "100") %>
+      <%= image_tag("hq_block.png", size: "100") %>
+      <%= image_tag("hq_block.png", size: "100") %>
+      <%= image_tag("hq_block.png", size: "100") %>
+    </div>
+    <div class="flex justify-center">
+      <br>
+      <br>
+      <%= image_tag("mario.png", size: "100") %>
+      <br>
+      <br>
     </div>
   </div>
 </div>
-
