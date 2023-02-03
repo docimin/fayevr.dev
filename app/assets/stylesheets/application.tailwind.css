@@ -37,3 +37,20 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
   fill: black;
   transition: fill 3s ease;
 }
+
+#mario-jumped-1 {
+  position: relative;
+}
+
+.jump {
+  animation: jump 1s forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}

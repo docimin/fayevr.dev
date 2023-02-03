@@ -1,0 +1,22 @@
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM loaded");
+    let image = document.getElementById("mario-jumped-1");
+    let pos = 0;
+    let id;
+
+    image.addEventListener("click", function() {
+        image.src = "<%= asset_path 'mario_block.png' %>";
+        id = setInterval(frame, 5);
+        image.classList.add("jump");
+    });
+
+    function frame() {
+        if (pos === -100) {
+            clearInterval(id);
+            pos = 0;
+        } else {
+            pos--;
+            image.style.transform = "translateY(" + pos + "px)";
+        }
+    }
+});
