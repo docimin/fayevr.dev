@@ -42,15 +42,28 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
   position: relative;
 }
 
-.jump {
-  animation: jump 1s forwards;
+.jump-up {
+  animation: jump-up 1s forwards;
 }
 
-@keyframes jump {
+@keyframes jump-up {
   0% {
     transform: translateY(0);
   }
   100% {
     transform: translateY(-100px);
+  }
+}
+
+.jump-down {
+  animation: jump-down 1s forwards;
+}
+
+@keyframes jump-down {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

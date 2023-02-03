@@ -1,22 +1,51 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM loaded");
-    let image = document.getElementById("mario-jumped-1");
-    let pos = 0;
-    let id;
+    let blockImage = document.getElementById("mario-jumped-1");
+    let marioImage = document.getElementById("mario-jumped-2");
+    let blockPos = 0;
+    let marioPos = 0;
+    let blockId;
+    let marioId;
 
-    image.addEventListener("click", function() {
-        image.src = "<%= asset_path 'mario_block.png' %>";
-        id = setInterval(frame, 5);
-        image.classList.add("jump");
+    blockImage.addEventListener("click", function() {
+        blockImage.src = "<%= asset_path 'mario_block.png' %>";
+        marioImage.src = "<%= asset_path 'mario.png' %>";
+        blockId = setInterval(blockFrame, 5);
+        marioId = setInterval(marioFrame, 3);
+        blockImage.classList.add("jump");
+        marioImage.classList.add("jump");
     });
 
-    function frame() {
-        if (pos === -100) {
-            clearInterval(id);
-            pos = 0;
+    function blockFrame() {
+        if (blockPos === -100) {
+            clearInterval(blockId);
+            setTimeout(function() {
+                blockId = setInterval(blockFrame, 5);
+            }, 500);
+        } else if (blockPos === 100) {
+            clearInterval(blockId);
+        } else if (blockPos < 0) {
+            blockPos--;
+            blockImage.style.transform = "translateY(" + blockPos + "px)";
         } else {
-            pos--;
-            image.style.transform = "translateY(" + pos + "px)";
+            blockPos++;
+            blockImage.style.transform = "translateY(" + blockPos + "px)";
+        }
+    }
+
+    function marioFrame() {
+        if (marioPos === -100) {
+            clearInterval(marioId);
+            setTimeout(function() {
+                marioId = setInterval(marioFrame, 3);
+            }, 500);
+        } else if (marioPos === 100) {
+            clearInterval(marioId);
+        } else if (marioPos < 0) {
+            marioPos--;
+            marioImage.style.transform = "translateY(" + marioPos + "px)";
+        } else {
+            marioPos++;
+            marioImage.style.transform = "translateY(" + marioPos + "px)";
         }
     }
 });
