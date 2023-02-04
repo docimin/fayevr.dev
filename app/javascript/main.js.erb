@@ -1,0 +1,6 @@
+const clickSound = new Audio("sounds/click.ogg");
+
+document.addEventListener("click", function() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+});

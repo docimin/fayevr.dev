@@ -3,49 +3,71 @@ document.addEventListener("DOMContentLoaded", function() {
     let marioImage = document.getElementById("mario-jumped-2");
     let blockPos = 0;
     let marioPos = 0;
-    let blockId;
-    let marioId;
+    let startTime;
+    let jumpDuration = 500;
+    let isJumping = false;
 
     blockImage.addEventListener("click", function() {
         blockImage.src = "<%= asset_path 'mario_block.png' %>";
         marioImage.src = "<%= asset_path 'mario.png' %>";
-        blockId = setInterval(blockFrame, 5);
-        marioId = setInterval(marioFrame, 3);
+        startTime = performance.now();
+        isJumping = true;
         blockImage.classList.add("jump");
         marioImage.classList.add("jump");
+        blockFrame();
+        marioFrame();
+    });
+
+    document.addEventListener("page:before-change", function() {
+        isJumping = false;
+    });
+
+    document.addEventListener("page:change", function() {
+        blockImage.src = "<%= asset_path 'mario_question.png' %>";
+        marioImage.src = "<%= asset_path 'mario.png' %>";
+        blockImage.style.transform = "translateY(0)";
+        marioImage.style.transform = "translateY(0)";
     });
 
     function blockFrame() {
-        if (blockPos === -100) {
-            clearInterval(blockId);
-            setTimeout(function() {
-                blockId = setInterval(blockFrame, 5);
-            }, 500);
-        } else if (blockPos === 100) {
-            clearInterval(blockId);
-        } else if (blockPos < 0) {
-            blockPos--;
-            blockImage.style.transform = "translateY(" + blockPos + "px)";
-        } else {
-            blockPos++;
-            blockImage.style.transform = "translateY(" + blockPos + "px)";
+        if (!isJumping) return;
+
+        let currentTime = performance.now();
+        let timeDiff = currentTime - startTime;
+        if (timeDiff >= jumpDuration) {
+            isJumping = false;
+            blockImage.style.transform = "translateY(0)";
+            return;
         }
+
+        let progress = timeDiff / jumpDuration;
+        let jumpHeight = 150 * progress;
+        if (progress >= 0.5) {
+            jumpHeight = 150 * (1 - (progress - 0.5) * 2);
+        }
+        blockPos = -jumpHeight;
+        blockImage.style.transform = "translateY(" + blockPos + "px)";
+        requestAnimationFrame(blockFrame);
     }
 
     function marioFrame() {
-        if (marioPos === -100) {
-            clearInterval(marioId);
-            setTimeout(function() {
-                marioId = setInterval(marioFrame, 3);
-            }, 500);
-        } else if (marioPos === 100) {
-            clearInterval(marioId);
-        } else if (marioPos < 0) {
-            marioPos--;
-            marioImage.style.transform = "translateY(" + marioPos + "px)";
-        } else {
-            marioPos++;
-            marioImage.style.transform = "translateY(" + marioPos + "px)";
+        if (!isJumping) return;
+
+        let currentTime = performance.now();
+        let timeDiff = currentTime - startTime;
+        if (timeDiff >= jumpDuration) {
+            isJumping = false;
+            marioImage.style.transform = "translateY(0)";
+            return;
         }
+
+        let progress = timeDiff / jumpDuration;
+        let jumpHeight = 100 * progress;
+        if (progress >= 0.5) {
+            jumpHeight = 100 * (1 - (progress - 0.5) * 2);
+        }
+        marioPos = -jumpHeight;
+        marioImage.style.transform = "translateY(" + marioPos + "px)";
+        requestAnimationFrame(marioFrame);
     }
 });
