@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         let progress = timeDiff / jumpDuration;
-        let jumpHeight = 150 * progress;
-        if (progress >= 0.5) {
+        let jumpHeight = 300 * progress;
+        if (progress >= 0.4) {
             jumpHeight = 100 * (1 - (progress - 0.5) * 2);
         }
         marioPos = -jumpHeight;

@@ -1,9 +1,8 @@
 <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <div class="flex items-center justify-start">
-      <%#= link_to image_tag("icon-256.png", width: 64), root_path, :class => "flex" %>
-      <%= show_svg('icon.svg') %>
-      <span class="text-xl font-semibold whitespace-nowrap dark:text-white">fayevr<span class="text-purple">.dev()</span></span>
+      <%= image_tag("icon-256.png", size: 100, class: "exploding-image") %>
+      <span class="text-xl font-semibold whitespace-nowrap dark:text-white exploding-title">fayevr<span class="text-purple">.dev()</span></span>
     </div>
     <div>
       <%= render_breadcrumbs :separator => ' / ' %>
