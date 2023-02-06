@@ -41,13 +41,15 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         let progress = timeDiff / jumpDuration;
-        let jumpHeight = 150 * progress;
+        let jumpHeight = 350 * progress;
         if (progress >= 0.5) {
             jumpHeight = 150 * (1 - (progress - 0.5) * 2);
         }
-        blockPos = -jumpHeight;
-        blockImage.style.transform = "translateY(" + blockPos + "px)";
-        requestAnimationFrame(blockFrame);
+        setTimeout(function() {
+            blockPos = -jumpHeight;
+            blockImage.style.transform = "translateY(" + blockPos + "px)";
+            requestAnimationFrame(blockFrame);
+        }, 15);
     }
 
     function marioFrame() {
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         let progress = timeDiff / jumpDuration;
-        let jumpHeight = 100 * progress;
+        let jumpHeight = 150 * progress;
         if (progress >= 0.5) {
             jumpHeight = 100 * (1 - (progress - 0.5) * 2);
         }
