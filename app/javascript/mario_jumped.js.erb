@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let startTime;
     let jumpDuration = 500;
     let isJumping = false;
+    if (!blockImage || !marioImage) return;
 
     blockImage.addEventListener("click", function() {
         blockImage.src = "<%= asset_path 'mario_block.png' %>";

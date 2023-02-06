@@ -78,3 +78,13 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
 .show {
   display: block;
 }
+
+.fragment {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
