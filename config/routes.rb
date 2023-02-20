@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'projects/projects'
-  get 'projects/index'
+  get "projects/suggestions", to: "projects#suggestions"
+  get "projects/alyx", to: "projects#alyx"
   # Root route
   root "home#index"
   # Gallery route

@@ -86,3 +86,30 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
   opacity: 1;
   transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1s;
 }
+
+.text-container:hover {
+  background-image: linear-gradient(to right, rgba(9, 9, 121, 0.2) 0%, rgba(121, 9, 9, 0.8) 100%);
+  background-size: 200% auto;
+  background-position: left bottom;
+  transition: background-position 0.3s ease-out;
+}
+
+.hover-4 {
+  position: relative;
+}
+
+.hover-4::before {
+  background: hsl(45 100% 70%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.hover-4:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
