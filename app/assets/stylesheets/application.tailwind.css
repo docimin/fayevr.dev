@@ -99,7 +99,7 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
 }
 
 .hover-4::before {
-  background: hsl(45 100% 70%);
+  background: rgba(0, 229, 255, 30%);
   content: "";
   inset: 0;
   position: absolute;
@@ -112,4 +112,11 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
 .hover-4:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.projects-bg {
+  background-image: url(projects-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

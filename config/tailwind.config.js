@@ -19,6 +19,8 @@ module.exports = {
       'grey': '#d1d1d1',
       'blackgrey': '#0e1212',
       'red': '#f0514e',
+      'hover': 'rgba(0, 229, 255)',
+      'main-white': 'rgba(255, 255, 255, 0.8)',
     },
     extend: {
       fontFamily: {
