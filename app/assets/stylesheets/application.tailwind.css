@@ -120,3 +120,11 @@ body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, butt
   background-size: cover;
   background-position: center;
 }
+
+.status-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 5px;
+  border-color: black;
+}

@@ -1,0 +1,52 @@
+let fetchData = () => {
+    fetch('https://api1.fayevr.dev/getstatus?member=196742608846979072')
+        .then(res => res.json())
+        .then((out) => {
+            console.log('Output: ', out);
+            let statusCircle = document.querySelector(".status-circle");
+            let activityGame = document.querySelector(".activity-game");
+            let songNameElement = document.querySelector('#song-name');
+            let songArtistElement = document.querySelector('#song-artist');
+            //let songAlbumElement = document.querySelector('#song-album');
+            let songArtElement = document.querySelector('#song-art');
+
+            // Status
+            switch (out.status) {
+                case "dnd":
+                    statusCircle.style.borderColor = "red";
+                    statusCircle.style.backgroundColor = "red";
+                    break;
+                case "online":
+                    statusCircle.style.borderColor = "green";
+                    statusCircle.style.backgroundColor = "green";
+                    break;
+                case "idle":
+                    statusCircle.style.borderColor = "yellow";
+                    statusCircle.style.backgroundColor = "yellow";
+                    break;
+                case "offline":
+                    statusCircle.style.borderColor = "grey";
+                    statusCircle.style.backgroundColor = "grey";
+                    break;
+                default:
+                    console.error("Invalid status:", out.status);
+                    break;
+            }
+
+            // Spotify
+            if (out.spotify.song_name == null) {
+                console.log("No song playing");
+            } else {
+                console.log(out.spotify.song_name);
+                songNameElement.textContent = out.spotify.song_name;
+                //songAlbumElement.textContent = out.spotify.album;
+                songArtistElement.textContent = out.spotify.artist;
+                songArtElement.alt = out.spotify.song_name;
+                songArtElement.src = out.spotify.cover_url;
+            }
+        }).catch(err => console.error(err));
+};
+
+// Call fetchData function every 10 seconds
+// setInterval(fetchData, 10000);
+fetchData();
