@@ -47,14 +47,13 @@ let fetchData = () => {
                 activityWorkspace.textContent = out.activities_raw.find(activity => activity.type === 0).state;
                 activityLargeImage.src = `https://cdn.discordapp.com/app-assets/${applicationId}/${largeImage}.png`;
             } else {
-                console.log("No activity has type 0");
+                return;
             }
 
             // Spotify
             if (out.spotify.song_name == null) {
-                console.log("No song playing");
+                return;
             } else {
-                console.log(out.spotify.song_name);
                 songNameElement.textContent = out.spotify.song_name;
                 //songAlbumElement.textContent = out.spotify.album;
                 songArtistElement.textContent = out.spotify.artist;
