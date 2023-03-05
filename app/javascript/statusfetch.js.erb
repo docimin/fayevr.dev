@@ -2,13 +2,20 @@ let fetchData = () => {
     fetch('https://api1.fayevr.dev/getstatus?member=196742608846979072')
         .then(res => res.json())
         .then((out) => {
-            console.log('Output: ', out);
+            // Debugging
+            // console.log('Output: ', out);
             let statusCircle = document.querySelector(".status-circle");
             let activityGame = document.querySelector(".activity-game");
+            let activityDetails = document.querySelector(".activity-details");
+            let activityWorkspace = document.querySelector(".activity-workspace");
+            let activityLargeImage = document.querySelector("#activity-large-image");
             let songNameElement = document.querySelector('#song-name');
             let songArtistElement = document.querySelector('#song-artist');
             //let songAlbumElement = document.querySelector('#song-album');
             let songArtElement = document.querySelector('#song-art');
+
+            const applicationId = out.activities_raw.find(activity => activity.type === 0).applicationId;
+            const largeImage = out.activities_raw.find(activity => activity.type === 0).assets.largeImage;
 
             // Status
             switch (out.status) {
@@ -33,6 +40,16 @@ let fetchData = () => {
                     break;
             }
 
+            // Game Activity
+            if (out.activities_raw.some(activity => activity.type === 0)) {
+                activityGame.textContent = out.activities_raw.find(activity => activity.type === 0).name;
+                activityDetails.textContent = out.activities_raw.find(activity => activity.type === 0).details;
+                activityWorkspace.textContent = out.activities_raw.find(activity => activity.type === 0).state;
+                activityLargeImage.src = `https://cdn.discordapp.com/app-assets/${applicationId}/${largeImage}.png`;
+            } else {
+                console.log("No activity has type 0");
+            }
+
             // Spotify
             if (out.spotify.song_name == null) {
                 console.log("No song playing");
@@ -48,5 +65,5 @@ let fetchData = () => {
 };
 
 // Call fetchData function every 10 seconds
-// setInterval(fetchData, 10000);
+setInterval(fetchData, 10000);
 fetchData();
