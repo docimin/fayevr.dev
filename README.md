@@ -1,24 +1,9 @@
-# README
+# https://fayevr.dev
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Setting up Rails 7 Server
+Edit the `config/secrets.yml` file to include the following
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Compile assets for production mode:
+```bash
+RAILS_ENV=production bundle exec rails assets:precompile
+```
