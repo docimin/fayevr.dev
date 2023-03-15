@@ -25,7 +25,6 @@ jobs:
       - run:
           name: Test Setup
           command: |
-            cp config/application.example.yml config/application.yml
             bundle exec rake assets:precompile
       - run:
           name: Run Tests
