@@ -1,0 +1,76 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let blockImage = document.getElementById("mario-jumped-1");
+    let marioImage = document.getElementById("mario-jumped-2");
+    let blockPos = 0;
+    let marioPos = 0;
+    let startTime;
+    let jumpDuration = 500;
+    let isJumping = false;
+    if (!blockImage || !marioImage) return;
+
+    blockImage.addEventListener("click", function() {
+        blockImage.src = "<%= asset_path 'mario_block.png' %>";
+        marioImage.src = "<%= asset_path 'mario.png' %>";
+        startTime = performance.now();
+        isJumping = true;
+        blockImage.classList.add("jump");
+        marioImage.classList.add("jump");
+        blockFrame();
+        marioFrame();
+    });
+
+    document.addEventListener("page:before-change", function() {
+        isJumping = false;
+    });
+
+    document.addEventListener("page:change", function() {
+        blockImage.src = "<%= asset_path 'mario_question.png' %>";
+        marioImage.src = "<%= asset_path 'mario.png' %>";
+        blockImage.style.transform = "translateY(0)";
+        marioImage.style.transform = "translateY(0)";
+    });
+
+    function blockFrame() {
+        if (!isJumping) return;
+
+        let currentTime = performance.now();
+        let timeDiff = currentTime - startTime;
+        if (timeDiff >= jumpDuration) {
+            isJumping = false;
+            blockImage.style.transform = "translateY(0)";
+            return;
+        }
+
+        let progress = timeDiff / jumpDuration;
+        let jumpHeight = 350 * progress;
+        if (progress >= 0.5) {
+            jumpHeight = 150 * (1 - (progress - 0.5) * 2);
+        }
+        setTimeout(function() {
+            blockPos = -jumpHeight;
+            blockImage.style.transform = "translateY(" + blockPos + "px)";
+            requestAnimationFrame(blockFrame);
+        }, 15);
+    }
+
+    function marioFrame() {
+        if (!isJumping) return;
+
+        let currentTime = performance.now();
+        let timeDiff = currentTime - startTime;
+        if (timeDiff >= jumpDuration) {
+            isJumping = false;
+            marioImage.style.transform = "translateY(0)";
+            return;
+        }
+
+        let progress = timeDiff / jumpDuration;
+        let jumpHeight = 300 * progress;
+        if (progress >= 0.4) {
+            jumpHeight = 100 * (1 - (progress - 0.5) * 2);
+        }
+        marioPos = -jumpHeight;
+        marioImage.style.transform = "translateY(" + marioPos + "px)";
+        requestAnimationFrame(marioFrame);
+    }
+});

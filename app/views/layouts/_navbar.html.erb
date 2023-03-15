@@ -1,0 +1,17 @@
+<nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
+  <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <div class="flex items-center justify-start">
+      <%= image_tag("icon-256.png", size: 100, class: "exploding-image") %>
+      <span class="text-xl font-semibold whitespace-nowrap dark:text-white exploding-title">fayevr<span class="text-purple">.dev()</span></span>
+    </div>
+    <div>
+      <%= render_breadcrumbs :separator => ' / ' %>
+    </div>
+    <div class="flex items-center justify-end">
+      <%= link_to "Home", root_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
+      <%= link_to "About", about_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
+      <%= link_to "Projects", projects_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
+      <%#= link_to "Blog", about_path, :class => "text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white px-2 py-1.5 rounded transition-colors duration-200" %>
+    </div>
+  </div>
+</nav>

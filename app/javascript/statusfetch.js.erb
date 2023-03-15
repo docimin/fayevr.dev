@@ -1,0 +1,67 @@
+let fetchData = () => {
+    fetch('https://api1.fayevr.dev/getstatus?member=196742608846979072')
+        .then(res => res.json())
+        .then((out) => {
+            // Debugging
+            // console.log('Output: ', out);
+            let statusCircle = document.querySelector(".status-circle");
+            let activityGame = document.querySelector(".activity-game");
+            let activityDetails = document.querySelector(".activity-details");
+            let activityWorkspace = document.querySelector(".activity-workspace");
+            let activityLargeImage = document.querySelector("#activity-large-image");
+            let songNameElement = document.querySelector('#song-name');
+            let songArtistElement = document.querySelector('#song-artist');
+            //let songAlbumElement = document.querySelector('#song-album');
+            let songArtElement = document.querySelector('#song-art');
+            let hideBlockActivity = document.querySelectorAll('#hide-block-activity');
+            let hideBlockSpotify = document.querySelectorAll('#hide-block-spotify');
+
+            // Status
+            if (out.status === "dnd") {
+                statusCircle.style.borderColor = "red";
+                statusCircle.style.backgroundColor = "red";
+            } else if (out.status === "online") {
+                statusCircle.style.borderColor = "green";
+                statusCircle.style.backgroundColor = "green";
+            } else if (out.status === "idle") {
+                statusCircle.style.borderColor = "yellow";
+                statusCircle.style.backgroundColor = "yellow";
+            } else if (out.status === "offline") {
+                statusCircle.style.borderColor = "grey";
+                statusCircle.style.backgroundColor = "grey";
+            } else {
+                console.error("Invalid status:", out.status);
+            }
+
+            // Game Activity
+            if (out.activities_raw.some(activity => activity.type === 0)) {
+                const applicationId = out.activities_raw.find(activity => activity.type === 0).applicationId;
+                const largeImage = out.activities_raw.find(activity => activity.type === 0).assets.largeImage;
+                activityGame.textContent = out.activities_raw.find(activity => activity.type === 0).name;
+                activityDetails.textContent = out.activities_raw.find(activity => activity.type === 0).details;
+                activityWorkspace.textContent = out.activities_raw.find(activity => activity.type === 0).state;
+                activityLargeImage.src = `https://cdn.discordapp.com/app-assets/${applicationId}/${largeImage}.png`;
+            } else {
+                for (let i = 0; i < hideBlockActivity.length; i++) {
+                    hideBlockActivity[i].style.display = 'none';
+                }
+            }
+
+            // Spotify
+            if (out.spotify.song_name == null) {
+                for (let i = 0; i < hideBlockSpotify.length; i++) {
+                    hideBlockSpotify[i].style.display = 'none';
+                }
+            } else {
+                songNameElement.textContent = out.spotify.song_name;
+                //songAlbumElement.textContent = out.spotify.album;
+                songArtistElement.textContent = out.spotify.artist;
+                songArtElement.alt = out.spotify.song_name;
+                songArtElement.src = out.spotify.cover_url;
+            }
+        }).catch(err => console.error(err));
+};
+
+// Call fetchData function every 10 seconds
+setInterval(fetchData, 10000);
+fetchData();

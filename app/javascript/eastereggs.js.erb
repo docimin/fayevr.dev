@@ -1,0 +1,32 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let image = document.getElementsByClassName("exploding-image")[0];
+    let title = document.getElementsByClassName("exploding-title")[0];
+    let clicks = 0;
+    if (!image) return;
+
+    image.addEventListener("click", function() {
+        clicks++;
+        if (clicks === 5) {
+            let fragments = [];
+            for (let i = 0; i < 25; i++) {
+                let fragment = document.createElement("div");
+                fragment.classList.add("fragment");
+                fragment.style.backgroundImage = "url('<%= asset_path 'hq_block.png' %>')";
+                fragment.style.top = (image.offsetTop + image.offsetHeight / 2) + "px";
+                fragment.style.left = (image.offsetLeft + image.offsetWidth / 2) + "px";
+                document.body.appendChild(fragment);
+                fragments.push(fragment);
+            }
+            // Change the icon-256.png to jacko_transparent.png
+            image.src = "<%= asset_path 'jacko_transparent.png' %>";
+            title.style.transform = "rotate(15deg)";
+            setTimeout(function() {
+                fragments.forEach(function(fragment) {
+                    fragment.style.transition = "all 1s cubic-bezier(0.165, 0.84, 0.44, 1)";
+                    fragment.style.transform = "translate(" + (Math.random() * 500 - 250) + "px, " + (Math.random() * 500 - 250) + "px) rotate(" + (Math.random() * 360 - 180) + "deg)";
+                    fragment.style.opacity = "0";
+                });
+            }, 100);
+        }
+    });
+});

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+body {
+  background-color: #0e1212;
+}
+
+/*make all text white*/
+body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, button {
+  color: #fff;
+  @apply tracking-wide;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.monogram-light {
+  fill: white;
+  transition: fill 3s ease;
+}
+
+.monogram-dark {
+  fill: black;
+  transition: fill 3s ease;
+}
+
+#mario-jumped-1 {
+  position: relative;
+}
+
+.jump-up {
+  animation: jump-up 1s forwards;
+}
+
+@keyframes jump-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+.jump-down {
+  animation: jump-down 1s forwards;
+}
+
+@keyframes jump-down {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.show {
+  display: block;
+}
+
+.fragment {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1s;
+}
+
+.text-container:hover {
+  background-image: linear-gradient(to right, rgba(9, 9, 121, 0.2) 0%, rgba(121, 9, 9, 0.8) 100%);
+  background-size: 200% auto;
+  background-position: left bottom;
+  transition: background-position 0.3s ease-out;
+}
+
+.hover-4 {
+  position: relative;
+}
+
+.hover-4::before {
+  background: rgba(0, 229, 255, 30%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.hover-4:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.projects-bg {
+  background-image: url(projects-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.status-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 5px;
+  border-color: black;
+}

@@ -1,36 +1,9 @@
-# Personal portfolio
+# https://fayevr.dev
 
-[![Site preview](https://github.com/dev-suro/fayevr.dev/blob/main/public/social-image.png)](https://Fayevr.dev)
+# Setting up Rails 7 Server
+Edit the `config/secrets.yml` file to include the following
 
-A design portfolio to showcase a few projects. View the [live site](https://fayevr.dev) or check out a live version of the [components storybook](https://storybook.fayevr.dev).
-
-## Install & run
-
-Make sure you have nodejs and npm installed. Install dependencies with:
-
+Compile assets for production mode:
 ```bash
-npm
-```
-
-```bash
-To install node components, please use
-npm install
-```
-
-Once it's done start up a local server with:
-
-```bash
-npm start
-```
-
-To view the components storybook:
-
-```bash
-npm run storybook
-```
-
-To create a production build:
-
-```bash
-npm run build
+RAILS_ENV=production bundle exec rails assets:precompile
 ```
