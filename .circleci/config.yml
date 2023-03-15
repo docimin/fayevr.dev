@@ -16,15 +16,12 @@ jobs:
       ##    pkg-manager: yarn
       ##    cache-key: "yarn.lock"
   test:
-    parallelism: 3
+    parallelism: 4
     docker:
       - image: cimg/ruby:3.2.0-node
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
-      #PGHOST: 127.0.0.1
-      #PGUSER: circleci-demo-ruby
-      #PGPASSWORD: ""
       RAILS_ENV: test
     steps:
       - checkout
@@ -32,9 +29,6 @@ jobs:
       ##- node/install-packages:
       ##    pkg-manager: yarn
       ##    cache-key: "yarn.lock"
-      #- run:
-      #    name: Database setup
-      #    command: bundle exec rails db:schema:load --trace
       # Run rspec in parallel
       - ruby/rspec-test
       - ruby/rubocop-check
