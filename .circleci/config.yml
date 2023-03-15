@@ -25,6 +25,7 @@ jobs:
       - run:
           name: Test Setup
           command: |
+            bundle config unset deployment
             bundle exec rake assets:precompile
       - run:
           name: Run Tests
