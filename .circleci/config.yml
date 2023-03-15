@@ -32,9 +32,9 @@ jobs:
       ##- node/install-packages:
       ##    pkg-manager: yarn
       ##    cache-key: "yarn.lock"
-      - run:
-          name: Database setup
-          command: bundle exec rails db:schema:load --trace
+      #- run:
+      #    name: Database setup
+      #    command: bundle exec rails db:schema:load --trace
       # Run rspec in parallel
       - ruby/rspec-test
       - ruby/rubocop-check
