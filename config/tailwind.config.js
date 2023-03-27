@@ -15,6 +15,7 @@ module.exports = {
       'primary': '#0072FF',
       'secondary': '#00B0FF',
       'purple': '#682AE9',
+      'blurple': '5865F2',
       'blue': '#0072ff',
       'grey': '#d1d1d1',
       'blackgrey': '#0e1212',

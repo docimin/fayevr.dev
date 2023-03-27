@@ -18,7 +18,7 @@ body {
 
 /*make all text white*/
 body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, input, textarea, select, button {
-  color: #fff;
+  color: #ffffff;
   @apply tracking-wide;
 }
 
