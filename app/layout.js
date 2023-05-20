@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         <meta name="image" content={metadata.image} />
         <meta name="icon" content={metadata.icon} />
       </Head>
-      <body className={inter.className} onMouseDown={handleMouseClick} onMouseUp={handleMouseClick}>
+      <body className={`${inter.className}`} onMouseDown={handleMouseClick} onMouseUp={handleMouseClick}>
         {children}
       </body>
     </html>

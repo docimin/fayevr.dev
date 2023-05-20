@@ -10,7 +10,6 @@ export default function Home() {
       <Sideleft />
       <div className="flex flex-col w-full items-center">
         <Header />
-        <Breadcrumbs />
       </div>
       <Sideright />
     </main>

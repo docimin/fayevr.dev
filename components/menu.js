@@ -3,11 +3,11 @@ import { Fragment, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
 
 const items = [
-  { id: 1, name: '>about', category: 'faye', url: '#' },
-  { id: 2, name: '>projects', category: 'faye', url: '#' },
-  { id: 3, name: '#suggestion-bot', category: 'Projects', url: '#' },
-  { id: 4, name: '#alyx-bot', category: 'Projects', url: '#' },
-  { id: 5, name: '?github', category: 'Help', url: 'https://' },
+  { id: 1, name: '>about', category: 'faye', url: '/about' },
+  { id: 2, name: '>projects', category: 'faye', url: '/projects' },
+  { id: 3, name: '#suggestions-bot', category: 'Projects', url: '/projects/suggestions-bot' },
+  { id: 4, name: '#alyx-bot', category: 'Projects', url: '/projects/alyx-bot' },
+  { id: 5, name: '?github', category: 'Help', url: 'https://github.com/docimin/' },
 ]
 
 function classNames(...classes) {

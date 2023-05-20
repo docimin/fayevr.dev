@@ -17,7 +17,7 @@ const Sideleft = () => {
   return (
     <div className="hidden md:flex flex-col">
       <button
-        className="min-w-[100px] min-h-[75px] border border-secondaryColor flex items-center justify-center"
+        className="min-w-[100px] min-h-[75px] border-b border-r border-white flex items-center justify-center"
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
         <i className="fa-solid fa-bars fa-2x"></i>
