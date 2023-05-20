@@ -17,13 +17,13 @@ const Sideleft = () => {
   return (
     <div className="hidden md:flex flex-col">
       <button
-        className="min-w-[100px] min-h-[75px] border-b border-r border-white flex items-center justify-center"
+        className="min-w-[100px] min-h-[75px] border-b border-r dark:border-white border-black flex items-center justify-center"
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
         <i className="fa-solid fa-bars fa-2x"></i>
       </button>
       {isMenuOpen && <Menu />}
-      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-secondaryColor">
+      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r dark:border-white border-black">
         <svg
           width="100"
           height="485"
@@ -178,7 +178,7 @@ const Sideleft = () => {
           <path d="M50 17L50 11" stroke="black"></path>
         </svg>
       </div>
-      <div className="min-w-[100px] min-h-[75px] border border-secondaryColor"></div>
+      <div className="min-w-[100px] min-h-[75px] border-r border-t dark:border-white border-black"></div>
     </div>
   );
 };

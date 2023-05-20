@@ -4,10 +4,10 @@ import AvatarStatus from "../components/statusFetch"
 const Sideright = () => {
   return (
     <div className="hidden md:flex flex-col">
-      <div className="min-w-[100px] min-h-[75px] border-b border-l border-white">
+      <div className="min-w-[100px] min-h-[75px] border-b border-l dark:border-white border-black">
         <AvatarStatus />
       </div>
-      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-gray-500">
+      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r dark:border-white border-black">
         <svg
           width="100"
           height="485"
@@ -110,7 +110,7 @@ const Sideright = () => {
           <path d="M50 17L50 11" stroke="black"></path>
         </svg>
       </div>
-      <div className="min-w-[100px] min-h-[75px] border border-secondaryColor"></div>
+      <div className="min-w-[100px] min-h-[75px] border-l border-t dark:border-white border-black"></div>
     </div>
   );
 };

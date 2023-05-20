@@ -9,7 +9,9 @@ export default function Home() {
     <main className="flex relative w-full h-full overflow-hidden">
       <Sideleft />
       <div className="flex flex-col w-full items-center">
-        <Header />
+        <div className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black">
+          <Header />
+        </div>
       </div>
       <Sideright />
     </main>
