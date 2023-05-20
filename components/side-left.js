@@ -75,7 +75,7 @@ const Sideleft = () => {
               style={{
                 position: "absolute",
                 top: "27%",
-                left: "80px",
+                left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
@@ -87,7 +87,7 @@ const Sideleft = () => {
               style={{
                 position: "absolute",
                 top: "47%",
-                left: "80px",
+                left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
@@ -99,7 +99,7 @@ const Sideleft = () => {
               style={{
                 position: "absolute",
                 top: "67%",
-                left: "80px",
+                left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
