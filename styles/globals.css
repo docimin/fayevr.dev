@@ -30,3 +30,19 @@ button:hover {
     filter: invert(1);
   }
 }
+
+.bg-green {
+  background-color: #57F287;
+}
+
+.bg-yellow {
+  background-color: #FEE75C;
+}
+
+.bg-red {
+  background-color: #ED4245;
+}
+
+.bg-gray {
+  background-color: gray;
+}

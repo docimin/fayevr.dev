@@ -1,0 +1,90 @@
+{
+  "status": "online",
+  "activities_raw": [
+    {
+      "name": "Custom Status",
+      "type": 4,
+      "url": null,
+      "details": null,
+      "state": null,
+      "applicationId": null,
+      "timestamps": null,
+      "party": null,
+      "assets": null,
+      "flags": 0,
+      "emoji": {
+        "animated": false,
+        "name": "1cute",
+        "id": "909213709442900049",
+        "createdTimestamp": 1636843840705,
+        "url": "https://cdn.discordapp.com/emojis/909213709442900049.png",
+        "identifier": "1cute:909213709442900049"
+      },
+      "buttons": [],
+      "createdTimestamp": 1684538434501
+    },
+    {
+      "name": "Spotify",
+      "type": 2,
+      "url": null,
+      "details": "Year of the Young",
+      "state": "Smith & Thell",
+      "applicationId": null,
+      "timestamps": {
+        "start": "2023-05-19T23:25:20.362Z",
+        "end": "2023-05-19T23:28:04.562Z"
+      },
+      "party": { "id": "spotify:196742608846979072" },
+      "assets": {
+        "largeText": "Year of the Young",
+        "smallText": null,
+        "largeImage": "spotify:ab67616d0000b2739c4bb07a3d223cb6724a9510",
+        "smallImage": null
+      },
+      "flags": 48,
+      "emoji": null,
+      "buttons": [],
+      "createdTimestamp": 1684538730579
+    }
+  ],
+  "activities_simplified": [
+    {
+      "name": "Custom Status",
+      "type": 4,
+      "state": null,
+      "details": null,
+      "url": null,
+      "timestamps": null,
+      "assets": null,
+      "party": null,
+      "flags": 0
+    },
+    {
+      "name": "Spotify",
+      "type": 2,
+      "state": "Smith & Thell",
+      "details": "Year of the Young",
+      "url": null,
+      "timestamps": {
+        "start": "2023-05-19T23:25:20.362Z",
+        "end": "2023-05-19T23:28:04.562Z"
+      },
+      "assets": {
+        "largeText": "Year of the Young",
+        "smallText": null,
+        "largeImage": "spotify:ab67616d0000b2739c4bb07a3d223cb6724a9510",
+        "smallImage": null
+      },
+      "party": { "id": "spotify:196742608846979072" },
+      "flags": 48
+    }
+  ],
+  "spotify": {
+    "song_name": "Year of the Young",
+    "artist": "Smith & Thell",
+    "album": "Year of the Young",
+    "cover_url": "https://i.scdn.co/image/ab67616d0000b2739c4bb07a3d223cb6724a9510",
+    "started_at": "2023-05-19T23:25:20.362Z",
+    "ends_at": "2023-05-19T23:28:04.562Z"
+  }
+}
