@@ -17,6 +17,14 @@ module.exports = {
         'button-half': '-2.5px 2.5px 0px 0px rgba(0, 98, 90, 0.4)',
       },
     },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000',
+      white: '#fff',
+      blurple: '#5865F2',
+      darkwhite: '#424549',
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
