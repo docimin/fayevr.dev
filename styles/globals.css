@@ -46,3 +46,7 @@ button:hover {
 .bg-gray {
   background-color: gray;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
