@@ -1,11 +1,11 @@
 import React from "react";
-import Avatar from "../components/statusFetch"
+import AvatarStatus from "../components/statusFetch"
 
 const Sideright = () => {
   return (
     <div className="hidden md:flex flex-col">
       <div className="min-w-[100px] min-h-[75px] border border-secondaryColor">
-        <Avatar />
+        <AvatarStatus />
       </div>
       <div className="flex flex-col invert-svg justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-secondaryColor">
         <svg
