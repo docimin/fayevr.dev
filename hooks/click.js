@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import useSound from 'use-sound';
 
 export default function useClickSound() {
-  const [playClickSound] = useSound('/sounds/click.ogg', { volume: 0.3 });
+  const [playClickSound] = useSound('/sounds/click.ogg', { volume: 0.2 });
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {

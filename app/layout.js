@@ -1,6 +1,5 @@
 'use client';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import '@fortawesome/fontawesome-free/css/all.css';
 import useClickSound from '../hooks/click';
 import '../styles/globals.css';
@@ -8,8 +7,8 @@ import '../styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 const metadata = {
-  title: 'Faye',
-  description: 'Faye\'s personal portfolio website.',
+  title: 'Faye | Portfolio',
+  description: 'Faye\'s personal portfolio website. A place to showcase my projects and skills.',
   url: 'https://fayevr.dev',
   image: 'icon-512.png',
   icon: 'icon-512.png',
@@ -32,14 +31,14 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords.join(', ')} />
         <meta name="theme-color" content={metadata.theme} />
         <meta name="image" content={metadata.image} />
         <meta name="icon" content={metadata.icon} />
-      </Head>
+      </head>
       <body className={`${inter.className}`} onMouseDown={handleMouseClick} onMouseUp={handleMouseClick}>
         {children}
       </body>
