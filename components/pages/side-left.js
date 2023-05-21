@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Menu from "./menu";
+import Menu from "../menu";
 
 const Sideleft = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

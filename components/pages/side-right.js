@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarStatus from "../components/statusFetch"
+import AvatarStatus from "../statusFetch"
 
 const Sideright = () => {
   return (

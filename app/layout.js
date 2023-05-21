@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import '@fortawesome/fontawesome-free/css/all.css';
