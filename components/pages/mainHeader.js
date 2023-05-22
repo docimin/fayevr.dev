@@ -4,18 +4,6 @@ export default function Header() {
   return (
     <>
       <div>
-        <div>
-          <span
-            className="dark:text-white text-black text-2xl font-bold hidden sm:block md:text-xl sm:text-xl"
-            style={{
-              position: "absolute",
-              top: "30%",
-              left: "3%",
-            }}
-          >
-            fayevr<span className="text-blurple">.dev( )</span>
-          </span>
-        </div>
         <div className="pt-4">
           <Link href="/">
             <button

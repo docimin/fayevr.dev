@@ -1,5 +1,6 @@
 "use client";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import useClickSound from "../hooks/click";
@@ -31,17 +32,26 @@ const metadata = {
 function LoadingScreen() {
   return (
     <>
-      <div class="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-tr to-blue-400 from-green-500 p-10">
-        <div class="w-max">
-          <h1 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
-            Welcome to my site! <i class="fas fa-hand-sparkles"></i>
+      <div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-tr to-blue-400 from-green-500 p-10">
+        <div className="w-max">
+          <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
+            Welcome to my site! <i className="fas fa-hand-sparkles"></i>
           </h1>
+          <img
+            src="/icon-256.png"
+            alt="Logo"
+            className="w-32 h-32 pt-4 mx-auto"
+          />
         </div>
       </div>
-      <div class="flex md:hidden min-h-screen items-center justify-center">
+      <div className="flex md:hidden min-h-screen items-center justify-center">
         <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin dark:border-violet-400">
-          <div class="w-full h-full flex items-center justify-center">
-            <img src="/icon-256.png" alt="Logo" class="w-16 h-16 mx-auto" />
+          <div className="w-full h-full flex items-center justify-center">
+            <img
+              src="/icon-256.png"
+              alt="Logo"
+              className="w-32 h-32 pt-4 mx-auto"
+            />
           </div>
         </div>
       </div>
@@ -56,7 +66,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Change the time to suit your needs
+    }, 3000); // Change the time to suit your needs
   }, []);
 
   return (
