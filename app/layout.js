@@ -32,7 +32,7 @@ const metadata = {
 function LoadingScreen() {
   return (
     <>
-      <div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-tr to-blue-400 from-green-500 p-10">
+      <div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 p-10">
         <div className="w-max">
           <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
             Welcome to my site! <i className="fas fa-hand-sparkles"></i>
