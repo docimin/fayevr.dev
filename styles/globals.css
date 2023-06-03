@@ -51,3 +51,24 @@ button:hover {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+.delayed {
+  animation-delay: 2s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

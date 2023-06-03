@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -32,8 +32,7 @@ const metadata = {
 function LoadingScreen() {
   return (
     <>
-      <div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 p-10">
-        <div className="w-max">
+<div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 p-10 fadeOut delayed">        <div className="w-max">
           <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
             Welcome to my site! <i className="fas fa-hand-sparkles"></i>
           </h1>
@@ -65,8 +64,9 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     setTimeout(() => {
+      document.body.classList.remove('fadeOut');
       setIsLoading(false);
-    }, 3000); // Change the time to suit your needs
+    }, 3000);
   }, []);
 
   return (
@@ -78,6 +78,23 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content={metadata.theme} />
         <meta name="image" content={metadata.image} />
         <meta name="icon" content={metadata.icon} />
+        <style>
+          {`.fadeOut {
+            animation-name: fadeOut;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            opacity: 1;
+          }
+          @keyframes fadeOut {
+            from {
+              opacity: 1;
+            }
+            to {
+              opacity: 0;
+            }
+          }`}
+        </style>
       </head>
       <body
         className={`${inter.className}`}
@@ -85,6 +102,11 @@ export default function RootLayout({ children }) {
         onMouseUp={handleMouseClick}
       >
         {isLoading ? <LoadingScreen /> : children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.body.classList.remove('fadeOut');`,
+          }}
+        />
       </body>
     </html>
   );
