@@ -36,11 +36,9 @@ function LoadingScreen() {
           <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
             Welcome to my site! <i className="fas fa-hand-sparkles"></i>
           </h1>
-          <Image
+          <img
             src="/icon-256.png"
             alt="Logo"
-            width={256}
-            height={256}
             className="w-32 h-32 pt-4 mx-auto"
           />
         </div>
@@ -48,11 +46,9 @@ function LoadingScreen() {
       <div className="flex md:hidden min-h-screen items-center justify-center">
         <div className="w-32 h-32 border-4 border-dashed rounded-full animate-spin dark:border-violet-400">
           <div className="w-full h-full flex items-center justify-center">
-            <Image
+            <img
               src="/icon-256.png"
               alt="Logo"
-              width={256}
-              height={256}
               className="w-32 h-32 pt-4 mx-auto"
             />
           </div>
