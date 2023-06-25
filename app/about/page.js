@@ -24,7 +24,7 @@ export default function About() {
           </div>
           <div className="flex flex-col w-full container pt-20">
             <div>
-                <h1 className="text-6xl font-bold">about<span className="text-blurple">( )</span></h1>
+                <h1 className="text-6xl font-bold">about<span className="text-blurple">( ) &#123;</span></h1>
             </div>
             <div className="pt-10">
                 <h3 className="text-2xl">Download my <button className="bg-blurple text-blackgrey rounded-full py-1 p-4 pb-2" onClick={handleDownload}>resume</button></h3>
@@ -209,7 +209,7 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Also busy with</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300 pb-20">
+            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300 pb-4">
                 <div className="col-span-1">
                     <p>
                         My dog barking
@@ -230,6 +230,10 @@ export default function About() {
                         .. work
                     </p>
                 </div>
+            </div>
+
+            <div>
+                <h1 className="text-6xl font-bold pb-20"><span className="text-blurple">&#125;</span></h1>
             </div>
             
           </div>

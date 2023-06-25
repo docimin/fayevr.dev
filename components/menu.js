@@ -8,6 +8,7 @@ const items = [
   { id: 3, name: '#suggestions-bot', category: 'Projects', url: '/projects/suggestions-bot' },
   { id: 4, name: '#alyx-bot', category: 'Projects', url: '/projects/alyx-bot' },
   { id: 5, name: '?github', category: 'Help', url: 'https://github.com/docimin/' },
+  { id: 6, name: 'doom', category: 'Help', url: '/doom' },
 ]
 
 function classNames(...classes) {
