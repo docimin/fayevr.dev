@@ -76,3 +76,30 @@ button:hover {
     opacity: 0;
   }
 }
+
+.e {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: default;
+}
+
+.fingies {
+  letter-spacing: -3px;
+  display: block;
+}
+
+.fingies:hover .touchtips {
+  animation: fingers 1200ms ease-in-out infinite;
+}
+
+@keyframes fingers {
+  0% {
+    margin-right: 0em;
+  }
+  50% {
+    margin-right: 0.75em;
+  }
+  100% {
+    margin-right: 0em;
+  }
+}

@@ -178,7 +178,12 @@ const Sideleft = () => {
           <path d="M50 17L50 11" stroke="black"></path>
         </svg>
       </div>
-      <div className="min-w-[100px] min-h-[75px] border-r border-t dark:border-white border-black"></div>
+      <div className="min-w-[100px] min-h-[75px] border-r border-t dark:border-white border-black flex items-center justify-center">
+        <a className="e fingies" id="fg" title="😳">
+          <span className="touchtips">👉</span>
+          <span>👈</span>
+        </a>
+      </div>
     </div>
   );
 };
