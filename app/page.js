@@ -1,6 +1,6 @@
-import Header from "../components/pages/mainHeader";
-import Sideleft from "../components/pages/side-left";
-import Sideright from "../components/pages/side-right";
+import Header from "@/components/pages/mainHeader";
+import Sideleft from "@/components/pages/side-left";
+import Sideright from "@/components/pages/side-right";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
           <div className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black" style={{position: "relative"}}>
             <Header />
           </div>
-          <div className="flex flex-col w-full items-center pt-4">
+          <div className="flex flex-col w-full items-center pt-10">
             <h1>HELLO ヽ(✿ﾟ▽ﾟ)ノ</h1>
           </div>
         </div>

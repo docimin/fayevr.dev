@@ -19,10 +19,11 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        black: '#000',
-        white: '#fff',
-        blurple: '#5865F2',
-        darkwhite: '#424549',
+        'black': '#000',
+        'white': '#fff',
+        'blurple': '#5865F2',
+        'darkwhite': '#424549',
+        'blurple': '#5865F2',
       },
       keyframes: {
         typing: {

@@ -52,6 +52,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+button:hover {
+  box-shadow: 0px 0px 0px 0px;
+}
+
 .fadeOut {
   animation-name: fadeOut;
   animation-duration: 1s;
