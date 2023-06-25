@@ -35,22 +35,22 @@ export default function About() {
                 <span className="text-xl">&#47;&#47; 6 years of experience</span>
             </div>
             <h3 className="text-2xl pt-20">Main Skills</h3>
-            <div class="grid grid-cols-4 gap-4 pt-6 text-gray-300">
-                <div class="col-span-1">
+            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+                <div className="col-span-1">
                     <p>
                         Frontend Development
                         <br />
                         UX/UI Design
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         JavaScript, CSS
                         <br />
                         HTML, Vue
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Photoshop
                         <br />
@@ -59,7 +59,7 @@ export default function About() {
                         Unity
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Linux
                         <br />
@@ -68,8 +68,8 @@ export default function About() {
                 </div>
             </div>
 
-            <div class="grid grid-cols-4 gap-4 pt-4 text-gray-300">
-                <div class="col-span-1">
+            <div className="grid grid-cols-4 gap-4 pt-4 text-gray-300">
+                <div className="col-span-1">
                     <p>
                         E-Commerce
                         <br />
@@ -80,7 +80,7 @@ export default function About() {
                         PrestaShop
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Graphic design
                         <br />
@@ -90,8 +90,8 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Tools</h3>
-            <div class="grid grid-cols-4 gap-4 pt-6">
-                <div class="col-span-1 text-gray-300">
+            <div className="grid grid-cols-4 gap-4 pt-6">
+                <div className="col-span-1 text-gray-300">
                     <p>
                         Vue
                         <br />
@@ -104,7 +104,7 @@ export default function About() {
                         Docker
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Node.JS
                         <br />
@@ -117,7 +117,7 @@ export default function About() {
                         PHP
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Photoshop
                         <br />
@@ -130,7 +130,7 @@ export default function About() {
                         Canvas
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Pencil & Paper
                         <br />
@@ -140,8 +140,8 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Experience</h3>
-            <div class="grid grid-cols-4 gap-4 pt-6 text-gray-300">
-                <div class="col-span-1">
+            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+                <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Backend Development</span>
                         <br />
@@ -150,7 +150,7 @@ export default function About() {
                         2019 - Present
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Developer & Designer</span>
                         <br />
@@ -159,7 +159,7 @@ export default function About() {
                         2018 - now
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Head of Game Development</span>
                         <br />
@@ -168,7 +168,7 @@ export default function About() {
                         2016 - 2019
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Freelancer</span>
                         <br />
@@ -180,26 +180,26 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Languages</h3>
-            <div class="grid grid-cols-4 gap-4 pt-6 text-gray-300">
-                <div class="col-span-1">
+            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+                <div className="col-span-1">
                     <p>
                         &#47;&#47; fluent
                         <br />
-                        <span class="text-blurple italic">en-US</span> English,
+                        <span className="text-blurple italic">en-US</span> English,
                         <br />
-                        <span class="text-blurple italic">nl-NL</span> Dutch,
+                        <span className="text-blurple italic">nl-NL</span> Dutch,
                         <br />
-                        <span class="text-blurple italic">de-DE</span> German
+                        <span className="text-blurple italic">de-DE</span> German
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         &#47;&#47; intermediate
                         <br />
-                        <span class="text-blurple italic">fr-NL</span> Fryslân
+                        <span className="text-blurple italic">fr-NL</span> Fryslân
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         &#47;&#47; basic
                         <br />
@@ -209,23 +209,23 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Also busy with</h3>
-            <div class="grid grid-cols-4 gap-4 pt-6 text-gray-300 pb-20">
-                <div class="col-span-1">
+            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300 pb-20">
+                <div className="col-span-1">
                     <p>
                         My dog barking
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         &lt;&#47;LINUX&gt;
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         Video games
                     </p>
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                     <p>
                         .. work
                     </p>
