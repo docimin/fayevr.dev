@@ -69,7 +69,7 @@ const Sideleft = () => {
           >
             hi :3
           </span>
-          <Link href="https://github.com/docimin">
+          <Link href="https://github.com/docimin" target="_blank">
             <i
               className="fa-brands fa-github fa-2x"
               style={{
@@ -81,7 +81,7 @@ const Sideleft = () => {
               }}
             ></i>
           </Link>
-          <Link href="https://discord.com/users/196742608846979072">
+          <Link href="https://discord.com/users/196742608846979072" target="_blank">
             <i
               className="fa-brands fa-discord fa-2x"
               style={{
@@ -93,7 +93,7 @@ const Sideleft = () => {
               }}
             ></i>
           </Link>
-          <Link href="https://twitter.com/fayeofficial_">
+          <Link href="https://twitter.com/fayeofficial_" target="_blank">
             <i
               className="fa-brands fa-twitter fa-2x"
               style={{
