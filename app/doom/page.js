@@ -13,6 +13,7 @@ export default function Doom() {
       <div className="flex flex-col w-full items-center pt-10">
         <iframe src="https://emupedia.net/emupedia-game-doom1/" title="EmuOS" className="w-full h-full" style={{ height: "1000px" }}></iframe>
       </div>
+      <h1>Press enter or escape to play c:</h1>
     </div>
     <Sideright />
     </main>

@@ -63,8 +63,9 @@ const Sideleft = () => {
             style={{
               position: "absolute",
               top: "47%",
-              left: "10px",
+              left: "20px",
               transform: "rotate(-90deg) translateY(-50%)",
+              cursor: "pointer"
             }}
           >
             hi :3

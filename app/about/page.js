@@ -154,7 +154,7 @@ export default function About() {
                     <p>
                         <span className="text-blurple">Developer & Designer</span>
                         <br />
-                        at <a href="https://vr-assets.net/" target="_blank" rel="noreferrer" className="text-red-500">DutchBoxx</a>
+                        at <a href="https://dutchboxx.nl/" target="_blank" rel="noreferrer" className="text-red-500">DutchBoxx</a>
                         <br />
                         2018 - now
                     </p>
