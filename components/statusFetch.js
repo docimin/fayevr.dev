@@ -48,7 +48,7 @@ function AvatarStatus() {
 
   return (
     <span className="relative flex justify-center items-center" onClick={handleClick}>
-      <Image
+      <img
         className="h-[75px] w-[75px] rounded-md object-cover"
         src="/icon-256.png"
         alt="Faye's Icon"
