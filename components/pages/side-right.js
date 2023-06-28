@@ -1,5 +1,6 @@
 import React from "react";
 import AvatarStatus from "../statusFetch"
+import Link from "next/link";
 
 const Sideright = () => {
   return (
@@ -44,7 +45,7 @@ const Sideright = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="invert-svg"
         >
-          <circle cx="50" cy="200" r="6" fill="black"></circle>
+          <Link href="/doom"><circle cx="50" cy="200" r="6" fill="black"></circle></Link>
           <circle cx="50" cy="184" r="2.5" stroke="black"></circle>
           <circle cx="50" cy="216" r="2.5" stroke="black"></circle>
           <line x1="49.5" y1="174" x2="49.5" y2="75" stroke="black"></line>
