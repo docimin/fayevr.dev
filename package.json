@@ -13,8 +13,6 @@
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@headlessui/react": "^1.7.14",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.1",
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "10.4.14",
     "eslint": "8.40.0",
@@ -25,6 +23,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
+    "typescript": "^5.1.5",
     "use-sound": "^4.0.1"
   }
 }
