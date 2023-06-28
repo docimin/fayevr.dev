@@ -23,7 +23,6 @@ module.exports = {
         'white': '#fff',
         'blurple': '#5865F2',
         'darkwhite': '#424549',
-        'blurple': '#5865F2',
       },
       keyframes: {
         typing: {
@@ -45,7 +44,7 @@ module.exports = {
         }
       },
       animation: {
-        typing: "typing 2s steps(20), blink .7s infinite"
+        typing: "typing 1.5s steps(30), blink .7s infinite",
       }
     },
   },
