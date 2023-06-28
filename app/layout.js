@@ -85,14 +85,6 @@ export default function RootLayout({ children }) {
             animation-timing-function: ease-out;
             animation-fill-mode: forwards;
             opacity: 1;
-          }
-          @keyframes fadeOut {
-            from {
-              opacity: 1;
-            }
-            to {
-              opacity: 0;
-            }
           }`}
         </style>
       </head>
