@@ -2,6 +2,7 @@
 import Header from "@/components/pages/mainHeader";
 import Sideleft from "@/components/pages/side-left";
 import Sideright from "@/components/pages/side-right";
+import Link from "next/link";
 
 export default function About() {
     const handleDownload = () => {
@@ -22,7 +23,7 @@ export default function About() {
           <div className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black" style={{position: "relative"}}>
             <Header />
           </div>
-          <div className="flex flex-col w-full container pt-20">
+          <div className="flex flex-col w-full container pt-20 p-4">
             <div>
                 <h1 className="text-6xl font-bold">about<span className="text-blurple">( ) &#123;</span></h1>
             </div>
@@ -35,54 +36,54 @@ export default function About() {
                 <span className="text-xl">&#47;&#47; 6 years of experience</span>
             </div>
             <h3 className="text-2xl pt-20">Main Skills</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
                 <div className="col-span-1">
                     <p>
-                        Frontend Development
+                        Frontend Development,
                         <br />
                         UX/UI Design
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        JavaScript, CSS
+                        JavaScript, CSS,
                         <br />
                         HTML, Vue
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Photoshop
+                        Photoshop,
                         <br />
-                        Illustrator
+                        Illustrator,
                         <br />
                         Unity
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Linux
+                        Linux,
                         <br />
                         Server Management
                     </p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4 pt-4 text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-gray-300">
                 <div className="col-span-1">
                     <p>
-                        E-Commerce
+                        E-Commerce,
                         <br />
-                        Magento
+                        Magento,
                         <br />
-                        WordPress
+                        WordPress,
                         <br />
                         PrestaShop
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Graphic design
+                        Graphic design,
                         <br />
                         Game design
                     </p>
@@ -90,49 +91,49 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Tools</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
                 <div className="col-span-1 text-gray-300">
                     <p>
-                        Vue
+                        Vue,
                         <br />
-                        React
+                        React,
                         <br />
-                        Unity
+                        Unity,
                         <br />
-                        Blender
+                        Blender,
                         <br />
                         Docker
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Node.JS
+                        Node.JS,
                         <br />
-                        npm
+                        npm,
                         <br />
-                        Git
+                        Git,
                         <br />
-                        Rest API
+                        Rest API,
                         <br />
                         PHP
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Photoshop
+                        Photoshop,
                         <br />
-                        Illustrator
+                        Illustrator,
                         <br />
-                        Adobe XD &#47; Figma
+                        Adobe XD &#47; Figma,
                         <br />
-                        SVG
+                        SVG,
                         <br />
                         Canvas
                     </p>
                 </div>
                 <div className="col-span-1">
                     <p>
-                        Pencil & Paper
+                        Pencil & Paper,
                         <br />
                         Drawing Tablet
                     </p>
@@ -140,12 +141,12 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Experience</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
                 <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Backend Development</span>
                         <br />
-                        at <a href="https://vr-assets.net/" target="_blank" rel="noreferrer" className="text-red-500">VR-Assets</a>
+                        at <Link href="https://vr-assets.net/" target="_blank" rel="noreferrer" className="text-red-500">VR-Assets </Link>
                         <br />
                         2019 - Present
                     </p>
@@ -154,7 +155,7 @@ export default function About() {
                     <p>
                         <span className="text-blurple">Developer & Designer</span>
                         <br />
-                        at <a href="https://dutchboxx.nl/" target="_blank" rel="noreferrer" className="text-red-500">DutchBoxx</a>
+                        at <Link href="https://dutchboxx.nl/" target="_blank" rel="noreferrer" className="text-red-500">DutchBoxx</Link>
                         <br />
                         2018 - now
                     </p>
@@ -180,7 +181,7 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Languages</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
                 <div className="col-span-1">
                     <p>
                         &#47;&#47; fluent
@@ -209,7 +210,7 @@ export default function About() {
             </div>
 
             <h3 className="text-2xl pt-20">Also busy with</h3>
-            <div className="grid grid-cols-4 gap-4 pt-6 text-gray-300 pb-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300 pb-4">
                 <div className="col-span-1">
                     <p>
                         My dog barking
