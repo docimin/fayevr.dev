@@ -25,7 +25,7 @@ export default function About() {
           </div>
           <div className="flex flex-col w-full container pt-20 p-4">
             <div>
-                <h1 className="text-6xl font-bold">about<span className="text-blurple">( ) &#123;</span></h1>
+                <h1 className="text-6xl font-bold dark:text-white text-black">about<span className="text-blurple">( ) &#123;</span></h1>
             </div>
             <div className="pt-10">
                 <h3 className="text-2xl">Download my <button className="bg-blurple text-blackgrey rounded-full py-1 p-4 pb-2" onClick={handleDownload}>resume</button></h3>

@@ -1,10 +1,10 @@
-'use client';
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import "@fortawesome/fontawesome-free/css/all.css";
-import useClickSound from "../hooks/click";
+"use client";
 import "../styles/globals.css";
+
+import { Inter } from "next/font/google";
+import { useEffect, useState } from "react";
+
+import useClickSound from "../hooks/click";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +32,9 @@ const metadata = {
 function LoadingScreen() {
   return (
     <>
-<div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 p-10 fadeOut delayed">        <div className="w-max">
+      <div className="hidden md:flex min-h-screen items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 p-10 fadeOut delayed">
+        {" "}
+        <div className="w-max">
           <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl text-white font-bold">
             Welcome to my site! <i className="fas fa-hand-sparkles"></i>
           </h1>
@@ -64,7 +66,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     setTimeout(() => {
-      document.body.classList.remove('fadeOut');
+      document.body.classList.remove("fadeOut");
       setIsLoading(false);
     }, 3000);
   }, []);

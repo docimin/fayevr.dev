@@ -1,6 +1,8 @@
 import React from "react";
-import AvatarStatus from "../statusFetch"
+import AvatarStatus from "../statusFetch";
 import Link from "next/link";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sideright = () => {
   return (
@@ -45,7 +47,9 @@ const Sideright = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="invert-svg"
         >
-          <Link href="/doom"><circle cx="50" cy="200" r="6" fill="black"></circle></Link>
+          <Link href="/doom">
+            <circle cx="50" cy="200" r="6" fill="black"></circle>
+          </Link>
           <circle cx="50" cy="184" r="2.5" stroke="black"></circle>
           <circle cx="50" cy="216" r="2.5" stroke="black"></circle>
           <line x1="49.5" y1="174" x2="49.5" y2="75" stroke="black"></line>
@@ -111,7 +115,14 @@ const Sideright = () => {
           <path d="M50 17L50 11" stroke="black"></path>
         </svg>
       </div>
-      <div className="min-w-[100px] min-h-[75px] border-l border-t dark:border-white border-black"></div>
+      <div className="min-w-[100px] min-h-[75px] border-l border-t dark:border-white border-black flex items-center justify-center">
+        <Link href="/light">
+          <FontAwesomeIcon
+            icon={faLightbulb}
+            className="text-2xl text-black dark:text-white"
+          />
+        </Link>
+      </div>
     </div>
   );
 };

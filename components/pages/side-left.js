@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Menu from "../menu";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sideleft = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +22,7 @@ const Sideleft = () => {
         className="min-w-[100px] min-h-[75px] border-b border-r dark:border-white border-black flex items-center justify-center"
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
-        <i className="fa-solid fa-bars fa-2x"></i>
+        <FontAwesomeIcon icon={faBars} className="fa-2xl" />
       </button>
       {isMenuOpen && <Menu />}
       <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r dark:border-white border-black">
