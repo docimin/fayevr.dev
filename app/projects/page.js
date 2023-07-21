@@ -1,7 +1,9 @@
+'use client';
 import Header from "@/components/pages/mainHeader";
 import Sideleft from "@/components/pages/side-left";
 import Sideright from "@/components/pages/side-right";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const statuses = {
   Completed: "text-green-400 bg-green-400/10",
@@ -12,38 +14,34 @@ const statuses = {
   Error: "text-rose-400 bg-rose-400/10",
   Paused: "text-gray-400 bg-gray-400/10",
 };
-const activityItems = [
-  {
-    project: {
-      name: "Suggestions Bot",
-      imageUrl:
-        "images/suggestionsbot.png",
-    },
-    gitrepo: "https://github.com/docimin/suggestion-bot",
-    branch: "main",
-    status: "Online",
-    duration: "25s",
-    creationdate: "Jun 24, 2022",
-  },
-  {
-    project: {
-      name: "Alyx Bot",
-      imageUrl:
-        "images/alyxbot.png",
-    },
-    gitrepo: "https://github.com/dev-suro/alyx-bot",
-    branch: "main",
-    status: "Maintenance",
-    duration: "1m 4s",
-    creationdate: "Apr 18, 2021",
-  },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('https://backend.fayevr.dev/api/fayeprojects?populate=*')
+      .then(response => response.json())
+      .then(data => {
+        setProjects(data.data);
+      })
+      .catch(error => console.error(error));
+  }, []);
+  
+  const activityItems = projects.map(project => ({
+    project: {
+      name: project.attributes.name, 
+      imageUrl: project.attributes.imageurl.data.attributes.formats.thumbnail.url
+    },
+    gitrepo: project.attributes.gitrepo,
+    branch: project.attributes.branch,
+    status: project.attributes.status,
+    creationdate: project.attributes.creationdate
+  }));
+
   return (
     <div>
       <main className="flex relative w-full h-full overflow-hidden">
