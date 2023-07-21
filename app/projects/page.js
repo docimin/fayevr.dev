@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Header from "@/components/pages/mainHeader";
 import Sideleft from "@/components/pages/side-left";
 import Sideright from "@/components/pages/side-right";
@@ -13,6 +13,7 @@ const statuses = {
   Pending: "text-red-400 bg-red-400/10",
   Error: "text-rose-400 bg-rose-400/10",
   Paused: "text-gray-400 bg-gray-400/10",
+  Archived: "text-orange-400 bg-orange-400/10"
 };
 
 function classNames(...classes) {
@@ -23,24 +24,47 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('https://backend.fayevr.dev/api/fayeprojects?populate=*')
-      .then(response => response.json())
-      .then(data => {
+    fetch("https://backend.fayevr.dev/api/fayeprojects?populate=*")
+      .then((response) => response.json())
+      .then((data) => {
         setProjects(data.data);
       })
-      .catch(error => console.error(error));
+      .catch((error) => console.error(error));
   }, []);
-  
-  const activityItems = projects.map(project => ({
-    project: {
-      name: project.attributes.name, 
-      imageUrl: project.attributes.imageurl.data.attributes.formats.thumbnail.url
-    },
-    gitrepo: project.attributes.gitrepo,
-    branch: project.attributes.branch,
-    status: project.attributes.status,
-    creationdate: project.attributes.creationdate
-  }));
+
+  const activityItems = projects.map((project) => {
+    let imageData = project.attributes.imageurl?.data;
+
+    let imageUrl;
+
+    if (
+      imageData &&
+      imageData.attributes &&
+      imageData.attributes.formats &&
+      imageData.attributes.formats.thumbnail
+    ) {
+      imageUrl = imageData.attributes.formats.thumbnail.url;
+    } else {
+      imageUrl = "images/placeholder.png";
+    }
+
+    return {
+      project: {
+        name: project.attributes.name,
+        imageUrl: imageUrl,
+      },
+      gitrepo: project.attributes.gitrepo,
+      branch: project.attributes.branch,
+      status: project.attributes.status,
+      creationdate: project.attributes.creationdate,
+      uuid: project.attributes.uuid,
+      hasinfo: project.attributes.hasinfo,
+    };
+  });
+
+  activityItems.sort(
+    (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
+  );
 
   return (
     <div>
@@ -87,9 +111,15 @@ export default function Projects() {
                   </th>
                   <th
                     scope="col"
-                    className="hidden py-2 pl-0 pr-4 text-right font-semibold sm:table-cell sm:pr-6 lg:pr-8"
+                    className="py-2 pl-0 pr-4 text-right font-semibold sm:pr-8 sm:text-left lg:pr-20"
                   >
                     Created at
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden py-2 pl-0 pr-4 text-right font-semibold sm:table-cell sm:pr-6 lg:pr-8"
+                  >
+                    More info
                   </th>
                 </tr>
               </thead>
@@ -111,7 +141,10 @@ export default function Projects() {
                     <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8">
                       <div className="flex gap-x-3">
                         <div className="font-mono text-sm leading-6 dark:text-gray-400 text-gray-800">
-                          <Link href={item.gitrepo} className="hover:text-blurple">
+                          <Link
+                            href={item.gitrepo}
+                            className="hover:text-blurple"
+                          >
                             Link
                           </Link>
                         </div>
@@ -122,9 +155,7 @@ export default function Projects() {
                     </td>
                     <td className="py-4 pl-0 pr-4 text-sm leading-6 sm:pr-8 lg:pr-20">
                       <div className="flex items-center justify-end gap-x-2 sm:justify-start">
-                        <time
-                          className="dark:text-gray-400 text-gray-800 sm:hidden"
-                        >
+                        <time className="dark:text-gray-400 text-gray-800 sm:hidden">
                           {item.creationdate}
                         </time>
                         <div
@@ -140,8 +171,18 @@ export default function Projects() {
                         </div>
                       </div>
                     </td>
-                    <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 dark:text-gray-400 text-gray-800 sm:table-cell sm:pr-6 lg:pr-8">
+                    <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8 dark:text-gray-400 text-gray-800">
                       <time>{item.creationdate}</time>
+                    </td>
+                    <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 text-blurple sm:table-cell sm:pr-6 lg:pr-8">
+                      {item.hasinfo === true && (
+                        <Link
+                          href={`projects/${item.uuid}`}
+                          className="hover:text-blurple"
+                        >
+                          More info --&gt;
+                        </Link>
+                      )}
                     </td>
                   </tr>
                 ))}
