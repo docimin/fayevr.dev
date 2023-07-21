@@ -13,7 +13,7 @@ const statuses = {
   Pending: "text-red-400 bg-red-400/10",
   Error: "text-rose-400 bg-rose-400/10",
   Paused: "text-gray-400 bg-gray-400/10",
-  Archived: "text-orange-400 bg-orange-400/10"
+  Archived: "text-orange-400 bg-orange-400/10",
 };
 
 function classNames(...classes) {
@@ -59,8 +59,12 @@ export default function Projects() {
       creationdate: project.attributes.creationdate,
       uuid: project.attributes.uuid,
       hasinfo: project.attributes.hasinfo,
+      hascustominfo: project.attributes.hascustominfo,
+      customurl: project.attributes.customurl,
     };
   });
+
+
 
   activityItems.sort(
     (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
@@ -177,12 +181,23 @@ export default function Projects() {
                     </td>
                     <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 text-blurple sm:table-cell sm:pr-6 lg:pr-8">
                       {item.hasinfo === true && (
-                        <Link
-                          href={`projects/${item.uuid}`}
-                          className="hover:text-blurple"
-                        >
-                          More info --&gt;
-                        </Link>
+                        <>
+                          {item.hascustominfo ? (
+                            <Link
+                              href={item.customurl}
+                              className="hover:text-blurple"
+                            >
+                              Visit page --&gt;
+                            </Link>
+                          ) : (
+                            <Link
+                              href={`projects/${item.uuid}`}
+                              className="hover:text-blurple"
+                            >
+                              More info --&gt;
+                            </Link>
+                          )}
+                        </>
                       )}
                     </td>
                   </tr>

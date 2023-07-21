@@ -11,7 +11,7 @@ export default function Home() {
           <div className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black" style={{position: "relative"}}>
             <Header />
           </div>
-          <div className="flex flex-col w-full items-center pt-10">
+          <div className="flex flex-col w-full items-center pt-10 text-black dark:text-white">
             <h1>HELLO ヽ(✿ﾟ▽ﾟ)ノ</h1>
           </div>
         </div>
