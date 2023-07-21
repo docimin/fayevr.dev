@@ -148,7 +148,7 @@ export default function About() {
                         <br />
                         at <Link href="https://vr-assets.net/" target="_blank" rel="noreferrer" className="text-red-500">VR-Assets </Link>
                         <br />
-                        2019 - Present
+                        2019 - present
                     </p>
                 </div>
                 <div className="col-span-1">
@@ -157,7 +157,7 @@ export default function About() {
                         <br />
                         at <Link href="https://dutchboxx.nl/" target="_blank" rel="noreferrer" className="text-red-500">DutchBoxx</Link>
                         <br />
-                        2018 - now
+                        2018 - present
                     </p>
                 </div>
                 <div className="col-span-1">
@@ -175,7 +175,7 @@ export default function About() {
                         <br />
                         &#64;everywhere
                         <br />
-                        2014 - now
+                        2014 - present
                     </p>
                 </div>
             </div>
