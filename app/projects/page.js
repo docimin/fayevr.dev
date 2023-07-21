@@ -144,6 +144,7 @@ export default function Projects() {
                           <Link
                             href={item.gitrepo}
                             className="hover:text-blurple"
+                            target="_blank"
                           >
                             Link
                           </Link>
