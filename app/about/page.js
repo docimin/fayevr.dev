@@ -28,15 +28,15 @@ export default function About() {
                 <h1 className="text-6xl font-bold dark:text-white text-black">about<span className="text-blurple">( ) &#123;</span></h1>
             </div>
             <div className="pt-10">
-                <h3 className="text-2xl">Download my <button className="bg-blurple text-blackgrey rounded-full py-1 p-4 pb-2" onClick={handleDownload}>resume</button></h3>
+                <h3 className="text-2xl text-black dark:text-white">Download my <button className="bg-blurple text-blackgrey rounded-full py-1 p-4 pb-2" onClick={handleDownload}>resume</button></h3>
             </div>
             <div className="pt-10">
-                <h3 className="text-2xl">I&#39;m a <span className="text-blurple">full-stack developer</span> with a passion for <span className="text-blurple">design</span> and <span className="text-blurple">technology</span>.</h3>
+                <h3 className="text-2xl text-black dark:text-white">I&#39;m a <span className="text-blurple">full-stack developer</span> with a passion for <span className="text-blurple">design</span> and <span className="text-blurple">technology</span>.</h3>
                 <br />
-                <span className="text-xl">&#47;&#47; 6 years of experience</span>
+                <span className="text-xl text-black dark:text-white">&#47;&#47; 6 years of experience</span>
             </div>
-            <h3 className="text-2xl pt-20">Main Skills</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
+            <h3 className="text-2xl pt-20 text-black dark:text-white">Main Skills</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                     <p>
                         Frontend Development,
@@ -69,7 +69,7 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-gray-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                     <p>
                         E-Commerce,
@@ -90,9 +90,9 @@ export default function About() {
                 </div>
             </div>
 
-            <h3 className="text-2xl pt-20">Tools</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-                <div className="col-span-1 text-gray-300">
+            <h3 className="text-2xl pt-20 text-black dark:text-white">Tools</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
+                <div className="col-span-1">
                     <p>
                         Vue,
                         <br />
@@ -140,8 +140,8 @@ export default function About() {
                 </div>
             </div>
 
-            <h3 className="text-2xl pt-20">Experience</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
+            <h3 className="text-2xl pt-20 text-black dark:text-white">Experience</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                     <p>
                         <span className="text-blurple">Backend Development</span>
@@ -180,8 +180,8 @@ export default function About() {
                 </div>
             </div>
 
-            <h3 className="text-2xl pt-20">Languages</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300">
+            <h3 className="text-2xl pt-20 text-black dark:text-white">Languages</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                     <p>
                         &#47;&#47; fluent
@@ -209,8 +209,8 @@ export default function About() {
                 </div>
             </div>
 
-            <h3 className="text-2xl pt-20">Also busy with</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-300 pb-4">
+            <h3 className="text-2xl pt-20 text-black dark:text-white">Also busy with</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300 pb-4">
                 <div className="col-span-1">
                     <p>
                         My dog barking

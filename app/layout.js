@@ -2,11 +2,11 @@
 import "../styles/globals.css";
 
 import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 import { useEffect, useState } from "react";
 
 import useClickSound from "../hooks/click";
-
-const inter = Inter({ subsets: ["latin"] });
+import useDarkMode from "@/components/useDarkMode";
 
 const metadata = {
   title: "Faye | Portfolio",
@@ -63,6 +63,7 @@ function LoadingScreen() {
 export default function RootLayout({ children }) {
   const [handleMouseClick] = useClickSound();
   const [isLoading, setIsLoading] = useState(true);
+  const [colorTheme, setTheme] = useDarkMode();
 
   useEffect(() => {
     setTimeout(() => {
@@ -91,11 +92,12 @@ export default function RootLayout({ children }) {
         </style>
       </head>
       <body
-        className={`${inter.className}`}
+        className={`bg-white dark:bg-black ${inter.className}`}
         onMouseDown={handleMouseClick}
         onMouseUp={handleMouseClick}
       >
-        {isLoading ? <LoadingScreen /> : children}
+        {/*isLoading ? <LoadingScreen /> : children*/}
+        { children }
         <script
           dangerouslySetInnerHTML={{
             __html: `document.body.classList.remove('fadeOut');`,

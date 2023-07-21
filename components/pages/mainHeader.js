@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <div>
-        <div className="pt-4">
+        <div className="pt-4 dark:text-white text-black">
           <Link href="/">
             <button
               type="button"

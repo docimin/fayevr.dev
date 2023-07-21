@@ -19,20 +19,20 @@ const Sideleft = () => {
   return (
     <div className="hidden md:flex flex-col">
       <button
-        className="min-w-[100px] min-h-[75px] border-b border-r dark:border-white border-black flex items-center justify-center"
+        className="min-w-[100px] min-h-[75px] border-b border-r dark:border-white border-black flex items-center justify-center text-black dark:text-white"
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
         <FontAwesomeIcon icon={faBars} className="fa-2xl" />
       </button>
       {isMenuOpen && <Menu />}
-      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r dark:border-white border-black">
+      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
         <svg
           width="100"
           height="485"
           viewBox="0 0 100 485"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="invert-svg"
+          className="dark:invert"
         >
           <circle cx="50" cy="3" r="2.5" fill="black" stroke="black"></circle>
           <path
@@ -53,6 +53,7 @@ const Sideleft = () => {
           <path d="M50 468V474" stroke="black"></path>
         </svg>
         <div
+          className=""
           style={{
             position: "relative",
             display: "flex",
@@ -61,7 +62,6 @@ const Sideleft = () => {
           }}
         >
           <span
-            className=""
             style={{
               position: "absolute",
               top: "47%",
@@ -114,7 +114,7 @@ const Sideleft = () => {
             viewBox="0 0 100 400"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="invert-svg"
+            className="dark:invert"
           >
             <Link href="test"><circle cx="50" cy="200" r="6" fill="black"></circle></Link>
             <circle cx="50" cy="184" r="2.5" stroke="black"></circle>
@@ -139,7 +139,7 @@ const Sideleft = () => {
           viewBox="0 0 100 485"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="invert-svg"
+          className="dark:invert"
         >
           <circle
             cx="50"

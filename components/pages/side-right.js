@@ -7,17 +7,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Sideright = () => {
   return (
     <div className="hidden md:flex flex-col">
-      <div className="min-w-[100px] min-h-[75px] border-b border-l dark:border-white border-black">
+      <div className="min-w-[100px] min-h-[75px] border-b border-l dark:border-white border-black text-black dark:text-white">
         <AvatarStatus />
       </div>
-      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r dark:border-white border-black">
+      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
         <svg
           width="100"
           height="485"
           viewBox="0 0 100 485"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="invert-svg"
+          className="dark:invert"
         >
           <circle cx="50" cy="3" r="2.5" fill="black" stroke="black"></circle>
           <path
@@ -45,7 +45,7 @@ const Sideright = () => {
           viewBox="0 0 100 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="invert-svg"
+          className="dark:invert"
         >
           <Link href="/doom">
             <circle cx="50" cy="200" r="6" fill="black"></circle>
@@ -71,7 +71,7 @@ const Sideright = () => {
           viewBox="0 0 100 485"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="invert-svg"
+          className="dark:invert"
         >
           <circle
             cx="50"
