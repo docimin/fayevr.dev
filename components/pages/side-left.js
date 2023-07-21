@@ -4,6 +4,8 @@ import Link from "next/link";
 import Menu from "../menu";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord, faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+
 
 const Sideleft = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +25,7 @@ const Sideleft = () => {
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
         <FontAwesomeIcon icon={faBars} className="fa-2xl" />
+
       </button>
       {isMenuOpen && <Menu />}
       <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
@@ -67,46 +70,40 @@ const Sideleft = () => {
               top: "47%",
               left: "20px",
               transform: "rotate(-90deg) translateY(-50%)",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             hi :3
           </span>
           <Link href="https://github.com/docimin" target="_blank">
-            <i
-              className="fa-brands fa-github fa-2x"
-              style={{
+            <FontAwesomeIcon icon={faGithub} className="fa-2xl" style={{
                 position: "absolute",
                 top: "27%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }}
-            ></i>
+              }} />
           </Link>
-          <Link href="https://discord.com/users/196742608846979072" target="_blank">
-            <i
-              className="fa-brands fa-discord fa-2x"
-              style={{
+          <Link
+            href="https://discord.com/users/196742608846979072"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faDiscord} className="fa-2xl" style={{
                 position: "absolute",
                 top: "47%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }}
-            ></i>
+              }} />
           </Link>
           <Link href="https://twitter.com/fayeofficial_" target="_blank">
-            <i
-              className="fa-brands fa-twitter fa-2x"
-              style={{
+          <FontAwesomeIcon icon={faTwitter} className="fa-2xl" style={{
                 position: "absolute",
                 top: "67%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }}
-            ></i>
+              }} />
           </Link>
           <svg
             width="100"
@@ -116,7 +113,9 @@ const Sideleft = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="dark:invert"
           >
-            <Link href="test"><circle cx="50" cy="200" r="6" fill="black"></circle></Link>
+            <Link href="test">
+              <circle cx="50" cy="200" r="6" fill="black"></circle>
+            </Link>
             <circle cx="50" cy="184" r="2.5" stroke="black"></circle>
             <circle cx="50" cy="216" r="2.5" stroke="black"></circle>
             <line x1="49.5" y1="174" x2="49.5" y2="75" stroke="black"></line>
