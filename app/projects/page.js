@@ -1,23 +1,14 @@
 import Header from "@/components/pages/mainHeader";
 import Sideleft from "@/components/pages/side-left";
 import Sideright from "@/components/pages/side-right";
-
-export async function getServerSideProps() {
-  const response = await fetch(
-    "https://api.github.com/repos/:owner/:repo/commits"
-  );
-  const commits = await response.json();
-
-  return {
-    props: {
-      commits,
-    },
-  };
-}
+import Link from "next/link";
 
 const statuses = {
   Completed: "text-green-400 bg-green-400/10",
+  Online: "text-green-400 bg-green-400/10",
   Ongoing: "text-yellow-400 bg-yellow-400/10",
+  Maintenance: "text-yellow-400 bg-yellow-400/10",
+  Pending: "text-red-400 bg-red-400/10",
   Error: "text-rose-400 bg-rose-400/10",
   Paused: "text-gray-400 bg-gray-400/10",
 };
@@ -28,12 +19,11 @@ const activityItems = [
       imageUrl:
         "images/suggestionsbot.png",
     },
-    commit: "2d89f0c8",
+    gitrepo: "https://github.com/docimin/suggestion-bot",
     branch: "main",
-    status: "Ongoing",
+    status: "Online",
     duration: "25s",
-    date: "45 minutes ago",
-    dateTime: "2023-01-23T11:00",
+    creationdate: "Jun 24, 2022",
   },
   {
     project: {
@@ -41,12 +31,11 @@ const activityItems = [
       imageUrl:
         "images/alyxbot.png",
     },
-    commit: "11464223",
+    gitrepo: "https://github.com/dev-suro/alyx-bot",
     branch: "main",
-    status: "Paused",
+    status: "Maintenance",
     duration: "1m 4s",
-    date: "12 hours ago",
-    dateTime: "2023-01-23T00:00",
+    creationdate: "Apr 18, 2021",
   },
 ];
 
@@ -78,7 +67,7 @@ export default function Projects() {
                 <col className="lg:w-1/12" />
                 <col className="lg:w-1/12" />
               </colgroup>
-              <thead className="border-b border-white/10 dark:border-white/50 text-sm leading-6 text-black dark:text-white">
+              <thead className="border-b border-black/50 dark:border-white/50 text-sm leading-6 text-black dark:text-white">
                 <tr>
                   <th
                     scope="col"
@@ -90,7 +79,7 @@ export default function Projects() {
                     scope="col"
                     className="hidden py-2 pl-0 pr-8 font-semibold sm:table-cell"
                   >
-                    Commit
+                    Git Repo
                   </th>
                   <th
                     scope="col"
@@ -100,19 +89,13 @@ export default function Projects() {
                   </th>
                   <th
                     scope="col"
-                    className="hidden py-2 pl-0 pr-8 font-semibold md:table-cell lg:pr-20"
-                  >
-                    Duration
-                  </th>
-                  <th
-                    scope="col"
                     className="hidden py-2 pl-0 pr-4 text-right font-semibold sm:table-cell sm:pr-6 lg:pr-8"
                   >
-                    Deployed at
+                    Created at
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 dark:divide-white/20">
+              <tbody className="divide-y divide-gray/50 dark:divide-white/20">
                 {activityItems.map((item) => (
                   <tr key={item.project.name}>
                     <td className="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
@@ -122,17 +105,19 @@ export default function Projects() {
                           alt=""
                           className="h-8 w-8 rounded-full bg-gray-800"
                         />
-                        <div className="truncate text-sm font-medium leading-6 text-white">
+                        <div className="truncate text-sm font-medium leading-6 dark:text-white text-black">
                           {item.project.name}
                         </div>
                       </div>
                     </td>
                     <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8">
                       <div className="flex gap-x-3">
-                        <div className="font-mono text-sm leading-6 text-gray-400">
-                          {item.commit}
+                        <div className="font-mono text-sm leading-6 dark:text-gray-400 text-gray-800">
+                          <Link href={item.gitrepo} className="hover:text-blurple">
+                            Link
+                          </Link>
                         </div>
-                        <div className="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
+                        <div className="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium dark:text-gray-400 text-gray-800 ring-1 ring-inset ring-white/10">
                           {item.branch}
                         </div>
                       </div>
@@ -140,10 +125,9 @@ export default function Projects() {
                     <td className="py-4 pl-0 pr-4 text-sm leading-6 sm:pr-8 lg:pr-20">
                       <div className="flex items-center justify-end gap-x-2 sm:justify-start">
                         <time
-                          className="text-gray-400 sm:hidden"
-                          dateTime={item.dateTime}
+                          className="dark:text-gray-400 text-gray-800 sm:hidden"
                         >
-                          {item.date}
+                          {item.creationdate}
                         </time>
                         <div
                           className={classNames(
@@ -153,16 +137,13 @@ export default function Projects() {
                         >
                           <div className="h-1.5 w-1.5 rounded-full bg-current" />
                         </div>
-                        <div className="hidden text-white sm:block">
+                        <div className="hidden dark:text-white text-black sm:block">
                           {item.status}
                         </div>
                       </div>
                     </td>
-                    <td className="hidden py-4 pl-0 pr-8 text-sm leading-6 text-gray-400 md:table-cell lg:pr-20">
-                      {item.duration}
-                    </td>
-                    <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 text-gray-400 sm:table-cell sm:pr-6 lg:pr-8">
-                      <time dateTime={item.dateTime}>{item.date}</time>
+                    <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 dark:text-gray-400 text-gray-800 sm:table-cell sm:pr-6 lg:pr-8">
+                      <time>{item.creationdate}</time>
                     </td>
                   </tr>
                 ))}
