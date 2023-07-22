@@ -64,7 +64,7 @@ const Sideleft = () => {
             whiteSpace: "nowrap",
           }}
         >
-          <span
+          <span className="dark:text-white"
             style={{
               position: "absolute",
               top: "47%",
@@ -76,7 +76,7 @@ const Sideleft = () => {
             hi :3
           </span>
           <Link href="https://github.com/docimin" target="_blank">
-            <FontAwesomeIcon icon={faGithub} className="fa-2xl" style={{
+            <FontAwesomeIcon icon={faGithub} className="fa-2xl dark:text-white" style={{
                 position: "absolute",
                 top: "27%",
                 left: "75px",
@@ -88,7 +88,7 @@ const Sideleft = () => {
             href="https://discord.com/users/196742608846979072"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faDiscord} className="fa-2xl" style={{
+            <FontAwesomeIcon icon={faDiscord} className="fa-2xl dark:text-white" style={{
                 position: "absolute",
                 top: "47%",
                 left: "75px",
@@ -97,7 +97,7 @@ const Sideleft = () => {
               }} />
           </Link>
           <Link href="https://twitter.com/fayeofficial_" target="_blank">
-          <FontAwesomeIcon icon={faTwitter} className="fa-2xl" style={{
+          <FontAwesomeIcon icon={faTwitter} className="fa-2xl dark:text-white" style={{
                 position: "absolute",
                 top: "67%",
                 left: "75px",
