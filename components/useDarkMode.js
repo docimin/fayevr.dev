@@ -27,9 +27,9 @@ function useDarkMode() {
       document.documentElement.classList.remove('dark')
     }
     
-  }, [colorTheme, theme]);
+  }, [colorTheme, theme, osTheme]);
 
-  return [colorTheme, setTheme];
+  return [colorTheme, setTheme, osTheme];
 }
 
 export default useDarkMode;
