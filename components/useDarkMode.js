@@ -5,6 +5,7 @@ function useDarkMode() {
     typeof localStorage !== "undefined" ? localStorage.theme : "light"
   );
   const colorTheme = theme === "dark" ? "light" : "dark";
+  const osTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -14,7 +15,7 @@ function useDarkMode() {
 
     if (typeof window !== "undefined") {
       if (localStorage.theme === undefined) {
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("theme", osTheme);
       } else {
         localStorage.setItem("theme", theme);
       }
