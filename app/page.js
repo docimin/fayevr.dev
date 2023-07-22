@@ -8,7 +8,10 @@ export default function Home() {
       <main className="flex relative w-full h-full overflow-hidden">
         <Sideleft />
         <div className="flex flex-col w-full items-center min-h-[100px]">
-          <div className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black" style={{position: "relative"}}>
+          <div
+            className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
+            style={{ position: "relative" }}
+          >
             <Header />
           </div>
           <div className="flex flex-col w-full items-center pt-10 text-black dark:text-white">

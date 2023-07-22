@@ -14,7 +14,8 @@ function useDarkMode() {
     root.classList.add(theme);
 
     if (typeof window !== "undefined") {
-      const newOsTheme = window.matchMedia &&
+      const newOsTheme =
+        window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
           : "light";

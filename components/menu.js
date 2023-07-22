@@ -1,37 +1,55 @@
-'use client';
-import { Fragment, useState } from 'react'
-import { Combobox, Dialog, Transition } from '@headlessui/react'
+"use client";
+import { Fragment, useState } from "react";
+import { Combobox, Dialog, Transition } from "@headlessui/react";
 
 const items = [
-  { id: 1, name: '>about', category: 'faye', url: '/about' },
-  { id: 2, name: '>projects', category: 'faye', url: '/projects' },
-  { id: 3, name: '#suggestions-bot', category: 'Projects', url: '/projects/suggestions-bot' },
-  { id: 4, name: '#alyx-bot', category: 'Projects', url: '/projects/alyx-bot' },
-  { id: 5, name: '?github', category: 'Help', url: 'https://github.com/docimin/' },
-  { id: 6, name: 'doom', category: 'Help', url: '/doom' },
-]
+  { id: 1, name: ">about", category: "faye", url: "/about" },
+  { id: 2, name: ">projects", category: "faye", url: "/projects" },
+  {
+    id: 3,
+    name: "#suggestions-bot",
+    category: "Projects",
+    url: "/projects/suggestions-bot",
+  },
+  { id: 4, name: "#alyx-bot", category: "Projects", url: "/projects/alyx-bot" },
+  {
+    id: 5,
+    name: "?github",
+    category: "Help",
+    url: "https://github.com/docimin/",
+  },
+  { id: 6, name: "doom", category: "Help", url: "/doom" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
-  const [query, setQuery] = useState('')
-  const [open, setOpen] = useState(true)
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(true);
 
   const filteredItems =
-    query === ''
+    query === ""
       ? []
       : items.filter((item) => {
-          return item.name.toLowerCase().includes(query.toLowerCase())
-        })
+          return item.name.toLowerCase().includes(query.toLowerCase());
+        });
 
   const groups = filteredItems.reduce((groups, item) => {
-    return { ...groups, [item.category]: [...(groups[item.category] || []), item] }
-  }, {})
+    return {
+      ...groups,
+      [item.category]: [...(groups[item.category] || []), item],
+    };
+  }, {});
 
   return (
-    <Transition.Root show={open} as={Fragment} afterLeave={() => setQuery('')} appear>
+    <Transition.Root
+      show={open}
+      as={Fragment}
+      afterLeave={() => setQuery("")}
+      appear
+    >
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}
@@ -66,32 +84,43 @@ export default function Example() {
                   />
                 </div>
 
-                {query === '' && (
+                {query === "" && (
                   <div className="border-t border-gray-100 px-6 py-14 text-center text-sm sm:px-14">
                     <i className="fa-solid fa-magnifying-glass fa-2xl mx-auto h-6 w-6 text-gray-400"></i>
-                    <p className="mt-4 font-semibold text-gray-900">Search for pages and other stuff..</p>
+                    <p className="mt-4 font-semibold text-gray-900">
+                      Search for pages and other stuff..
+                    </p>
                     <p className="mt-2 text-gray-500">
-                      Quickly access pages on this site. Keep a lookout for secrets :)
+                      Quickly access pages on this site. Keep a lookout for
+                      secrets :)
                     </p>
                   </div>
                 )}
 
                 {filteredItems.length > 0 && (
-                  <Combobox.Options static className="max-h-80 scroll-pb-2 scroll-pt-11 space-y-2 overflow-y-auto pb-2">
+                  <Combobox.Options
+                    static
+                    className="max-h-80 scroll-pb-2 scroll-pt-11 space-y-2 overflow-y-auto pb-2"
+                  >
                     {Object.entries(groups).map(([category, items]) => (
                       <li key={category}>
-                        <h2 className="bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-900">{category}</h2>
+                        <h2 className="bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-900">
+                          {category}
+                        </h2>
                         <ul className="mt-2 text-sm text-gray-800">
                           {items.map((item) => (
                             <Combobox.Option
-                            key={item.id}
-                            value={item}
-                            className={({ active }) =>
-                              classNames('cursor-default select-none px-4 py-2', active && 'bg-indigo-600 text-white')
-                            }
-                          >
-                            {item.name.replace(/^[#>?]/, '')}
-                          </Combobox.Option>
+                              key={item.id}
+                              value={item}
+                              className={({ active }) =>
+                                classNames(
+                                  "cursor-default select-none px-4 py-2",
+                                  active && "bg-indigo-600 text-white"
+                                )
+                              }
+                            >
+                              {item.name.replace(/^[#>?]/, "")}
+                            </Combobox.Option>
                           ))}
                         </ul>
                       </li>
@@ -99,40 +128,45 @@ export default function Example() {
                   </Combobox.Options>
                 )}
 
-                {query !== '' && filteredItems.length === 0 && (
+                {query !== "" && filteredItems.length === 0 && (
                   <div className="border-t border-gray-100 px-6 py-14 text-center text-sm sm:px-14">
                     <i className="fa-solid fa-arrow-left mx-auto h-6 w-6 text-gray-400"></i>
-                    <p className="mt-4 font-semibold text-gray-900">No results found</p>
-                    <p className="mt-2 text-gray-500">We couldn’t find anything with that term. Please try again.</p>
+                    <p className="mt-4 font-semibold text-gray-900">
+                      No results found
+                    </p>
+                    <p className="mt-2 text-gray-500">
+                      We couldn’t find anything with that term. Please try
+                      again.
+                    </p>
                   </div>
                 )}
 
                 <div className="flex flex-wrap items-center bg-gray-50 px-4 py-2.5 text-xs text-gray-700">
-                  Type{' '}
+                  Type{" "}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-indigo-600 text-indigo-600'
+                      "mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-indigo-600 text-indigo-600"
                     )}
                   >
                     #
-                  </kbd>{' '}
+                  </kbd>{" "}
                   <span className="sm:hidden">for projects,</span>
                   <span className="hidden sm:inline">to view projects,</span>
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-gray-400 text-gray-900'
+                      "mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-gray-400 text-gray-900"
                     )}
                   >
                     &gt;
-                  </kbd>{' '}
-                  for pages, and{' '}
+                  </kbd>{" "}
+                  for pages, and{" "}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold sm:mx-2'
+                      "mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold sm:mx-2"
                     )}
                   >
                     ?
-                  </kbd>{' '}
+                  </kbd>{" "}
                   for help.
                 </div>
               </Combobox>
@@ -141,5 +175,5 @@ export default function Example() {
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }

@@ -13,29 +13,29 @@ const LightBulb = () => {
 
   const handleButtonClick = () => {
     const video = videoRef.current;
-  
+
     if (video.paused) {
       video.play();
-  
+
       // Disable button
       document.querySelector("button").disabled = true;
-  
+
       // Log current theme
       console.log(colorTheme);
-  
+
       // Change theme after 6 seconds
       setTimeout(() => {
         setTheme(colorTheme === "dark" ? "dark" : "light");
       }, 6000);
-  
+
       // Change video after 10 seconds
       setTimeout(() => {
-        video.src = 
+        video.src =
           colorTheme === "light" ? "/files/lightoff.mp4" : "/files/lighton.mp4";
         video.load();
-        
+
         // Re-enable button
-        document.querySelector("button").disabled = false; 
+        document.querySelector("button").disabled = false;
       }, 10000);
     }
   };

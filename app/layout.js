@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
         onMouseUp={handleMouseClick}
       >
         {/*isLoading ? <LoadingScreen /> : children*/}
-        { children }
+        {children}
         <script
           dangerouslySetInnerHTML={{
             __html: `document.body.classList.remove('fadeOut');`,

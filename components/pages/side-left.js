@@ -4,8 +4,11 @@ import Link from "next/link";
 import Menu from "../menu";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
-
+import {
+  faDiscord,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Sideleft = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +28,6 @@ const Sideleft = () => {
         onClick={isMenuOpen ? closeMenu : toggleMenu}
       >
         <FontAwesomeIcon icon={faBars} className="fa-2xl" />
-
       </button>
       {isMenuOpen && <Menu />}
       <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
@@ -64,7 +66,8 @@ const Sideleft = () => {
             whiteSpace: "nowrap",
           }}
         >
-          <span className="dark:text-white"
+          <span
+            className="dark:text-white"
             style={{
               position: "absolute",
               top: "47%",
@@ -76,34 +79,46 @@ const Sideleft = () => {
             hi :3
           </span>
           <Link href="https://github.com/docimin" target="_blank">
-            <FontAwesomeIcon icon={faGithub} className="fa-2xl dark:text-white" style={{
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="fa-2xl dark:text-white"
+              style={{
                 position: "absolute",
                 top: "27%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }} />
+              }}
+            />
           </Link>
           <Link
             href="https://discord.com/users/196742608846979072"
             target="_blank"
           >
-            <FontAwesomeIcon icon={faDiscord} className="fa-2xl dark:text-white" style={{
+            <FontAwesomeIcon
+              icon={faDiscord}
+              className="fa-2xl dark:text-white"
+              style={{
                 position: "absolute",
                 top: "47%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }} />
+              }}
+            />
           </Link>
           <Link href="https://twitter.com/fayeofficial_" target="_blank">
-          <FontAwesomeIcon icon={faTwitter} className="fa-2xl dark:text-white" style={{
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="fa-2xl dark:text-white"
+              style={{
                 position: "absolute",
                 top: "67%",
                 left: "75px",
                 transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
-              }} />
+              }}
+            />
           </Link>
           <svg
             width="100"

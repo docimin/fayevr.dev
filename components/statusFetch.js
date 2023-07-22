@@ -1,15 +1,17 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 function AvatarStatus() {
-  const [status, setStatus] = useState('offline');
+  const [status, setStatus] = useState("offline");
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     async function fetchStatus() {
       try {
-        const response = await fetch('https://api1.fayevr.dev/getstatus?member=196742608846979072');
+        const response = await fetch(
+          "https://api1.fayevr.dev/getstatus?member=196742608846979072"
+        );
         const data = await response.json();
         const status = data.status;
         setStatus(status);
@@ -28,15 +30,15 @@ function AvatarStatus() {
     return () => clearInterval(interval);
   }, []);
 
-  let color = 'green';
-  if (status === 'online') {
-    color = 'green';
-  } else if (status === 'idle') {
-    color = 'yellow';
-  } else if (status === 'dnd') {
-    color = 'red';
-  } else if (status === 'offline') {
-    color = 'gray';
+  let color = "green";
+  if (status === "online") {
+    color = "green";
+  } else if (status === "idle") {
+    color = "yellow";
+  } else if (status === "dnd") {
+    color = "red";
+  } else if (status === "offline") {
+    color = "gray";
   }
 
   const handleClick = () => {
@@ -47,7 +49,10 @@ function AvatarStatus() {
   };
 
   return (
-    <span className="relative flex justify-center items-center" onClick={handleClick}>
+    <span
+      className="relative flex justify-center items-center"
+      onClick={handleClick}
+    >
       <img
         className="h-[75px] w-[75px] rounded-md object-cover"
         src="/icon-256.png"
@@ -56,11 +61,17 @@ function AvatarStatus() {
         height={75}
       />
       {showText && (
-        <span className={`absolute left-0 bottom-0.5 block h-4 w-4 rounded-full bg-${color}`}>
-          <p className="absolute w-[100px] translate-x-[-70%] translate-y-[-80%]">boop :3</p>
+        <span
+          className={`absolute left-0 bottom-0.5 block h-4 w-4 rounded-full bg-${color}`}
+        >
+          <p className="absolute w-[100px] translate-x-[-70%] translate-y-[-80%]">
+            boop :3
+          </p>
         </span>
       )}
-      <span className={`absolute left-0 bottom-0.5 block h-4 w-4 rounded-full bg-${color}`} />
+      <span
+        className={`absolute left-0 bottom-0.5 block h-4 w-4 rounded-full bg-${color}`}
+      />
     </span>
   );
 }
