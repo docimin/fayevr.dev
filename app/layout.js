@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { useEffect, useState } from "react";
 
-import useClickSound from "../hooks/click";
+import useClickSound from "@/hooks/click";
 import useDarkMode from "@/components/useDarkMode";
 
 const metadata = {
