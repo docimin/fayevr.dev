@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import useDarkMode from "@/components/useDarkMode";
 
 const LightBulb = () => {
-  const [colorTheme, setTheme, osTheme] = useDarkMode();
+  const [colorTheme, setTheme] = useDarkMode();
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const LightBulb = () => {
 
         // Re-enable button
         document.querySelector("button").disabled = false;
-      }, 10000);
+      }, 6000);
     }
   };
 
