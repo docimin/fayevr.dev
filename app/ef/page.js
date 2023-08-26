@@ -38,12 +38,12 @@ export default function EF() {
             English Version
           </button>
           {showEnglish && (
-            <span id="english" className="text-white pt-4 text-3xl text-center">
+            <span id="english" className="text-red-500 pt-4 text-3xl text-center">
               Sprich deutsch du Hurensohn!
             </span>
           )}
           <div className="flex flex-col w-full items-center pt-10 text-black dark:text-white">
-            <h1 className="text-4xl">Eurofurence Edition</h1>
+            <h1 id="rainbow" className="text-4xl">Eurofurence Edition</h1>
             <br />
             <span className="text-2xl p-4 text-center">
               Sie müssen schwul sein,
