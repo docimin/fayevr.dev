@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from "react";
-import useDarkMode from "@/components/useDarkMode";
+'use client'
+import React, { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 const LightBulb = () => {
-  const [colorTheme, setTheme] = useDarkMode();
+  const { resolvedTheme, setTheme } = useTheme();
   const videoRef = useRef(null);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     videoRef.current.src =
-      colorTheme === "light" ? "/files/lighton.mp4" : "/files/lightoff.mp4";
+      resolvedTheme === "light" ? "/files/lightoff.mp4" : "/files/lighton.mp4";
     videoRef.current.load();
-  }, [colorTheme]);
+  }, []);
 
   const handleButtonClick = () => {
     const video = videoRef.current;
@@ -18,35 +20,36 @@ const LightBulb = () => {
       video.play();
 
       // Disable button
-      document.querySelector("button").disabled = true;
+      setIsButtonDisabled(true);
 
       // Log current theme
-      console.log(colorTheme);
+      console.log(resolvedTheme);
 
       // Change theme after 6 seconds
+      const newTheme = resolvedTheme === "light" ? "dark" : "light";
       setTimeout(() => {
-        setTheme(colorTheme === "dark" ? "dark" : "light");
-      }, 6000);
+        setTheme(newTheme);
+      }, 6150);
 
       // Change video after 10 seconds
       setTimeout(() => {
         video.src =
-          colorTheme === "light" ? "/files/lightoff.mp4" : "/files/lighton.mp4";
+          newTheme === "light" ? "/files/lightoff.mp4" : "/files/lighton.mp4";
         video.load();
 
         // Re-enable button
-        document.querySelector("button").disabled = false;
-      }, 6000);
+        setIsButtonDisabled(false);
+      }, 10000); // Changed the delay to 10 seconds
     }
   };
 
   return (
     <>
-      <video ref={videoRef} type="video/mp4">
+      <video ref={videoRef} type="video/mp4" className="w-full h-full object-cover">
         Your browser does not support the video tag.
       </video>
       <button
-        className="pt-32 pb-36 pl-16 pr-16"
+        className="pt-32 pb-36 pl-16 pr-16 dark:text-white text-black"
         onClick={handleButtonClick}
         style={{
           position: "absolute",
@@ -55,6 +58,7 @@ const LightBulb = () => {
           transform: "translate(-50%, -50%)",
           zIndex: 1,
         }}
+        disabled={isButtonDisabled}
       ></button>
     </>
   );

@@ -1,10 +1,7 @@
-"use client";
 import LightBulb from "@/components/lightBulb";
-import useDarkMode from "@/components/useDarkMode";
 import Link from "next/link";
 
 export default function Home() {
-  const [theme, setTheme] = useDarkMode();
 
   return (
     <div>

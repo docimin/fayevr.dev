@@ -1,7 +1,4 @@
 "use client";
-import Header from "@/components/pages/mainHeader";
-import Sideleft from "@/components/pages/side-left";
-import Sideright from "@/components/pages/side-right";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
