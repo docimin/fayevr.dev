@@ -10,7 +10,7 @@ function AvatarStatus() {
     async function fetchStatus() {
       try {
         const response = await fetch(
-          "https://api1.fayevr.dev/getstatus?member=196742608846979072"
+          `/api/getStatus`
         );
         const data = await response.json();
         const status = data.status;
