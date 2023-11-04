@@ -24,7 +24,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("https://backend.fayevr.dev/api/fayeprojects?populate=*")
+    fetch(`/api/projects`)
       .then((response) => response.json())
       .then((data) => {
         setProjects(data.data);
@@ -63,8 +63,6 @@ export default function Projects() {
       customurl: project.attributes.customurl,
     };
   });
-
-
 
   activityItems.sort(
     (a, b) => new Date(b.creationdate) - new Date(a.creationdate)

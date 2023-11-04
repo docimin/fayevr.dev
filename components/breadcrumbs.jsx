@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Example() {
+export default function Breadcrumbs() {
   return (
     <div className="pt-8">
       <nav aria-label="breadcrumb">
