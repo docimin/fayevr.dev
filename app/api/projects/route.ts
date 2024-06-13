@@ -22,12 +22,12 @@ export async function GET() {
     }
 
     if (!response.ok) {
-      throw new Error("Failed to fetch data");
+      return NextResponse.json({ message: "An error occurred" }, { status: 500 });
     }
 
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.error(500, error.message);
+    return NextResponse.error();
   }
 }

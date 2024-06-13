@@ -1,6 +1,6 @@
 import "@/css/globals.css";
 import { Inter } from "next/font/google";
-import { Providers } from "@/app/providers";
+import { Providers } from "@/components/providers";
 import ClickSound from "@/hooks/click";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,9 +12,6 @@ export const metadata = {
   },
   description:
     "Faye's personal portfolio website. A place to showcase my projects and skills.",
-  url: "https://fayevr.dev",
-  image: "icon-512.png",
-  icon: "icon-512.png",
   keywords: [
     "faye",
     "fayevr",
@@ -26,7 +23,14 @@ export const metadata = {
     "personal website",
     "personal portfolio",
   ],
-  theme: "#ff4f00",
+  openGraph: {
+    title: "Faye | Portfolio",
+    description: "Faye's personal portfolio website. A place to showcase my projects and skills.",
+    url: "https://fayevr.dev",
+    images: "icon-512.png",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({ children }) {

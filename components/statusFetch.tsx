@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 
 function AvatarStatus() {
   const [status, setStatus] = useState("offline");
