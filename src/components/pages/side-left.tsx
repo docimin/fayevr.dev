@@ -1,37 +1,33 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import MenuComponent from '../menu'
-import { MenuIcon } from 'lucide-react'
-import {
-  faDiscord,
-  faTwitter,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons'
-import { SiDiscord, SiGithub, SiX } from '@icons-pack/react-simple-icons'
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import MenuComponent from "../menu";
+import { MenuIcon } from "lucide-react";
+import { SiDiscord, SiGithub, SiX } from "@icons-pack/react-simple-icons";
 
 const Sideleft = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="hidden md:flex flex-col">
       <button
         className="min-w-[100px] min-h-[75px] border-b border-r dark:border-white border-black flex items-center justify-center text-black dark:text-white"
-        onClick={isMenuOpen ? closeMenu : toggleMenu}
+        onClick={toggleMenu}
       >
-        <MenuIcon className=""/>
+        <MenuIcon className="" />
       </button>
-      {isMenuOpen && <MenuComponent/>}
-      <div
-        className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
+      {isMenuOpen && (
+        <MenuComponent open={isMenuOpen} setOpen={setIsMenuOpen} />
+      )}
+      <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">
         <svg
           width="100"
           height="485"
@@ -61,20 +57,20 @@ const Sideleft = () => {
         <div
           className=""
           style={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            whiteSpace: 'nowrap',
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            whiteSpace: "nowrap",
           }}
         >
           <span
             className="dark:text-white"
             style={{
-              position: 'absolute',
-              top: '47%',
-              left: '20px',
-              transform: 'rotate(-90deg) translateY(-50%)',
-              cursor: 'pointer',
+              position: "absolute",
+              top: "47%",
+              left: "20px",
+              transform: "rotate(-90deg) translateY(-50%)",
+              cursor: "pointer",
             }}
           >
             hi :3
@@ -83,10 +79,10 @@ const Sideleft = () => {
             <SiGithub
               className="dark:text-white"
               style={{
-                position: 'absolute',
-                top: '27%',
-                left: '75px',
-                transform: 'rotate(-90deg) translateY(-50%)',
+                position: "absolute",
+                top: "27%",
+                left: "75px",
+                transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
             />
@@ -98,10 +94,10 @@ const Sideleft = () => {
             <SiDiscord
               className="dark:text-white"
               style={{
-                position: 'absolute',
-                top: '47%',
-                left: '75px',
-                transform: 'rotate(-90deg) translateY(-50%)',
+                position: "absolute",
+                top: "47%",
+                left: "75px",
+                transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
             />
@@ -110,10 +106,10 @@ const Sideleft = () => {
             <SiX
               className="dark:text-white"
               style={{
-                position: 'absolute',
-                top: '67%',
-                left: '75px',
-                transform: 'rotate(-90deg) translateY(-50%)',
+                position: "absolute",
+                top: "67%",
+                left: "75px",
+                transform: "rotate(-90deg) translateY(-50%)",
                 zIndex: 1,
               }}
             />
@@ -193,15 +189,14 @@ const Sideleft = () => {
           <path d="M50 17L50 11" stroke="black"></path>
         </svg>
       </div>
-      <div
-        className="min-w-[100px] min-h-[75px] border-r border-t dark:border-white border-black flex items-center justify-center">
+      <div className="min-w-[100px] min-h-[75px] border-r border-t dark:border-white border-black flex items-center justify-center">
         <a className="e fingies" id="fg" title="😳">
           <span className="touchtips">👉</span>
           <span>👈</span>
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sideleft
+export default Sideleft;

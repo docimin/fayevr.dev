@@ -1,4 +1,4 @@
-import "@/css/globals.css";
+import "../../css/globals.css";
 import { Inter } from "next/font/google";
 import { Providers } from "@/components/providers";
 import ClickSound from "@/hooks/click";
@@ -25,12 +25,14 @@ export const metadata = {
   ],
   openGraph: {
     title: "Faye | Portfolio",
-    description: "Faye's personal portfolio website. A place to showcase my projects and skills.",
+    description:
+      "Faye's personal portfolio website. A place to showcase my projects and skills.",
     url: "https://fayevr.dev",
     images: "icon-512.png",
     type: "website",
     locale: "en_US",
   },
+  metadataBase: new URL("https://fayevr.dev"),
 };
 
 export default function RootLayout({ children }) {

@@ -19,7 +19,7 @@ export default function Suggestions() {
           <div className="flex flex-col w-full items-center pt-10">
             <div className="block container">
               <h1 className="text-4xl">Privacy Policy</h1>
-              <Link className="text-blurple" href="/projects/suggestions">
+              <Link className="text-primary" href={"/projects/suggestions"}>
                 <span>Suggestions Bot</span>
               </Link>
               <br />
@@ -111,7 +111,7 @@ export default function Suggestions() {
                 Terms of Service. If you have any questions or concerns, please
                 contact us at: <br />
                 <Link
-                  className="text-blurple"
+                  className="text-primary"
                   href="https://discord.com/invite/VZebBhm3bY"
                 >
                   https://discord.com/invite/VZebBhm3bY

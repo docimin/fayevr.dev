@@ -29,14 +29,14 @@ export default function About() {
           <div className="flex flex-col w-full container pt-20 p-4">
             <div>
               <h1 className="text-6xl font-bold dark:text-white text-black">
-                about<span className="text-blurple">( ) &#123;</span>
+                about<span className="text-primary">( ) &#123;</span>
               </h1>
             </div>
             <div className="pt-10">
               <h3 className="text-2xl text-black dark:text-white">
                 Download my{" "}
                 <button
-                  className="bg-blurple text-blackgrey rounded-full py-1 p-4 pb-2"
+                  className="bg-primary text-blackgrey rounded-full py-1 p-4 pb-2"
                   onClick={handleDownload}
                 >
                   resume
@@ -46,13 +46,13 @@ export default function About() {
             <div className="pt-10">
               <h3 className="text-2xl text-black dark:text-white">
                 I&#39;m a{" "}
-                <span className="text-blurple">full-stack developer</span> with
-                a passion for <span className="text-blurple">design</span> and{" "}
-                <span className="text-blurple">technology</span>.
+                <span className="text-primary">full-stack developer</span> with
+                a passion for <span className="text-primary">design</span> and{" "}
+                <span className="text-primary">technology</span>.
               </h3>
               <br />
               <span className="text-xl text-black dark:text-white">
-                &#47;&#47; 6 years of experience
+                &#47;&#47; 8 years of experience
               </span>
             </div>
             <h3 className="text-2xl pt-20 text-black dark:text-white">
@@ -70,7 +70,7 @@ export default function About() {
                 <p>
                   JavaScript, CSS,
                   <br />
-                  HTML, Vue
+                  HTML, Vue, React
                 </p>
               </div>
               <div className="col-span-1">
@@ -168,7 +168,7 @@ export default function About() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
               <div className="col-span-1">
                 <p>
-                  <span className="text-blurple">Backend Development</span>
+                  <span className="text-primary">Backend Development</span>
                   <br />
                   at{" "}
                   <Link
@@ -185,7 +185,7 @@ export default function About() {
               </div>
               <div className="col-span-1">
                 <p>
-                  <span className="text-blurple">Developer & Designer</span>
+                  <span className="text-primary">Developer & Designer</span>
                   <br />
                   at{" "}
                   <Link
@@ -202,7 +202,7 @@ export default function About() {
               </div>
               <div className="col-span-1">
                 <p>
-                  <span className="text-blurple">Head of Game Development</span>
+                  <span className="text-primary">Head of Game Development</span>
                   <br />
                   &lt;&#47;unknown&gt;
                   <br />
@@ -211,7 +211,7 @@ export default function About() {
               </div>
               <div className="col-span-1">
                 <p>
-                  <span className="text-blurple">Freelancer</span>
+                  <span className="text-primary">Freelancer</span>
                   <br />
                   &#64;everywhere
                   <br />
@@ -228,18 +228,18 @@ export default function About() {
                 <p>
                   &#47;&#47; fluent
                   <br />
-                  <span className="text-blurple italic">en-US</span> English,
+                  <span className="text-primary italic">en-US</span> English,
                   <br />
-                  <span className="text-blurple italic">nl-NL</span> Dutch,
+                  <span className="text-primary italic">nl-NL</span> Dutch,
                   <br />
-                  <span className="text-blurple italic">de-DE</span> German
+                  <span className="text-primary italic">de-DE</span> German
                 </p>
               </div>
               <div className="col-span-1">
                 <p>
                   &#47;&#47; intermediate
                   <br />
-                  <span className="text-blurple italic">fr-NL</span> Fryslân
+                  <span className="text-primary italic">fr-NL</span> Fryslân
                 </p>
               </div>
               <div className="col-span-1">
@@ -271,7 +271,7 @@ export default function About() {
 
             <div>
               <h1 className="text-6xl font-bold pb-20">
-                <span className="text-blurple">&#125;</span>
+                <span className="text-primary">&#125;</span>
               </h1>
             </div>
           </div>

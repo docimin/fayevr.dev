@@ -1,8 +1,7 @@
 import React from "react";
 import AvatarStatus from "../statusFetch";
 import Link from "next/link";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LightbulbIcon } from "lucide-react";
 
 const Sideright = () => {
   return (
@@ -116,11 +115,8 @@ const Sideright = () => {
         </svg>
       </div>
       <div className="min-w-[100px] min-h-[75px] border-l border-t dark:border-white border-black flex items-center justify-center">
-        <Link href="/light">
-          <FontAwesomeIcon
-            icon={faLightbulb}
-            className="text-2xl text-black dark:text-white"
-          />
+        <Link href={"/light"}>
+          <LightbulbIcon className="text-2xl text-black dark:text-white" />
         </Link>
       </div>
     </div>
