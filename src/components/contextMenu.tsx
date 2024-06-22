@@ -18,7 +18,7 @@ export default function ContextMenuProvider({ children }) {
       <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
       <ContextMenuContent className="w-64">
         <Link
-          href={'https://github.com/docimin/cloudnet-webinterface'}
+          href={'https://github.com/docimin/fayevr.dev'}
           passHref
           target={'_blank'}
         >
