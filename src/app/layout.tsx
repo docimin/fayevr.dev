@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="h-full" suppressHydrationWarning>
     <body
-      className={`${myFont.className} flex min-h-full bg-white antialiased dark:bg-black`}
+      className={`${myFont.className} flex min-h-full bg-white antialiased dark:bg-black tracking-widest`}
     >
     <Providers>
       <ContextMenuProvider>
