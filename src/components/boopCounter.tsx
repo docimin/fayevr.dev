@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { sendBoop } from '@/lib/actions/sendBoop'
 import { client } from '@/app/appwrite-client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BoopRealtimeCounter } from '@/lib/types/counters'
 
 export default function BoopCounter({ count }) {
@@ -12,12 +12,14 @@ export default function BoopCounter({ count }) {
     await sendBoop()
   }
 
-  client.subscribe(
-    'databases.main.collections.counters.documents.mainBoop',
-    (response: BoopRealtimeCounter) => {
-      setBoopCount(response.payload.boop)
-    }
-  )
+  useEffect(() => {
+    client.subscribe(
+      'databases.main.collections.counters.documents.mainBoop',
+      (response: BoopRealtimeCounter) => {
+        setBoopCount(response.payload.boop)
+      }
+    )
+  }, [])
 
   return (
     <div className={'text-center'}>
