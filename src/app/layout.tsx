@@ -1,12 +1,10 @@
 import '../../css/globals.css'
-//import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import ClickSound from '@/hooks/click'
 import ContextMenuProvider from '@/components/contextMenu'
-import localFont from 'next/font/local'
 
-//const inter = Inter({ subsets: ['latin'] })
-const myFont = localFont({ src: '../../public/fonts/PixelMplus12-Regular.woff2' })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: {
@@ -42,7 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="h-full" suppressHydrationWarning>
     <body
-      className={`${myFont.className} flex min-h-full bg-white antialiased dark:bg-black`}
+      className={`${inter.className} flex min-h-full bg-white antialiased dark:bg-black`}
     >
     <Providers>
       <ContextMenuProvider>
