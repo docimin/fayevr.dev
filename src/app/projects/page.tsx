@@ -1,28 +1,28 @@
-import Sideleft from "@/components/pages/side-left";
-import Sideright from "@/components/pages/side-right";
-import { getProjects } from "@/lib/server-calls";
-import Header from "@/components/pages/mainHeader";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import Sideleft from '@/components/pages/side-left'
+import Sideright from '@/components/pages/side-right'
+import { getProjects } from '@/lib/server-calls'
+import Header from '@/components/pages/mainHeader'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 export const metadata = {
-  title: "Projects",
+  title: 'Projects',
   description: "Projects I've worked on in the past or current.",
-};
+}
 
 export default async function Projects() {
-  const projects = await getProjects();
+  const projects = await getProjects()
 
   const statuses = {
-    Completed: "text-green-400 bg-green-400/10",
-    Online: "text-green-400 bg-green-400/10",
-    Ongoing: "text-yellow-400 bg-yellow-400/10",
-    Maintenance: "text-yellow-400 bg-yellow-400/10",
-    Pending: "text-red-400 bg-red-400/10",
-    Error: "text-rose-400 bg-rose-400/10",
-    Paused: "text-gray-400 bg-gray-400/10",
-    Archived: "text-orange-400 bg-orange-400/10",
-  };
+    Completed: 'text-green-400 bg-green-400/10',
+    Online: 'text-green-400 bg-green-400/10',
+    Ongoing: 'text-yellow-400 bg-yellow-400/10',
+    Maintenance: 'text-yellow-400 bg-yellow-400/10',
+    Pending: 'text-red-400 bg-red-400/10',
+    Error: 'text-rose-400 bg-rose-400/10',
+    Paused: 'text-gray-400 bg-gray-400/10',
+    Archived: 'text-orange-400 bg-orange-400/10',
+  }
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default async function Projects() {
         <div className="flex flex-col w-full items-center min-h-[100px]">
           <div
             className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
-            style={{ position: "relative" }}
+            style={{ position: 'relative' }}
           >
             <Header />
           </div>
@@ -86,7 +86,7 @@ export default async function Projects() {
                   .sort(
                     (a, b) =>
                       new Date(b.$createdAt).getTime() -
-                      new Date(a.$createdAt).getTime(),
+                      new Date(a.$createdAt).getTime()
                   )
                   .map((item) => (
                     <tr key={item.name}>
@@ -126,7 +126,7 @@ export default async function Projects() {
                           <div
                             className={cn(
                               statuses[item.status],
-                              "flex-none rounded-full p-1",
+                              'flex-none rounded-full p-1'
                             )}
                           >
                             <div className="h-1.5 w-1.5 rounded-full bg-current" />
@@ -139,7 +139,7 @@ export default async function Projects() {
                       <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8 dark:text-gray-400 text-gray-800">
                         <time>
                           {new Date(item.$createdAt).toLocaleDateString(
-                            "en-GB",
+                            'en-GB'
                           )}
                         </time>
                       </td>
@@ -160,5 +160,5 @@ export default async function Projects() {
         <Sideright />
       </main>
     </div>
-  );
+  )
 }

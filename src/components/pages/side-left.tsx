@@ -1,20 +1,20 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import MenuComponent from "../menu";
-import { MenuIcon } from "lucide-react";
-import { SiDiscord, SiGithub, SiX } from "@icons-pack/react-simple-icons";
+'use client'
+import React, { useState } from 'react'
+import Link from 'next/link'
+import MenuComponent from '../menu'
+import { MenuIcon } from 'lucide-react'
+import { SiDiscord, SiGithub, SiX } from '@icons-pack/react-simple-icons'
 
 const Sideleft = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+    setIsMenuOpen(false)
+  }
 
   return (
     <div className="hidden md:flex flex-col">
@@ -57,20 +57,20 @@ const Sideleft = () => {
         <div
           className=""
           style={{
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            whiteSpace: "nowrap",
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
           }}
         >
           <span
             className="dark:text-white"
             style={{
-              position: "absolute",
-              top: "47%",
-              left: "20px",
-              transform: "rotate(-90deg) translateY(-50%)",
-              cursor: "pointer",
+              position: 'absolute',
+              top: '47%',
+              left: '20px',
+              transform: 'rotate(-90deg) translateY(-50%)',
+              cursor: 'pointer',
             }}
           >
             hi :3
@@ -79,10 +79,10 @@ const Sideleft = () => {
             <SiGithub
               className="dark:text-white"
               style={{
-                position: "absolute",
-                top: "27%",
-                left: "75px",
-                transform: "rotate(-90deg) translateY(-50%)",
+                position: 'absolute',
+                top: '27%',
+                left: '75px',
+                transform: 'rotate(-90deg) translateY(-50%)',
                 zIndex: 1,
               }}
             />
@@ -94,10 +94,10 @@ const Sideleft = () => {
             <SiDiscord
               className="dark:text-white"
               style={{
-                position: "absolute",
-                top: "47%",
-                left: "75px",
-                transform: "rotate(-90deg) translateY(-50%)",
+                position: 'absolute',
+                top: '47%',
+                left: '75px',
+                transform: 'rotate(-90deg) translateY(-50%)',
                 zIndex: 1,
               }}
             />
@@ -106,10 +106,10 @@ const Sideleft = () => {
             <SiX
               className="dark:text-white"
               style={{
-                position: "absolute",
-                top: "67%",
-                left: "75px",
-                transform: "rotate(-90deg) translateY(-50%)",
+                position: 'absolute',
+                top: '67%',
+                left: '75px',
+                transform: 'rotate(-90deg) translateY(-50%)',
                 zIndex: 1,
               }}
             />
@@ -196,7 +196,7 @@ const Sideleft = () => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sideleft;
+export default Sideleft

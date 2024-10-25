@@ -1,19 +1,19 @@
-"use client";
-import Header from "@/components/pages/mainHeader";
-import Sideleft from "@/components/pages/side-left";
-import Sideright from "@/components/pages/side-right";
-import Link from "next/link";
+'use client'
+import Header from '@/components/pages/mainHeader'
+import Sideleft from '@/components/pages/side-left'
+import Sideright from '@/components/pages/side-right'
+import Link from 'next/link'
 
 export default function About() {
   const handleDownload = () => {
-    const pdfUrl = "/files/resume.pdf";
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+    const pdfUrl = '/files/resume.pdf'
+    const link = document.createElement('a')
+    link.href = pdfUrl
+    link.download = 'resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <div>
@@ -22,7 +22,7 @@ export default function About() {
         <div className="flex flex-col w-full items-center min-h-[100px]">
           <div
             className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
-            style={{ position: "relative" }}
+            style={{ position: 'relative' }}
           >
             <Header />
           </div>
@@ -34,7 +34,7 @@ export default function About() {
             </div>
             <div className="pt-10">
               <h3 className="text-2xl text-black dark:text-white">
-                Download my{" "}
+                Download my{' '}
                 <button
                   className="bg-primary text-blackgrey rounded-full py-1 p-4 pb-2"
                   onClick={handleDownload}
@@ -45,9 +45,9 @@ export default function About() {
             </div>
             <div className="pt-10">
               <h3 className="text-2xl text-black dark:text-white">
-                I&#39;m a{" "}
+                I&#39;m a{' '}
                 <span className="text-primary">full-stack developer</span> with
-                a passion for <span className="text-primary">design</span> and{" "}
+                a passion for <span className="text-primary">design</span> and{' '}
                 <span className="text-primary">technology</span>.
               </h3>
               <br />
@@ -170,14 +170,14 @@ export default function About() {
                 <p>
                   <span className="text-primary">Backend Development</span>
                   <br />
-                  at{" "}
+                  at{' '}
                   <Link
                     href="https://vr-assets.net/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-red-500"
                   >
-                    VR-Assets{" "}
+                    VR-Assets{' '}
                   </Link>
                   <br />
                   2019 - present
@@ -187,7 +187,7 @@ export default function About() {
                 <p>
                   <span className="text-primary">Developer & Designer</span>
                   <br />
-                  at{" "}
+                  at{' '}
                   <Link
                     href="https://dutchboxx.nl/"
                     target="_blank"
@@ -279,5 +279,5 @@ export default function About() {
         <Sideright />
       </main>
     </div>
-  );
+  )
 }

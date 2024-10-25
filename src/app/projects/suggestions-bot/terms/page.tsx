@@ -1,8 +1,8 @@
-import React from "react";
-import Header from "@/components/pages/mainHeader";
-import Sideleft from "@/components/pages/side-left";
-import Sideright from "@/components/pages/side-right";
-import Link from "next/link";
+import React from 'react'
+import Header from '@/components/pages/mainHeader'
+import Sideleft from '@/components/pages/side-left'
+import Sideright from '@/components/pages/side-right'
+import Link from 'next/link'
 
 export default function Suggestions() {
   return (
@@ -12,14 +12,14 @@ export default function Suggestions() {
         <div className="flex flex-col w-full items-center min-h-[100px]">
           <div
             className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
-            style={{ position: "relative" }}
+            style={{ position: 'relative' }}
           >
             <Header />
           </div>
           <div className="flex flex-col w-full items-center pt-10">
             <div className="block container">
               <h1 className="text-4xl">Terms of Service</h1>
-              <Link className="text-primary" href={"/projects/suggestions"}>
+              <Link className="text-primary" href={'/projects/suggestions'}>
                 <span>Suggestions Bot</span>
               </Link>
               <br />
@@ -146,5 +146,5 @@ export default function Suggestions() {
         <Sideright />
       </main>
     </div>
-  );
+  )
 }

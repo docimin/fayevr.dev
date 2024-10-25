@@ -1,33 +1,36 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server'
 
-export const runtime = "edge";
+export const runtime = 'edge'
 
 export async function GET() {
   try {
-    const fetchURL = `${process.env.DOMAIN_BACKEND}/api/fayeprojects?populate=*`;
+    const fetchURL = `${process.env.DOMAIN_BACKEND}/api/fayeprojects?populate=*`
 
     const response = await fetch(fetchURL, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-    });
+    })
 
     if (response.status === 401) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
     }
 
     if (response.status === 403) {
-      return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+      return NextResponse.json({ message: 'Forbidden' }, { status: 403 })
     }
 
     if (!response.ok) {
-      return NextResponse.json({ message: "An error occurred" }, { status: 500 });
+      return NextResponse.json(
+        { message: 'An error occurred' },
+        { status: 500 }
+      )
     }
 
-    const data = await response.json();
-    return NextResponse.json(data);
+    const data = await response.json()
+    return NextResponse.json(data)
   } catch (error) {
-    return NextResponse.error();
+    return NextResponse.error()
   }
 }

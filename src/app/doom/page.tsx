@@ -1,6 +1,6 @@
-import Header from "@/components/pages/mainHeader";
-import Sideleft from "@/components/pages/side-left";
-import Sideright from "@/components/pages/side-right";
+import Header from '@/components/pages/mainHeader'
+import Sideleft from '@/components/pages/side-left'
+import Sideright from '@/components/pages/side-right'
 
 export default function Doom() {
   return (
@@ -9,7 +9,7 @@ export default function Doom() {
       <div className="flex flex-col w-full items-center min-h-[100px]">
         <div
           className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
-          style={{ position: "relative" }}
+          style={{ position: 'relative' }}
         >
           <Header />
         </div>
@@ -18,7 +18,7 @@ export default function Doom() {
             src="https://emupedia.net/emupedia-game-doom1/"
             title="EmuOS"
             className="w-full h-full"
-            style={{ height: "1000px" }}
+            style={{ height: '1000px' }}
           ></iframe>
         </div>
         <h1 className="dark:text-white">Press enter or escape to play c:</h1>
@@ -31,5 +31,5 @@ export default function Doom() {
       </div>
       <Sideright />
     </main>
-  );
+  )
 }
