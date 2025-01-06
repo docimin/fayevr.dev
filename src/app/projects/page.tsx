@@ -93,7 +93,7 @@ export default async function Projects() {
                       <td className="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
                         <div className="flex items-center gap-x-4">
                           <img
-                            src={item.imageId}
+                            src={item.imageId || '/images/placeholder.png'}
                             alt={item.name}
                             className="h-8 w-8 rounded-full bg-secondary-foreground"
                           />
