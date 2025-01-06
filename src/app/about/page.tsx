@@ -170,22 +170,14 @@ export default function About() {
                 <p>
                   <span className="text-primary">Backend Development</span>
                   <br />
-                  at{' '}
-                  <Link
-                    href="https://vr-assets.net/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-red-500"
-                  >
-                    VR-Assets{' '}
-                  </Link>
+                  at <span className="text-red-500">VR-Assets (WIP)</span>
                   <br />
                   2019 - present
                 </p>
               </div>
               <div className="col-span-1">
                 <p>
-                  <span className="text-primary">Developer & Designer</span>
+                  <span className="text-primary">Sysadmin & Developer</span>
                   <br />
                   at{' '}
                   <Link
@@ -194,7 +186,7 @@ export default function About() {
                     rel="noreferrer"
                     className="text-red-500"
                   >
-                    DutchBoxx
+                    DUTCHBOXX
                   </Link>
                   <br />
                   2018 - present

@@ -126,7 +126,7 @@ export default async function Projects() {
                           <div
                             className={cn(
                               statuses[item.status],
-                              'flex-none rounded-full p-1'
+                              'flex-none rounded-full p-1 animate-pulse'
                             )}
                           >
                             <div className="h-1.5 w-1.5 rounded-full bg-current" />

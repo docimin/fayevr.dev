@@ -1,11 +1,9 @@
 import '../../css/globals.css'
-//import { Inter } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import ClickSound from '@/hooks/click'
 import ContextMenuProvider from '@/components/contextMenu'
 import localFont from 'next/font/local'
 
-//const inter = Inter({ subsets: ['latin'] })
 const myFont = localFont({
   src: '../../public/fonts/PixelMplus12-Regular.woff2',
 })
