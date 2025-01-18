@@ -25,11 +25,6 @@ FROM node:22-alpine AS runner
 # Set working directory
 WORKDIR /app
 
-# Debug build arguments
-RUN echo "NEXT_PUBLIC_DOMAIN_BACKEND=${NEXT_PUBLIC_DOMAIN_BACKEND}" && \
-    echo "NEXT_PUBLIC_PROJECT_ID=${NEXT_PUBLIC_PROJECT_ID}" && \
-    echo "API_KEY=${API_KEY}"
-
 # Copy only the necessary files from the builder stage
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
