@@ -1,4 +1,4 @@
-# Use a lightweight Node.js image
+# Use a lightweight Node.js image for the builder stage
 FROM node:22-alpine AS builder
 
 # Set working directory
@@ -37,7 +37,17 @@ RUN corepack enable && corepack prepare pnpm@latest --activate && pnpm install -
 # Expose the port the app will run on
 EXPOSE 3000
 
-# Set environment variables
+# Define build arguments for environment variables
+ARG NEXT_PUBLIC_DOMAIN_BACKEND
+ARG NEXT_PUBLIC_PROJECT_ID
+ARG API_KEY
+
+# Set environment variables for the container
+ENV NEXT_PUBLIC_DOMAIN_BACKEND=${NEXT_PUBLIC_DOMAIN_BACKEND}
+ENV NEXT_PUBLIC_PROJECT_ID=${NEXT_PUBLIC_PROJECT_ID}
+ENV API_KEY=${API_KEY}
+
+# Set the environment to production
 ENV NODE_ENV=production
 
 # Start the Next.js application
