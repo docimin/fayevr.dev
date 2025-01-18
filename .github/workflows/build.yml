@@ -12,6 +12,10 @@ jobs:
   build-and-push:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
+    env: # Env variables needed during build
+      NEXT_PUBLIC_DOMAIN_BACKEND: ${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}}
+      NEXT_PUBLIC_PROJECT_ID: ${{secrets.NEXT_PUBLIC_PROJECT_ID}}
+      API_KEY: ${{secrets.API_KEY}}
 
     steps:
       # Step 1: Checkout the code
