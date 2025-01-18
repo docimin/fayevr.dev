@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug environment variables
+        run: |
+          echo "NEXT_PUBLIC_DOMAIN_BACKEND=${{ secrets.NEXT_PUBLIC_DOMAIN_BACKEND }}"
+          echo "NEXT_PUBLIC_PROJECT_ID=${{ secrets.NEXT_PUBLIC_PROJECT_ID }}"
+          echo "API_KEY=${{ secrets.API_KEY }}"
       # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
