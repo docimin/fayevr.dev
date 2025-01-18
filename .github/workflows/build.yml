@@ -36,9 +36,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install Dependencies
-        run: |
-          corepack enable
-          pnpm install
+        run: pnpm install
 
       # Step 3: Build the Next.js project
       - name: Build Project
