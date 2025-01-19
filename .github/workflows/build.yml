@@ -12,6 +12,10 @@ jobs:
   build-and-push:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
+    env: # Env variables needed during build
+      NEXT_PUBLIC_DOMAIN_BACKEND: ${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}}
+      NEXT_PUBLIC_PROJECT_ID: ${{secrets.NEXT_PUBLIC_PROJECT_ID}}
+      API_KEY: ${{secrets.API_KEY}}
 
     steps:
       - name: Checkout Code
@@ -70,9 +74,9 @@ jobs:
           echo "CMD [\"node\", \"server.js\"]" >> Dockerfile
 
           docker build \
-          --build-arg NEXT_PUBLIC_DOMAIN_BACKEND=${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}} \
-          --build-arg NEXT_PUBLIC_PROJECT_ID=${{secrets.NEXT_PUBLIC_PROJECT_ID}} \
-          --build-arg API_KEY=${{secrets.API_KEY}} \
+          --build-arg NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND \
+          --build-arg NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID \
+          --build-arg API_KEY=$API_KEY \
           -t harbor.fayevr.dev/fleet/fayevr.dev:latest .
 
       # Push the Docker image to Harbor
