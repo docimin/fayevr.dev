@@ -76,7 +76,11 @@ jobs:
           echo "ENV PORT=3000" >> Dockerfile
           echo "CMD [\"node\", \"server.js\"]" >> Dockerfile
 
-          docker build -t harbor.fayevr.dev/fleet/fayevr.dev:latest .
+          docker build \
+          --build-arg NEXT_PUBLIC_DOMAIN_BACKEND=${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}} \
+          --build-arg NEXT_PUBLIC_PROJECT_ID=${{secrets.NEXT_PUBLIC_PROJECT_ID}} \
+          --build-arg API_KEY=${{secrets.API_KEY}} \
+          -t harbor.fayevr.dev/fleet/fayevr.dev:latest .
 
       # Step 5: Push the Docker image to Harbor
       - name: Push Docker Image
