@@ -12,17 +12,11 @@ jobs:
   build-and-push:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
-    env: # Env variables needed during build
-      NEXT_PUBLIC_DOMAIN_BACKEND: ${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}}
-      NEXT_PUBLIC_PROJECT_ID: ${{secrets.NEXT_PUBLIC_PROJECT_ID}}
-      API_KEY: ${{secrets.API_KEY}}
 
     steps:
-      # Step 1: Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js and install dependencies with pnpm
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
@@ -35,14 +29,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Install Dependencies
-        run: pnpm install
-
-      # Step 3: Build the Next.js project
-      - name: Build Project
-        run: pnpm build
-
-      # Step 4: Prepare the Docker image
+      # Prepare the Docker image
       - name: Log in to Harbor Registry
         uses: docker/login-action@v3
         with:
@@ -88,6 +75,6 @@ jobs:
           --build-arg API_KEY=${{secrets.API_KEY}} \
           -t harbor.fayevr.dev/fleet/fayevr.dev:latest .
 
-      # Step 5: Push the Docker image to Harbor
+      # Push the Docker image to Harbor
       - name: Push Docker Image
         run: docker push harbor.fayevr.dev/fleet/fayevr.dev:latest
