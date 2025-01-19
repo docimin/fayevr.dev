@@ -50,12 +50,25 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: harbor.fayevr.dev/fleet/fayevr.dev:latest
-          build-args: |
-              NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND
-              NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID
-              API_KEY=$API_KEY
+      - name: Build Docker Image
+        run: |
+          echo "FROM node:18-alpine AS base" > Dockerfile
+          echo "FROM base AS deps" >> Dockerfile
+          echo "RUN apk add --no-cache libc6-compat" >> Dockerfile
+          echo "WORKDIR /app" >> Dockerfile
+          echo "ENV NODE_ENV=production" >> Dockerfile
+          echo "RUN addgroup --system --gid 1001 nodejs" >> Dockerfile
+          echo "RUN adduser --system --uid 1001 nextjs" >> Dockerfile
+          echo "COPY --from=builder /app/public ./public" >> Dockerfile
+          echo "COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./" >> Dockerfile
+          echo "COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static" >> Dockerfile
+          echo "USER nextjs" >> Dockerfile
+          echo "EXPOSE 3000" >> Dockerfile
+          echo "ENV PORT=3000" >> Dockerfile
+          echo "CMD [\"node\", \"server.js\"]" >> Dockerfile
+
+          docker build -t harbor.fayevr.dev/fleet/fayevr.dev:latest .
+
+      # Step 5: Push the Docker image to Harbor
+      - name: Push Docker Image
+        run: docker push harbor.fayevr.dev/fleet/fayevr.dev:latest
