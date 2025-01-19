@@ -60,6 +60,12 @@ jobs:
           echo "RUN corepack enable pnpm && pnpm i --frozen-lockfile" >> Dockerfile
           echo "FROM base AS builder" >> Dockerfile
           echo "WORKDIR /app" >> Dockerfile
+          echo "ARG NEXT_PUBLIC_DOMAIN_BACKEND" >> Dockerfile
+          echo "ARG NEXT_PUBLIC_PROJECT_ID" >> Dockerfile
+          echo "ARG API_KEY" >> Dockerfile
+          echo "ENV NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND" >> Dockerfile
+          echo "ENV NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID" >> Dockerfile
+          echo "ENV API_KEY=$API_KEY" >> Dockerfile
           echo "COPY --from=deps /app/node_modules ./node_modules" >> Dockerfile
           echo "COPY . ." >> Dockerfile
           echo "RUN corepack enable pnpm && pnpm run build" >> Dockerfile
