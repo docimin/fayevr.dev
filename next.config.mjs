@@ -2,7 +2,11 @@
 const nextConfig = {
   output: 'standalone',
   images: {
-    domains: ['cdn.discordapp.com', 'dash.fayevr.dev'],
+    remotePatterns: [
+      'cdn.discordapp.com',
+      'cdn.discord.com',
+      'dash.fayevr.dev',
+    ],
   },
 }
 
