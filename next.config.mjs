@@ -3,9 +3,21 @@ const nextConfig = {
   output: 'standalone',
   images: {
     remotePatterns: [
-      'cdn.discordapp.com',
-      'cdn.discord.com',
-      'dash.fayevr.dev',
+      {
+        protocol: 'https',
+        hostname: 'cdn.discordapp.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.discord.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dash.fayevr.dev',
+        pathname: '**',
+      },
     ],
   },
 }
