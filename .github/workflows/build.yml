@@ -57,7 +57,7 @@ jobs:
           echo "RUN apk add --no-cache libc6-compat" >> Dockerfile
           echo "WORKDIR /app" >> Dockerfile
           echo "COPY package.json pnpm-lock.yaml ./" >> Dockerfile
-          echo "corepack enable pnpm && pnpm i --frozen-lockfile" >> Dockerfile
+          echo "pnpm i --frozen-lockfile" >> Dockerfile
           echo "FROM base AS builder" >> Dockerfile
           echo "WORKDIR /app" >> Dockerfile
           echo "COPY --from=deps /app/node_modules ./node_modules" >> Dockerfile
