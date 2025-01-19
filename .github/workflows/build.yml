@@ -55,3 +55,7 @@ jobs:
         with:
           push: true
           tags: harbor.fayevr.dev/fleet/fayevr.dev:latest
+          build-args: |
+              NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND
+              NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID
+              API_KEY=$API_KEY
