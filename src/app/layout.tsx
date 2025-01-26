@@ -2,7 +2,13 @@ import '../../css/globals.css'
 import { Providers } from '@/components/providers'
 import ClickSound from '@/hooks/click'
 import ContextMenuProvider from '@/components/contextMenu'
+import localFont from 'next/font/local'
 import React from 'react'
+
+const pixelFont = localFont({
+  src: '../../public/fonts/PixelMplus12-Regular.woff2',
+  display: 'swap',
+})
 
 export const metadata = {
   title: {
@@ -42,7 +48,7 @@ export default function RootLayout({
   return (
     <html className="h-full" suppressHydrationWarning>
       <body
-        className={`flex min-h-full bg-white antialiased dark:bg-black tracking-widest`}
+        className={`${pixelFont.className} flex min-h-full bg-white antialiased dark:bg-black tracking-widest`}
       >
         <Providers>
           <ContextMenuProvider>

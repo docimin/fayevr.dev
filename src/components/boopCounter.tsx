@@ -5,7 +5,7 @@ import { client } from '@/app/appwrite-client'
 import { useEffect, useState } from 'react'
 import { BoopRealtimeCounter } from '@/lib/types/counters'
 
-export default function BoopCounter({ count }) {
+export default function BoopCounter({ count }: { count: number }) {
   const [boopCount, setBoopCount] = useState<number>(count)
 
   async function handleSubmit() {

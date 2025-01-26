@@ -8,11 +8,14 @@ import {
   ContextMenuTrigger,
 } from '@/components/ui/context-menu'
 import { SiGithub } from '@icons-pack/react-simple-icons'
-import Image from 'next/image'
 import * as React from 'react'
 import Link from 'next/link'
 
-export default function ContextMenuProvider({ children }) {
+export default function ContextMenuProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <ContextMenu>
       <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>

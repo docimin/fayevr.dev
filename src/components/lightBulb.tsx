@@ -11,7 +11,7 @@ const LightBulb = () => {
     videoRef.current.src =
       resolvedTheme === 'light' ? '/files/lightoff.mp4' : '/files/lighton.mp4'
     videoRef.current.load()
-  }, [])
+  }, [resolvedTheme])
 
   const handleButtonClick = () => {
     const video = videoRef.current
