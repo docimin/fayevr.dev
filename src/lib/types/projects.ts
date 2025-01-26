@@ -11,6 +11,7 @@ export interface ProjectsDocumentsType extends Models.Document {
   branch: string
   customUrl: string
   imageId: string
+  private: boolean
   status:
     | 'Completed'
     | 'Online'

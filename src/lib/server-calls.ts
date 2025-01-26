@@ -1,4 +1,4 @@
-import { databases } from '@/app/appwrite-server'
+import { databases } from '@/app/appwrite-client'
 import { ProjectsType } from '@/lib/types/projects'
 
 export async function getProjects() {
