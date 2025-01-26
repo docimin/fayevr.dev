@@ -160,8 +160,15 @@
   }
 }
 
+@font-face {
+  font-family: 'PixelMplus12', monospace;
+  src: url('../public/fonts/PixelMplus12-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  font-family: 'Inter', sans-serif;
+  font-family: PixelMplus12, monospace;
   font-weight: 500;
 }
 
