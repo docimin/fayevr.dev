@@ -4,6 +4,8 @@ import Sideleft from '@/components/pages/side-left'
 import Sideright from '@/components/pages/side-right'
 import Link from 'next/link'
 
+export const runtime = 'edge'
+
 export default function Suggestions() {
   return (
     <div>
