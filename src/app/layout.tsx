@@ -5,7 +5,7 @@ import ContextMenuProvider from '@/components/contextMenu'
 import localFont from 'next/font/local'
 
 const myFont = localFont({
-  src: '../../public/fonts/PixelMplus12-Bold.woff2',
+  src: '../../public/fonts/PixelMplus12-Regular.woff2',
 })
 
 export const metadata = {
