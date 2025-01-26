@@ -1,3 +1,4 @@
+'use client'
 import { databases } from '@/app/appwrite-client'
 import { ProjectsType } from '@/lib/types/projects'
 
