@@ -13,12 +13,15 @@ export default function BoopCounter({ count }) {
   }
 
   useEffect(() => {
-    client.subscribe(
+    const subscription = client.subscribe(
       'databases.main.collections.counters.documents.mainBoop',
       (response: BoopRealtimeCounter) => {
         setBoopCount(response.payload.boop)
       }
     )
+    return () => {
+      subscription()
+    }
   }, [])
 
   return (

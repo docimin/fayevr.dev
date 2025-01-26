@@ -4,7 +4,7 @@ import ClickSound from '@/hooks/click'
 import ContextMenuProvider from '@/components/contextMenu'
 import localFont from 'next/font/local'
 
-const myFont = localFont({
+const pixelFont = localFont({
   src: '../../public/fonts/PixelMplus12-Regular.woff2',
 })
 
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="h-full" suppressHydrationWarning>
       <body
-        className={`${myFont.className} flex min-h-full bg-white antialiased dark:bg-black tracking-widest`}
+        className={`${pixelFont.className} flex min-h-full bg-white antialiased dark:bg-black tracking-widest`}
       >
         <Providers>
           <ContextMenuProvider>
