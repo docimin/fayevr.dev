@@ -10,7 +10,6 @@ export default function ProjectsClient() {
   React.useEffect(() => {
     const fetchProjects = async () => {
       const data = await getProjects()
-      console.log(data)
       setProjects(data)
     }
     fetchProjects().then()
