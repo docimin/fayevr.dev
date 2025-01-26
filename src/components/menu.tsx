@@ -144,7 +144,7 @@ export default function MenuComponent({ open, setOpen }) {
                   Type{' '}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-indigo-600 text-indigo-600'
+                      'mx-1 flex h-5 w-5 items-center justify-center rounded-sm border bg-white font-semibold sm:mx-2 border-indigo-600 text-indigo-600'
                     )}
                   >
                     #
@@ -153,7 +153,7 @@ export default function MenuComponent({ open, setOpen }) {
                   <span className="hidden sm:inline">to view projects,</span>
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2 border-gray-400 text-gray-900'
+                      'mx-1 flex h-5 w-5 items-center justify-center rounded-sm border bg-white font-semibold sm:mx-2 border-gray-400 text-gray-900'
                     )}
                   >
                     &gt;
@@ -161,7 +161,7 @@ export default function MenuComponent({ open, setOpen }) {
                   for pages, and{' '}
                   <kbd
                     className={classNames(
-                      'mx-1 flex h-5 w-5 items-center justify-center rounded border border-gray-400 bg-white font-semibold sm:mx-2'
+                      'mx-1 flex h-5 w-5 items-center justify-center rounded-sm border border-gray-400 bg-white font-semibold sm:mx-2'
                     )}
                   >
                     ?
