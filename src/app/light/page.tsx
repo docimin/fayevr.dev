@@ -12,7 +12,7 @@ export default function Home() {
             <LightBulb />
             <Link href="/">
               <button
-                className="px-3.5 py-2.5 border-2 mr-4 border-black dark:border-white rounded shadow-button shadow-black dark:shadow-white text-black dark:text-white"
+                className="px-3.5 py-2.5 border-2 mr-4 border-black dark:border-white rounded-sm shadow-button shadow-black dark:shadow-white text-black dark:text-white"
                 style={{
                   position: 'absolute',
                   top: '10%',

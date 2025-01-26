@@ -28,7 +28,7 @@ export default function EF() {
           ></div>
           <button
             type="button"
-            className="px-3.5 py-2.5 border-2 border-black dark:border-white dark:text-white text-black rounded shadow-button shadow-black dark:shadow-white"
+            className="px-3.5 py-2.5 border-2 border-black dark:border-white dark:text-white text-black rounded-sm shadow-button shadow-black dark:shadow-white"
             style={{ transition: 'box-shadow 0.2s ease-in-out' }}
             onClick={handleButtonClick}
           >

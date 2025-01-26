@@ -31,20 +31,20 @@ export default function ProjectsClient() {
       <td className="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
         <div className="flex items-center gap-x-4">
           <div className="h-8 w-8 rounded-full bg-gray-300 dark:bg-gray-700 animate-pulse" />
-          <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 animate-pulse rounded" />
+          <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-sm" />
         </div>
       </td>
       <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8">
-        <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 animate-pulse rounded" />
+        <div className="h-4 w-24 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-sm" />
       </td>
       <td className="py-4 pl-0 pr-4 text-sm leading-6 sm:pr-8 lg:pr-20">
-        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded" />
+        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-sm" />
       </td>
       <td className="hidden py-4 pl-0 pr-4 sm:table-cell sm:pr-8">
-        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded" />
+        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-sm" />
       </td>
       <td className="hidden py-4 pl-0 pr-4 text-right text-sm leading-6 sm:table-cell sm:pr-6 lg:pr-8">
-        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded" />
+        <div className="h-4 w-16 bg-gray-300 dark:bg-gray-700 animate-pulse rounded-sm" />
       </td>
     </tr>
   ))

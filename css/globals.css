@@ -1,6 +1,117 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --shadow-button: -5px 5px 0px 0px rgba(0, 98, 90, 0.4);
+  --shadow-button-half: -2.5px 2.5px 0px 0px rgba(0, 98, 90, 0.4);
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --min-width-0: 0;
+  --min-width-44: 11rem;
+  --min-width-1\/4: 25%;
+  --min-width-1\/3: 33%;
+  --min-width-1\/2: 50%;
+  --min-width-2\/3: 66%;
+  --min-width-3\/4: 75%;
+  --min-width-2xl: 42rem;
+  --min-width-3xl: 48rem;
+  --min-width-4xl: 56rem;
+  --min-width-5xl: 64rem;
+  --min-width-6xl: 72rem;
+  --min-width-7xl: 80rem;
+  --min-width-8xl: 88rem;
+  --min-width-9xl: 96rem;
+
+  --container-0: 0;
+  --container-44: 11rem;
+  --container-1\/4: 25%;
+  --container-1\/3: 33%;
+  --container-1\/2: 50%;
+  --container-2\/3: 66%;
+  --container-3\/4: 75%;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+  --container-8xl: 88rem;
+  --container-9xl: 96rem;
+
+  --animate-typing: typing 1.5s steps(30), blink 0.7s infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes typing {
+    0% {
+      width: 0%;
+      visibility: hidden;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: white;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   :root {
