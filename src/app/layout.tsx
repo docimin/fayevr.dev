@@ -3,9 +3,11 @@ import { Providers } from '@/components/providers'
 import ClickSound from '@/hooks/click'
 import ContextMenuProvider from '@/components/contextMenu'
 import localFont from 'next/font/local'
+import React from 'react'
 
 const pixelFont = localFont({
   src: '../../public/fonts/PixelMplus12-Regular.woff2',
+  display: 'swap',
 })
 
 export const metadata = {
@@ -38,7 +40,11 @@ export const metadata = {
   metadataBase: new URL('https://fayevr.dev'),
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html className="h-full" suppressHydrationWarning>
       <body

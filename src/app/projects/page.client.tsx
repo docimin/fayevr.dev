@@ -3,9 +3,10 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { getProjects } from '@/lib/server-calls'
 import React from 'react'
+import { ProjectsDocumentsType } from '@/lib/types/projects'
 
 export default function ProjectsClient() {
-  const [projects, setProjects] = React.useState([])
+  const [projects, setProjects] = React.useState<ProjectsDocumentsType[]>([])
 
   React.useEffect(() => {
     const fetchProjects = async () => {
