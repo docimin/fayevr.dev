@@ -59,13 +59,9 @@ function AvatarStatus() {
         height={75}
       />
       {showText && (
-        <span
-          className={`absolute left-0 bottom-0.5 block h-4 w-4 rounded-full bg-${color}`}
-        >
-          <p className="absolute w-[100px] translate-x-[-70%] translate-y-[-80%]">
-            boop :3
-          </p>
-        </span>
+        <p className="absolute w-[100px] translate-x-[-100%] translate-y-[-10%]">
+          boop :3
+        </p>
       )}
       <span className="absolute left-2 bottom-2">
         <span className="relative flex h-3 w-3">
