@@ -36,9 +36,6 @@ export default function ContextMenuProvider({
         <Link href={'/'} passHref>
           <ContextMenuItem inset>Home</ContextMenuItem>
         </Link>
-        <Link href={'/about'} passHref>
-          <ContextMenuItem inset>About</ContextMenuItem>
-        </Link>
         <Link href={'/projects'} passHref>
           <ContextMenuItem inset>Projects</ContextMenuItem>
         </Link>

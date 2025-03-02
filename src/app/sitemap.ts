@@ -7,7 +7,7 @@ export default function sitemap() {
       priority: 1,
     },
     {
-      url: `https://fayevr.dev/about`,
+      url: `https://fayevr.dev/projects`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,

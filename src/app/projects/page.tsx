@@ -1,10 +1,7 @@
-import Sideleft from '@/components/pages/side-left'
-import Sideright from '@/components/pages/side-right'
-import { getProjects } from '@/lib/server-calls'
 import Header from '@/components/pages/mainHeader'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
 import ProjectsClient from '@/app/projects/page.client'
+import SideLeft from '@/components/pages/side-left'
+import SideRight from '@/components/pages/side-right'
 
 export const metadata = {
   title: 'Projects',
@@ -17,7 +14,7 @@ export default async function Projects() {
   return (
     <div>
       <main className="flex relative w-full h-full overflow-hidden">
-        <Sideleft />
+        <SideLeft />
         <div className="flex flex-col w-full items-center min-h-[100px]">
           <div
             className="flex flex-col w-full items-center pb-2.5 border-b dark:border-white border-black"
@@ -32,7 +29,7 @@ export default async function Projects() {
             <ProjectsClient />
           </div>
         </div>
-        <Sideright />
+        <SideRight />
       </main>
     </div>
   )

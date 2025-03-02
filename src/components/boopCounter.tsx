@@ -1,37 +1,21 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { sendBoop } from '@/lib/actions/sendBoop'
-import { client } from '@/app/appwrite-client'
-import { useEffect, useState } from 'react'
-import { BoopRealtimeCounter } from '@/lib/types/counters'
+import { useEffect } from 'react'
 import { getBoops } from '@/lib/server-calls'
 
-export default function BoopCounter() {
-  const [boopCount, setBoopCount] = useState<number>(null)
-
+export default function BoopCounter({ boopCount, setBoopCount }) {
   useEffect(() => {
     const getBoopCount = async () => {
       const data = await getBoops()
       setBoopCount(data)
     }
     getBoopCount().then()
-  }, [])
+  }, [setBoopCount])
 
   async function handleSubmit() {
     await sendBoop()
   }
-
-  useEffect(() => {
-    const subscription = client.subscribe(
-      'databases.main.collections.counters.documents.mainBoop',
-      (response: BoopRealtimeCounter) => {
-        setBoopCount(response.payload.boop)
-      }
-    )
-    return () => {
-      subscription()
-    }
-  }, [])
 
   return (
     <div className={'text-center'}>

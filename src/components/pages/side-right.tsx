@@ -3,7 +3,7 @@ import AvatarStatus from '../statusFetch'
 import Link from 'next/link'
 import { LightbulbIcon } from 'lucide-react'
 
-const Sideright = () => {
+const SideRight = () => {
   return (
     <div className="hidden md:flex flex-col">
       <div className="min-w-[100px] min-h-[75px] border-b border-l dark:border-white border-black text-black dark:text-white">
@@ -123,4 +123,4 @@ const Sideright = () => {
   )
 }
 
-export default Sideright
+export default SideRight

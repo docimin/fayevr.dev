@@ -13,11 +13,6 @@ export default function Header() {
           home
         </button>
       </Link>
-      <Link href={'/about'}>
-        <button type="button" className={`${buttonClass} ${commonStyles}`}>
-          about
-        </button>
-      </Link>
       <Link href={'/projects'}>
         <button type="button" className={`${buttonClass} ${commonStyles}`}>
           projects

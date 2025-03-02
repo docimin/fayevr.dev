@@ -5,7 +5,7 @@ import MenuComponent from '../menu'
 import { MenuIcon } from 'lucide-react'
 import { SiDiscord, SiGithub, SiX } from '@icons-pack/react-simple-icons'
 
-const Sideleft = () => {
+const SideLeft = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -199,4 +199,4 @@ const Sideleft = () => {
   )
 }
 
-export default Sideleft
+export default SideLeft
