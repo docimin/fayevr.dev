@@ -8,8 +8,6 @@ export const metadata = {
   description: "Projects I've worked on in the past or current.",
 }
 
-export const runtime = 'edge'
-
 export default async function Projects() {
   return (
     <div>

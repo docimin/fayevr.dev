@@ -1,8 +1,6 @@
 import LightBulb from '@/components/lightBulb'
 import Link from 'next/link'
 
-export const runtime = 'edge'
-
 export default function Home() {
   return (
     <div>

@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
 
-export const runtime = 'edge'
-
 export async function GET() {
   try {
     const fetchURL = `https://api1.fayevr.dev/getstatus?member=196742608846979072`
