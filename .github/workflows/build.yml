@@ -1,89 +1,40 @@
-name: Build and Push Next.js to Harbor
+name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-push:
-    name: Build and Push Docker Image
     runs-on: ubuntu-latest
-    env: # Env variables needed during build
-      NEXT_PUBLIC_DOMAIN_BACKEND: ${{secrets.NEXT_PUBLIC_DOMAIN_BACKEND}}
-      NEXT_PUBLIC_PROJECT_ID: ${{secrets.NEXT_PUBLIC_PROJECT_ID}}
-      API_KEY: ${{secrets.API_KEY}}
-
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          version: 10
-          run_install: false
-
-      - name: Install Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Get version from package.json
+      - name: Extract version from package.json
         id: get_version
-        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+        run: |
+          VERSION=$(jq -r .version package.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      # Prepare the Docker image
       - name: Log in to Harbor Registry
         uses: docker/login-action@v3
         with:
-          registry: harbor.fayevr.dev
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ${{ secrets.HARBOR_REGISTRY }}
+          username: ${{ secrets.HARBOR_USERNAME }}
+          password: ${{ secrets.HARBOR_PASSWORD }}
 
-      - name: Build Docker Image
+      - name: Build and push Docker image
         run: |
-          echo "FROM node:18-alpine AS base" > Dockerfile
-          echo "FROM base AS deps" >> Dockerfile
-          echo "RUN apk add --no-cache libc6-compat" >> Dockerfile
-          echo "WORKDIR /app" >> Dockerfile
-          echo "COPY package.json pnpm-lock.yaml ./" >> Dockerfile
-          echo "RUN corepack enable pnpm && pnpm i --frozen-lockfile" >> Dockerfile
-          echo "FROM base AS builder" >> Dockerfile
-          echo "WORKDIR /app" >> Dockerfile
-
-          echo "ARG NEXT_PUBLIC_DOMAIN_BACKEND" >> Dockerfile
-          echo "ARG NEXT_PUBLIC_PROJECT_ID" >> Dockerfile
-          echo "ARG API_KEY" >> Dockerfile
-          echo "ENV NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND" >> Dockerfile
-          echo "ENV NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID" >> Dockerfile
-          echo "ENV API_KEY=$API_KEY" >> Dockerfile
-
-          echo "COPY --from=deps /app/node_modules ./node_modules" >> Dockerfile
-          echo "COPY . ." >> Dockerfile
-          echo "RUN corepack enable pnpm && pnpm run build" >> Dockerfile
-          echo "FROM base AS runner" >> Dockerfile
-          echo "WORKDIR /app" >> Dockerfile
-          echo "ENV NODE_ENV=production" >> Dockerfile
-          echo "RUN addgroup --system --gid 1001 nodejs" >> Dockerfile
-          echo "RUN adduser --system --uid 1001 nextjs" >> Dockerfile
-          echo "COPY --from=builder /app/public ./public" >> Dockerfile
-          echo "COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./" >> Dockerfile
-          echo "COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static" >> Dockerfile
-          echo "USER nextjs" >> Dockerfile
-          echo "EXPOSE 3000" >> Dockerfile
-          echo "ENV PORT=3000" >> Dockerfile
-          echo "CMD [\"node\", \"server.js\"]" >> Dockerfile
-
           docker build \
-          --build-arg NEXT_PUBLIC_DOMAIN_BACKEND=$NEXT_PUBLIC_DOMAIN_BACKEND \
-          --build-arg NEXT_PUBLIC_PROJECT_ID=$NEXT_PUBLIC_PROJECT_ID \
-          --build-arg API_KEY=$API_KEY \
-          -t harbor.fayevr.dev/fleet/fayevr.dev:${{ env.VERSION }} .
-
-      # Push the Docker image to Harbor
-      - name: Push Docker Image
-        run: docker push harbor.fayevr.dev/fleet/fayevr.dev:${{ env.VERSION }}
+            --build-arg NEXT_PUBLIC_DOMAIN_BACKEND=${{ secrets.NEXT_PUBLIC_DOMAIN_BACKEND }} \
+            --build-arg NEXT_PUBLIC_PROJECT_ID=${{ secrets.NEXT_PUBLIC_PROJECT_ID }} \
+            -t ${{ secrets.HARBOR_REGISTRY }}/fleet/fayevr-dev:${{ steps.get_version.outputs.version }} \
+            -t ${{ secrets.HARBOR_REGISTRY }}/fleet/fayevr-dev:latest \
+            -f Dockerfile .
+          docker push ${{ secrets.HARBOR_REGISTRY }}/fleet/fayevr-dev:${{ steps.get_version.outputs.version }}
+          docker push ${{ secrets.HARBOR_REGISTRY }}/fleet/fayevr-dev:latest

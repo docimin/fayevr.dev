@@ -1,6 +1,14 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
+
+# Add build-time arguments
+ARG NEXT_PUBLIC_DOMAIN_BACKEND
+ARG NEXT_PUBLIC_PROJECT_ID
+
+# Set them as environment variables for later stages
+ENV NEXT_PUBLIC_DOMAIN_BACKEND=${NEXT_PUBLIC_DOMAIN_BACKEND}
+ENV NEXT_PUBLIC_PROJECT_ID=${NEXT_PUBLIC_PROJECT_ID}
 
 # Install dependencies only when needed
 FROM base AS deps
