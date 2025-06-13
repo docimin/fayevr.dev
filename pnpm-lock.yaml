@@ -97,7 +97,7 @@ importers:
         specifier: ^19.1.8
         version: 19.1.8
       tailwindcss:
-        specifier: ^4.1.10
+        specifier: ^4
         version: 4.1.10
       wrangler:
         specifier: ^4.19.2
