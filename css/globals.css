@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -38,6 +38,23 @@
 
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Chrome grid: side rails are one rail wide, their end caps one cell tall. */
+  --spacing-rail: 100px;
+  --spacing-rail-cell: 75px;
+
+  --font-display: PixelMplus12, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-glass: hsl(var(--background) / 0.72);
+
+  --shadow-elevation-1:
+    0 1px 2px rgb(0 0 0 / 0.16), 0 2px 8px rgb(0 0 0 / 0.12);
+  --shadow-elevation-2:
+    0 2px 4px rgb(0 0 0 / 0.18), 0 8px 24px rgb(0 0 0 / 0.16);
+  --shadow-elevation-3:
+    0 4px 8px rgb(0 0 0 / 0.2), 0 16px 48px rgb(0 0 0 / 0.22);
+  --shadow-glow: 0 0 24px hsl(var(--primary) / 0.35);
 
   --min-width-0: 0;
   --min-width-44: 11rem;
@@ -161,19 +178,30 @@
 }
 
 @font-face {
-  font-family: 'PixelMplus12', monospace;
-  src: url('../public/fonts/PixelMplus12-Regular.woff2') format('woff2');
+  font-family: "PixelMplus12", monospace;
+  src: url("/fonts/PixelMplus12-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-variable.woff2") format("woff2");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
-  font-family: PixelMplus12, monospace;
+  font-family: var(--font-body);
   font-weight: 500;
 }
 
-button:hover {
-  box-shadow: -2.5px 2.5px 0px 0px;
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -228,8 +256,8 @@ button:hover {
 }
 
 .e {
-  color: inherit !important;
-  text-decoration: none !important;
+  color: inherit;
+  text-decoration: none;
   cursor: default;
 }
 
@@ -267,4 +295,39 @@ button:hover {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.circuit-node {
+  opacity: 0.25;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .circuit-node {
+    animation: circuit-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes circuit-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  [data-reveal][data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
 }
