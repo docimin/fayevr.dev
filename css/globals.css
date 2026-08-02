@@ -306,26 +306,6 @@ button:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.circuit-node {
-  opacity: 0.25;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .circuit-node {
-    animation: circuit-pulse 3s ease-in-out infinite;
-  }
-}
-
-@keyframes circuit-pulse {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.9;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
     opacity: 0;
@@ -338,5 +318,94 @@ button:hover {
   [data-reveal][data-revealed="true"] {
     opacity: 1;
     transform: none;
+  }
+}
+
+.doom-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.06) 0px,
+    rgb(255 255 255 / 0.06) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.doom-crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgb(0 0 0 / 0.55) 100%
+  );
+}
+
+.doom-cursor {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .doom-scanlines {
+    animation: doom-scan 6s linear infinite;
+  }
+
+  .doom-flicker {
+    animation: doom-flicker 3.2s steps(1) infinite;
+  }
+
+  .doom-type {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: doom-type 1.6s steps(16) 1 both;
+  }
+
+  .doom-cursor {
+    animation: doom-blink 1s steps(1) infinite;
+  }
+}
+
+@keyframes doom-scan {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 24px;
+  }
+}
+
+/* steps(1) so it snaps between levels like a failing tube, never a smooth fade */
+@keyframes doom-flicker {
+  0%,
+  42%,
+  46%,
+  74%,
+  100% {
+    opacity: 1;
+  }
+  44%,
+  76% {
+    opacity: 0.35;
+  }
+  78% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes doom-type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes doom-blink {
+  50% {
+    opacity: 0;
   }
 }

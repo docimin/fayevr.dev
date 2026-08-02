@@ -4,11 +4,28 @@ import { useTheme } from '@/components/theme/ThemeProvider'
 const LightBulb = () => {
   const { theme, setTheme } = useTheme()
   const videoRef = useRef<HTMLVideoElement>(null)
+  const isPlayingRef = useRef(false)
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([])
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+
+  // Navigating away mid-animation would otherwise leave the theme flip and the
+  // re-enable pending, firing setState on an unmounted component.
+  useEffect(() => {
+    const timers = timersRef
+    return () => {
+      for (const id of timers.current) clearTimeout(id)
+      timers.current = []
+    }
+  }, [])
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
+
+    // The click handler flips the theme mid-clip, which re-runs this effect.
+    // load() aborts playback, so skipping it here is what lets the animation
+    // finish; the handler swaps the source itself once the clip is done.
+    if (isPlayingRef.current) return
 
     video.src = theme === 'light' ? '/files/lightoff.mp4' : '/files/lighton.mp4'
     video.load()
@@ -19,6 +36,7 @@ const LightBulb = () => {
     if (!video) return
 
     if (video.paused) {
+      isPlayingRef.current = true
       video.play()
 
       // Disable button
@@ -26,19 +44,24 @@ const LightBulb = () => {
 
       // Change theme after 6 seconds
       const newTheme = theme === 'light' ? 'dark' : 'light'
-      setTimeout(() => {
-        setTheme(newTheme)
-      }, 6150)
+      timersRef.current.push(
+        setTimeout(() => {
+          setTheme(newTheme)
+        }, 6150)
+      )
 
       // Change video after 10 seconds
-      setTimeout(() => {
-        video.src =
-          newTheme === 'light' ? '/files/lightoff.mp4' : '/files/lighton.mp4'
-        video.load()
+      timersRef.current.push(
+        setTimeout(() => {
+          isPlayingRef.current = false
+          video.src =
+            newTheme === 'light' ? '/files/lightoff.mp4' : '/files/lighton.mp4'
+          video.load()
 
-        // Re-enable button
-        setIsButtonDisabled(false)
-      }, 10000) // Changed the delay to 10 seconds
+          // Re-enable button
+          setIsButtonDisabled(false)
+        }, 10000) // Changed the delay to 10 seconds
+      )
     }
   }
 

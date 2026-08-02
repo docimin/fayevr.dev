@@ -41,7 +41,7 @@ function EF() {
           {showEnglish && (
             <span
               id="english"
-              className="text-red-500 pt-4 text-3xl text-center"
+              className="text-red-500 pt-4 text-xl sm:text-3xl text-center"
             >
               Sprich deutsch du Hurensohn!
             </span>

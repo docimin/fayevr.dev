@@ -38,12 +38,12 @@ function Home() {
           </div>
           <div className="flex flex-col w-full container gap-8 pt-10 p-4">
             <div ref={heroRef} data-reveal className={panelClass}>
-              <h1 className="text-6xl font-bold dark:text-white text-black">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold dark:text-white text-black">
                 <span className="text-primary">function</span> about
                 <span className="text-primary">( ) </span>&#123;
               </h1>
               <div className="pt-10">
-                <h3 className="text-2xl text-black dark:text-white">
+                <h3 className="text-xl sm:text-2xl text-black dark:text-white">
                   Download my{' '}
                   <Button
                     type="button"
@@ -55,14 +55,14 @@ function Home() {
                 </h3>
               </div>
               <div className="pt-10">
-                <h3 className="text-2xl text-black dark:text-white">
+                <h3 className="text-xl sm:text-2xl text-black dark:text-white">
                   I&#39;m a{' '}
                   <span className="text-primary">full-stack developer</span>{' '}
                   with a passion for{' '}
                   <span className="text-primary">design</span> and{' '}
                   <span className="text-primary">technology</span>.
                 </h3>
-                <span className="text-xl text-black dark:text-white">
+                <span className="text-base sm:text-xl text-black dark:text-white">
                   &#47;&#47; {new Date().getFullYear() - 2014} years of
                   developing experience
                 </span>
@@ -71,7 +71,7 @@ function Home() {
 
             <div ref={stackRef} data-reveal className={panelClass}>
               <div className="flex flex-col items-center mb-8">
-                <h2 className="text-3xl font-bold tracking-tight mb-2 text-black dark:text-white">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2 text-black dark:text-white">
                   Stack
                 </h2>
                 <p className="text-muted-foreground text-center max-w-2xl">
@@ -82,10 +82,10 @@ function Home() {
             </div>
 
             <div ref={experienceRef} data-reveal className={panelClass}>
-              <h3 className="text-2xl text-black dark:text-white">
+              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
                 Experience
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>
                     <span className="text-primary">Sysadmin & Developer</span>
@@ -116,8 +116,10 @@ function Home() {
             </div>
 
             <div ref={languagesRef} data-reveal className={panelClass}>
-              <h3 className="text-2xl text-black dark:text-white">Languages</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
+              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+                Languages
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>
                     &#47;&#47; fluent
@@ -147,10 +149,10 @@ function Home() {
             </div>
 
             <div ref={busyRef} data-reveal className={panelClass}>
-              <h3 className="text-2xl text-black dark:text-white">
+              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
                 Also busy with
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>My dog barking</p>
                 </div>
@@ -170,7 +172,7 @@ function Home() {
             </div>
 
             <div>
-              <h1 className="text-6xl font-bold pb-20 dark:text-white text-black">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pb-20 dark:text-white text-black">
                 <span>&#125;</span>
               </h1>
             </div>

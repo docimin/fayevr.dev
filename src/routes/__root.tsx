@@ -7,7 +7,6 @@ import {
 import type { ReactNode } from 'react'
 import { CommandPaletteProvider } from '../components/CommandPaletteProvider'
 import ContextMenuProvider from '../components/ContextMenuProvider'
-import CircuitFieldMount from '../components/circuit/CircuitFieldMount'
 import MobileNav from '../components/nav/MobileNav'
 import { ThemeProvider } from '../components/theme/ThemeProvider'
 import { THEME_SCRIPT } from '../components/theme/theme-script'
@@ -61,9 +60,8 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       {/* text-foreground is the baseline: without it everything inherits the UA
-          default black, which is invisible on dark-mode glass panels. */}
+          default black, which is invisible in dark mode. */}
       <body className="flex min-h-full bg-white text-foreground antialiased dark:bg-black tracking-widest">
-        <CircuitFieldMount />
         <ThemeProvider>
           <ContextMenuProvider>
             <CommandPaletteProvider>

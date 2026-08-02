@@ -20,7 +20,7 @@ function Terms() {
             <Header />
           </div>
           <div className="flex flex-col w-full items-center pt-10">
-            <div className="block container">
+            <div className="block container px-4 break-words">
               <h1 className="text-4xl">Terms of Service</h1>
               <Link className="text-primary" to="/projects/suggestions-bot">
                 <span>Suggestions Bot</span>

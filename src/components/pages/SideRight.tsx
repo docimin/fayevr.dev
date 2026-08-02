@@ -5,7 +5,7 @@ import StatusAvatar from '../StatusAvatar'
 const SideRight = () => {
   return (
     <div className="hidden md:flex flex-col">
-      <div className="min-w-[100px] min-h-[75px] border-b border-l dark:border-white border-black text-black dark:text-white">
+      <div className="flex min-w-[100px] min-h-[75px] items-center justify-center border-b border-l dark:border-white border-black text-black dark:text-white">
         <StatusAvatar />
       </div>
       <div className="flex flex-col justify-between items-center min-w-[100px] h-full py-3 border-l border-r border-black dark:border-white">

@@ -36,12 +36,12 @@ function Projects() {
             <div
               ref={listRef}
               data-reveal
-              className="relative rounded-lg border bg-glass p-6 shadow-elevation-2 backdrop-blur-md md:p-10"
+              className="relative rounded-lg border bg-glass p-6 shadow-elevation-2 backdrop-blur-md lg:p-10"
             >
               <h2 className="text-base font-semibold leading-7 text-black dark:text-white">
                 All projects
               </h2>
-              <ul className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
                 {projects.map((item) => (
                   <li key={item.name}>
                     <TiltCard className="flex h-full flex-col gap-4 rounded-lg border bg-glass p-6 shadow-elevation-2">
@@ -49,10 +49,10 @@ function Projects() {
                         <img
                           src={item.image || '/images/placeholder.png'}
                           alt={item.name}
-                          className="h-10 w-10 rounded-full bg-secondary-foreground"
+                          className="h-10 w-10 shrink-0 rounded-full bg-secondary-foreground"
                         />
-                        <div className="flex flex-col">
-                          <span className="truncate text-sm font-medium leading-6 dark:text-white text-black">
+                        <div className="flex min-w-0 flex-col">
+                          <span className="break-words text-sm font-medium leading-6 dark:text-white text-black">
                             {item.name}
                           </span>
                           <time className="text-xs leading-6 dark:text-gray-400 text-gray-800">
