@@ -37,3 +37,13 @@ next-env.d.ts
 
 # IntelliJ
 .idea
+# Superpowers brainstorm scratch
+.superpowers/
+# Editor launch config
+.claude/
+
+# TanStack Router generated
+src/routeTree.gen.ts
+.output
+.nitro
+.tanstack
