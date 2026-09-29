@@ -38,9 +38,9 @@ function Projects() {
               data-reveal
               className="relative rounded-lg border bg-glass p-6 shadow-elevation-2 backdrop-blur-md lg:p-10"
             >
-              <h2 className="text-base font-semibold leading-7 text-black dark:text-white">
+              <h1 className="text-base font-semibold leading-7 text-black dark:text-white">
                 All projects
-              </h2>
+              </h1>
               <ul className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
                 {projects.map((item) => (
                   <li key={item.name}>

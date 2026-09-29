@@ -13,6 +13,7 @@ const SideLeft = () => {
           type="button"
           className="flex flex-1 h-full items-center justify-center text-black dark:text-white"
           onClick={() => setOpen(!open)}
+          aria-label="Open menu"
         >
           <MenuIcon className="" />
         </button>

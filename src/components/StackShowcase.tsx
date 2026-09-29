@@ -21,7 +21,7 @@ export default function StackShowcase() {
           >
             <div className="flex items-center gap-2 border-b pb-2">
               <Icon className="h-5 w-5" aria-hidden="true" />
-              <h2 className="text-xl font-semibold">{group.name}</h2>
+              <h3 className="text-xl font-semibold">{group.name}</h3>
             </div>
             <ul className="flex flex-wrap gap-2">
               {group.items.map((item) => (

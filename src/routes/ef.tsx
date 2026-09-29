@@ -58,7 +58,7 @@ function EF() {
             </span>
             <span>Schau dir die headpat.de seite an:</span>
             <a
-              className="text-red-500"
+              className="text-red-600 dark:text-red-500"
               href="https://headpat.de"
               target="_blank"
               rel="noreferrer"

@@ -43,7 +43,7 @@ function Home() {
                 <span className="text-primary">( ) </span>&#123;
               </h1>
               <div className="pt-10">
-                <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+                <p className="font-display text-xl sm:text-2xl text-black dark:text-white">
                   Download my{' '}
                   <Button
                     type="button"
@@ -52,16 +52,16 @@ function Home() {
                   >
                     resume
                   </Button>
-                </h3>
+                </p>
               </div>
               <div className="pt-10">
-                <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+                <p className="font-display text-xl sm:text-2xl text-black dark:text-white">
                   I&#39;m a{' '}
                   <span className="text-primary">full-stack developer</span>{' '}
                   with a passion for{' '}
                   <span className="text-primary">design</span> and{' '}
                   <span className="text-primary">technology</span>.
-                </h3>
+                </p>
                 <span className="text-base sm:text-xl text-black dark:text-white">
                   &#47;&#47; {new Date().getFullYear() - 2014} years of
                   developing experience
@@ -82,9 +82,9 @@ function Home() {
             </div>
 
             <div ref={experienceRef} data-reveal className={panelClass}>
-              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+              <h2 className="text-xl sm:text-2xl text-black dark:text-white">
                 Experience
-              </h3>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>
@@ -95,7 +95,7 @@ function Home() {
                       href="https://dutchboxx.nl/"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-red-500"
+                      className="text-red-600 dark:text-red-500"
                     >
                       DUTCHBOXX
                     </a>
@@ -116,9 +116,9 @@ function Home() {
             </div>
 
             <div ref={languagesRef} data-reveal className={panelClass}>
-              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+              <h2 className="text-xl sm:text-2xl text-black dark:text-white">
                 Languages
-              </h3>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>
@@ -149,9 +149,9 @@ function Home() {
             </div>
 
             <div ref={busyRef} data-reveal className={panelClass}>
-              <h3 className="text-xl sm:text-2xl text-black dark:text-white">
+              <h2 className="text-xl sm:text-2xl text-black dark:text-white">
                 Also busy with
-              </h3>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 text-gray-500 dark:text-gray-300">
                 <div className="col-span-1">
                   <p>My dog barking</p>
@@ -172,9 +172,12 @@ function Home() {
             </div>
 
             <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pb-20 dark:text-white text-black">
+              <p
+                aria-hidden="true"
+                className="font-display text-4xl sm:text-5xl md:text-6xl font-bold pb-20 dark:text-white text-black"
+              >
                 <span>&#125;</span>
-              </h1>
+              </p>
             </div>
           </div>
         </div>

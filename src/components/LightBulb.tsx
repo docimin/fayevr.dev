@@ -75,6 +75,7 @@ const LightBulb = () => {
         type="button"
         className="pt-32 pb-36 pl-16 pr-16 dark:text-white text-black"
         onClick={handleButtonClick}
+        aria-label="Flip the light switch"
         style={{
           position: 'absolute',
           top: '30%',

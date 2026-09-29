@@ -45,9 +45,9 @@ const SideRight = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="dark:invert"
-          aria-hidden="true"
+          role="none"
         >
-          <Link to="/doom">
+          <Link to="/doom" aria-label="Doom">
             <circle cx="50" cy="200" r="6" fill="black"></circle>
           </Link>
           <circle cx="50" cy="184" r="2.5" stroke="black"></circle>
@@ -117,7 +117,7 @@ const SideRight = () => {
         </svg>
       </div>
       <div className="min-w-[100px] min-h-[75px] border-l border-t dark:border-white border-black flex items-center justify-center">
-        <Link to={'/light'}>
+        <Link to={'/light'} aria-label="Light">
           <LightbulbIcon className="text-2xl text-black dark:text-white" />
         </Link>
       </div>
