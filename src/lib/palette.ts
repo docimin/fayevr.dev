@@ -50,3 +50,16 @@ export function filterPalette(
   const term = query.toLowerCase()
   return items.filter((item) => item.name.toLowerCase().includes(term))
 }
+
+const TERMINAL_REPLIES: Record<string, string> = {
+  sudo: 'faye is not in the sudoers file. This incident will be reported.',
+  'rm -rf /': 'nice try. the site is mounted read-only c:',
+  whoami: 'a curious visitor poking at things. I like you already.',
+  exit: 'there is no escape. press esc like everyone else.',
+}
+
+export function terminalReply(query: string): string | null {
+  const command = query.trim().toLowerCase()
+  if (command.startsWith('sudo ')) return TERMINAL_REPLIES.sudo
+  return TERMINAL_REPLIES[command] ?? null
+}

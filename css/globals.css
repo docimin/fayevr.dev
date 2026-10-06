@@ -291,7 +291,7 @@ button:hover {
   }
 }
 
-#rainbow {
+.rainbow {
   background: linear-gradient(
     to right,
     red,
@@ -319,6 +319,26 @@ button:hover {
     opacity: 1;
     transform: none;
   }
+}
+
+/* --x/--y are written by the pointer handler on /light; the default parks the
+   beam off-canvas until the pointer first moves. */
+.flashlight {
+  --x: -100%;
+  --y: -100%;
+  background: radial-gradient(
+    circle 9rem at var(--x) var(--y),
+    rgb(255 236 200 / 0.28),
+    transparent
+  );
+}
+
+.flashlight-wall {
+  mask-image: radial-gradient(
+    circle 7rem at var(--x) var(--y),
+    black 40%,
+    transparent
+  );
 }
 
 .doom-scanlines {

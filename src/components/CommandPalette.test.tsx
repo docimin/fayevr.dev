@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { filterPalette, PALETTE_ITEMS } from '@/lib/palette'
+import { filterPalette, PALETTE_ITEMS, terminalReply } from '@/lib/palette'
 
 describe('filterPalette', () => {
   it('returns nothing for an empty query', () => {
@@ -21,5 +21,22 @@ describe('filterPalette', () => {
     const result = filterPalette(PALETTE_ITEMS, '#fayevr')
     expect(result.every((item) => item.category === 'Projects')).toBe(true)
     expect(result.some((item) => item.name.includes('fayevr'))).toBe(true)
+  })
+})
+
+describe('terminalReply', () => {
+  it('answers the known commands regardless of case and padding', () => {
+    for (const command of ['sudo', ' WHOAMI ', 'rm -rf /', 'exit']) {
+      expect(terminalReply(command)).toEqual(expect.any(String))
+    }
+  })
+
+  it('treats sudo with arguments as sudo', () => {
+    expect(terminalReply('sudo make me a sandwich')).toBe(terminalReply('sudo'))
+  })
+
+  it('stays silent for ordinary searches', () => {
+    expect(terminalReply('projects')).toBeNull()
+    expect(terminalReply('')).toBeNull()
   })
 })

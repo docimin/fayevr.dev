@@ -1,7 +1,12 @@
 import { useRouter } from '@tanstack/react-router'
 import { Command } from 'cmdk'
 import * as React from 'react'
-import { filterPalette, PALETTE_ITEMS, type PaletteItem } from '@/lib/palette'
+import {
+  filterPalette,
+  PALETTE_ITEMS,
+  type PaletteItem,
+  terminalReply,
+} from '@/lib/palette'
 
 export default function CommandPalette({
   open,
@@ -27,6 +32,7 @@ export default function CommandPalette({
 
   const results = filterPalette(PALETTE_ITEMS, query)
   const groups = Array.from(new Set(results.map((item) => item.category)))
+  const reply = terminalReply(query)
 
   const select = (item: PaletteItem) => {
     onOpenChange(false)
@@ -52,10 +58,21 @@ export default function CommandPalette({
           className="h-12 w-full border-0 bg-transparent px-4 text-foreground placeholder:text-muted-foreground focus:ring-0 focus:outline-hidden"
         />
         <Command.List className="max-h-80 overflow-y-auto pb-2">
-          {query !== '' && (
-            <Command.Empty className="px-6 py-10 text-center text-sm text-muted-foreground">
-              No results found
-            </Command.Empty>
+          {reply ? (
+            <p
+              aria-live="polite"
+              className="px-6 py-10 font-mono text-sm text-foreground"
+            >
+              <span className="text-primary">$ {query.trim()}</span>
+              <br />
+              {reply}
+            </p>
+          ) : (
+            query !== '' && (
+              <Command.Empty className="px-6 py-10 text-center text-sm text-muted-foreground">
+                No results found
+              </Command.Empty>
+            )
           )}
           {groups.map((group) => (
             <Command.Group

@@ -1,6 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 
+// Dates change every year: take them from eurofurence.org.
+const EUROFURENCE = { edition: 31, start: '2027-08-18', end: '2027-08-22' }
+const DAY_MS = 86_400_000
+
+function efStatus(now: number): string | null {
+  const days = Math.ceil((Date.parse(EUROFURENCE.start) - now) / DAY_MS)
+  if (days > 0)
+    return `Noch ${days} ${days === 1 ? 'Tag' : 'Tage'} bis zur Eurofurence ${EUROFURENCE.edition}!`
+  if (now < Date.parse(EUROFURENCE.end) + DAY_MS)
+    return `Die Eurofurence ${EUROFURENCE.edition} läuft gerade!`
+  return null
+}
+
 export const Route = createFileRoute('/ef')({
   head: () => ({ meta: [{ title: 'EF | Faye' }] }),
   component: EF,
@@ -8,6 +21,10 @@ export const Route = createFileRoute('/ef')({
 
 function EF() {
   const [showEnglish, setShowEnglish] = useState(false)
+  const [status, setStatus] = useState<string | null>(null)
+
+  // Decided after mount: the server's clock and timezone are not the visitor's.
+  useEffect(() => setStatus(efStatus(Date.now())), [])
 
   const handleButtonClick = () => {
     setShowEnglish(true)
@@ -47,9 +64,8 @@ function EF() {
             </span>
           )}
           <div className="flex flex-col w-full items-center pt-10 text-black dark:text-white">
-            <h1 id="rainbow" className="text-4xl">
-              Eurofurence Edition
-            </h1>
+            <h1 className="rainbow text-4xl">Eurofurence Edition</h1>
+            {status && <p className="pt-4 font-display text-xl">{status}</p>}
             <br />
             <span className="text-2xl p-4 text-center">
               Sie müssen schwul sein,

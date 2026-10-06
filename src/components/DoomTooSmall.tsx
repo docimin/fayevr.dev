@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CrtPanel from '@/components/CrtPanel'
 
 // The rails take ~204px, so the game only gets viewport minus that. Below this
 // the playfield is too narrow to read the HUD or aim comfortably.
@@ -18,9 +19,7 @@ export default function DoomTooSmall() {
 
   return (
     <div className="w-full px-4 py-10">
-      <div className="doom-crt relative mx-auto max-w-md overflow-hidden rounded-lg border-2 border-black bg-black p-6 text-center dark:border-white">
-        <div className="doom-scanlines pointer-events-none absolute inset-0" />
-
+      <CrtPanel>
         <p className="doom-flicker font-display text-3xl font-bold text-primary">
           DOOM
         </p>
@@ -41,7 +40,7 @@ export default function DoomTooSmall() {
         </p>
 
         <span className="doom-cursor mt-4 inline-block h-4 w-2 bg-primary align-middle" />
-      </div>
+      </CrtPanel>
     </div>
   )
 }

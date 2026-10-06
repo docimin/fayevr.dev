@@ -7,6 +7,9 @@ import {
 import type { ReactNode } from 'react'
 import { CommandPaletteProvider } from '../components/CommandPaletteProvider'
 import ContextMenuProvider from '../components/ContextMenuProvider'
+import ComeBack from '../components/eggs/ComeBack'
+import ConsoleGreeting from '../components/eggs/ConsoleGreeting'
+import NotFound from '../components/NotFound'
 import MobileNav from '../components/nav/MobileNav'
 import { ThemeProvider } from '../components/theme/ThemeProvider'
 import { THEME_SCRIPT } from '../components/theme/theme-script'
@@ -43,6 +46,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFound,
 })
 
 function RootComponent() {
@@ -69,6 +73,8 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
                 {children}
               </div>
               <MobileNav />
+              <ComeBack />
+              <ConsoleGreeting />
             </CommandPaletteProvider>
           </ContextMenuProvider>
         </ThemeProvider>
